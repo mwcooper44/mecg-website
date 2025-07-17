@@ -1,1 +1,0 @@
-# mecg-website
