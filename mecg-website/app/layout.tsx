@@ -20,7 +20,7 @@ const lora = Lora({
 })
 
 export const metadata: Metadata = {
-  title: "MECG Consulting Group",
+  title: "MECG Consulting",
   description: "University of Michigan's Premier Consulting Group",
   icons: {
     icon: "/favicon.ico",
