@@ -24,6 +24,10 @@ export default function Carousel() {
       const scrollSpeed = 1.5;
       let animationFrameId: number;
       let scrollPos = 0;
+      let lastScrollPos = 0;
+      let isMoving = false;
+      let retryCount = 0;
+      const maxRetries = 5;
 
       const scroll = () => {
         scrollPos += scrollSpeed;
@@ -32,10 +36,48 @@ export default function Carousel() {
           scrollPos = 0; // Reset to start of first set
         }
         container.scrollLeft = scrollPos;
+        
+        // Check if carousel is actually moving
+        if (Math.abs(container.scrollLeft - lastScrollPos) > 0) {
+          isMoving = true;
+        }
+        lastScrollPos = container.scrollLeft;
+        
         animationFrameId = requestAnimationFrame(scroll);
       };
 
+      const checkAndRestart = () => {
+        if (!isMoving || container.scrollLeft === 0) {
+          retryCount++;
+          console.log(`Carousel not moving, restart attempt ${retryCount}/${maxRetries}...`);
+          
+          if (retryCount < maxRetries) {
+            cancelAnimationFrame(animationFrameId);
+            scrollPos = 0;
+            isMoving = false;
+            lastScrollPos = 0;
+            animationFrameId = requestAnimationFrame(scroll);
+            
+            // Check again in 1 second
+            setTimeout(checkAndRestart, 1000);
+          } else {
+            console.log('Max retries reached, forcing carousel to start...');
+            // Force start even if max retries reached
+            cancelAnimationFrame(animationFrameId);
+            scrollPos = 0;
+            isMoving = false;
+            lastScrollPos = 0;
+            animationFrameId = requestAnimationFrame(scroll);
+          }
+        } else {
+          console.log('Carousel is moving successfully!');
+        }
+      };
+
       animationFrameId = requestAnimationFrame(scroll);
+
+      // Start checking after 1 second
+      setTimeout(checkAndRestart, 1000);
 
       return () => {
         cancelAnimationFrame(animationFrameId);
