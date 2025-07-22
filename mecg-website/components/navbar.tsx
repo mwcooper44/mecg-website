@@ -34,7 +34,7 @@ export default function Navbar() {
           {/* Updated Image component with proper error handling and fallback */}
           <div className="relative h-24 w-48">
             <Image
-              src="/images/mecg-logo.png"
+              src="/images/mecg-logo-white.png"
               alt="MECG"
               fill
               style={{ objectFit: "contain" }}
