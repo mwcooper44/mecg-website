@@ -1,18 +1,13 @@
 "use client"
 
-import type React from "react"
-
-import { useState, useEffect } from "react"
+import React, { useState, ChangeEvent, FormEvent } from "react"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
-import { toast } from "@/components/ui/use-toast"
-import { Instagram, Linkedin, Mail, MapPin, Music } from "lucide-react"
+import { Instagram, Linkedin, Mail } from "lucide-react"
 import Link from "next/link"
 import PageHeader from "@/components/page-header"
-import { submitContactForm } from "@/actions/contact-form"
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -21,239 +16,151 @@ export default function ContactPage() {
     subject: "",
     message: "",
   })
-
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [formStatus, setFormStatus] = useState<{ success?: boolean; message?: string } | null>(null)
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
+    setFormData((prev: typeof formData) => ({ ...prev, [name]: value }))
   }
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  // Dummy submit handler for now
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
-    setFormStatus(null)
-
-    try {
-      // Create FormData object from the form data
-      const formDataObj = new FormData()
-      Object.entries(formData).forEach(([key, value]) => {
-        formDataObj.append(key, value)
-      })
-
-      // Submit the form using the server action
-      const result = await submitContactForm(formDataObj)
-
-      // Show success or error message
-      setFormStatus(result)
-
-      if (result.success) {
-        // Reset form on success
-        setFormData({
-          name: "",
-          email: "",
-          subject: "",
-          message: "",
-        })
-
-        toast({
-          title: "Message Sent",
-          description: result.message,
-        })
-      } else {
-        toast({
-          title: "Error",
-          description: result.message,
-        })
-      }
-    } catch (error) {
-      console.error("Error submitting form:", error)
-      setFormStatus({
-        success: false,
-        message: "There was an error sending your message. Please try again later.",
-      })
-
-      toast({
-        title: "Error",
-        description: "There was an error sending your message. Please try again later.",
-      })
-    } finally {
+    setTimeout(() => {
+      setFormStatus({ success: true, message: "Message sent!" })
+      setFormData({ name: "", email: "", subject: "", message: "" })
       setIsSubmitting(false)
-    }
+    }, 1000)
   }
 
-  // Ensure all links scroll to top of page
-  useEffect(() => {
-    // Scroll to top on page load
-    window.scrollTo(0, 0)
-
-    // Add scroll-to-top behavior to all internal links
-    const handleClick = (e: MouseEvent) => {
-      const target = e.target as HTMLElement
-      const link = target.closest("a")
-
-      if (link && link.href.startsWith(window.location.origin) && !link.hasAttribute("target")) {
-        // For same-origin links without target attribute
-        window.scrollTo(0, 0)
-      }
-    }
-
-    document.addEventListener("click", handleClick)
-    return () => document.removeEventListener("click", handleClick)
-  }, [])
-
   return (
-    <div>
-      <PageHeader
-        title="Contact Us"
-        descriptions={[
-          "Have questions about our services or interested in joining our team?",
-          "Get in touch with us using the form below or through our contact information.",
-          "We'd love to hear from you and answer any questions you may have.",
-        ]}
-      />
-
-      <div className="py-10 md:py-16">
-        <div className="container px-4 md:px-6">
-          <div className="grid md:grid-cols-2 gap-8 items-start">
-            <Card>
-              <CardHeader>
-                <CardTitle>Send Us a Message</CardTitle>
-                <CardDescription>
-                  Fill out the form below and we'll get back to you as soon as possible.
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
+    <div className="min-h-screen flex flex-col bg-mecg-dark-blue">
+      <main className="flex-1 flex flex-col justify-center">
+        <div className="w-full py-0 md:py-16 px-0" style={{ background: '#ccdeff' }}>
+          <div className="max-w-6xl mx-auto px-4 md:px-8 py-12 rounded-lg">
+            <div className="grid md:grid-cols-2 gap-12 items-start">
+              {/* Left: Form */}
+              <div>
+                <h1 className="text-4xl md:text-5xl font-bold mb-8 text-mecg-dark-blue" style={{ fontFamily: 'Geist, Inter, sans-serif' }}>
+                  Send us a <span className="relative inline-block font-signature text-mecg-dark-blue">message!
+                    <span className="absolute left-0 right-0 -bottom-2 h-3 pointer-events-none" style={{ zIndex: -1 }}>
+                      <svg width="100%" height="20" viewBox="0 0 220 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <ellipse cx="110" cy="10" rx="100" ry="8" fill="#f58e4f" fillOpacity="0.4" />
+                      </svg>
+                    </span>
+                  </span>
+                </h1>
                 <form onSubmit={handleSubmit} className="space-y-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="name">Name</Label>
-                    <Input
-                      id="name"
-                      name="name"
-                      placeholder="Your name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                    />
+                  <div className="flex flex-col md:flex-row gap-4">
+                    <div className="flex-1">
+                      <Label htmlFor="name" className="text-mecg-dark-blue font-semibold">Full Name</Label>
+                      <Input
+                        id="name"
+                        name="name"
+                        placeholder="Enter your full name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        required
+                        className="bg-white text-mecg-dark-blue placeholder-mecg-dark-blue rounded-md border border-mecg-dark-blue"
+                      />
+                    </div>
+                    <div className="flex-1">
+                      <Label htmlFor="email" className="text-mecg-dark-blue font-semibold">Email</Label>
+                      <Input
+                        id="email"
+                        name="email"
+                        type="email"
+                        placeholder="Enter your email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                        className="bg-white text-mecg-dark-blue placeholder-mecg-dark-blue rounded-md border border-mecg-dark-blue"
+                      />
+                    </div>
                   </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="email">Email</Label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      placeholder="Your email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="subject">Subject</Label>
+                  <div>
+                    <Label htmlFor="subject" className="text-mecg-dark-blue font-semibold">Subject</Label>
                     <Input
                       id="subject"
                       name="subject"
-                      placeholder="Subject of your message"
+                      placeholder="Subject..."
                       value={formData.subject}
                       onChange={handleChange}
                       required
+                      className="bg-white text-mecg-dark-blue placeholder-mecg-dark-blue rounded-md border border-mecg-dark-blue"
                     />
                   </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="message">Message</Label>
+                  <div>
+                    <Label htmlFor="message" className="text-mecg-dark-blue font-semibold">Message</Label>
                     <Textarea
                       id="message"
                       name="message"
-                      placeholder="Your message"
-                      rows={5}
+                      placeholder="Write your message here"
+                      rows={3}
                       value={formData.message}
                       onChange={handleChange}
                       required
+                      className="bg-white text-mecg-dark-blue placeholder-mecg-dark-blue rounded-md border border-mecg-dark-blue"
                     />
                   </div>
-
                   {formStatus && (
-                    <div
-                      className={`p-3 rounded-md ${formStatus.success ? "bg-green-50 text-green-800" : "bg-red-50 text-red-800"}`}
-                    >
+                    <div className={`p-3 rounded-md ${formStatus.success ? "bg-green-50 text-green-800" : "bg-red-50 text-red-800"}`}>
                       {formStatus.message}
                     </div>
                   )}
-
-                  <Button type="submit" className="w-full" disabled={isSubmitting}>
+                  <Button type="submit" className="w-full bg-mecg-dark-blue text-white hover:bg-mecg-orange" disabled={isSubmitting}>
                     {isSubmitting ? "Sending..." : "Send Message"}
                   </Button>
                 </form>
-              </CardContent>
-            </Card>
-
-            <div className="space-y-8">
-              <Card>
-                <CardHeader>
-                  <CardTitle>Contact Information</CardTitle>
-                  <CardDescription>Reach out to us directly using the information below.</CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div className="flex items-start gap-3">
-                    <Mail className="h-5 w-5 text-red-600 mt-0.5" />
-                    <div>
-                      <h3 className="font-semibold">Email</h3>
-                      <p className="text-muted-foreground">MECG.board2025@umich.edu</p>
-                    </div>
+              </div>
+              {/* Right: Contact Info */}
+              <div>
+                <h2 className="text-3xl md:text-4xl font-bold mb-8 text-mecg-dark-blue" style={{ fontFamily: 'Geist, Inter, sans-serif' }}>
+                  Connect with us...
+                </h2>
+                <div className="space-y-6">
+                  <div className="flex items-center gap-4">
+                    <span className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-mecg-dark-blue">
+                      <Mail className="h-6 w-6 text-white" />
+                    </span>
+                    <span className="text-lg text-mecg-dark-blue">mecg-board@umich.edu</span>
                   </div>
-                  <div className="flex items-start gap-3">
-                    <MapPin className="h-5 w-5 text-red-600 mt-0.5" />
-                    <div>
-                      <h3 className="font-semibold">Address</h3>
-                      <p className="text-muted-foreground">
-                        Ross School of Business
-                        <br />
-                        University of Michigan
-                        <br />
-                        701 Tappan Ave
-                        <br />
-                        Ann Arbor, MI 48109
-                      </p>
-                    </div>
+                  <div className="flex items-center gap-4">
+                    <span className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-tr from-pink-500 via-yellow-400 to-purple-500">
+                      <Instagram className="h-6 w-6 text-white" />
+                    </span>
+                    <span className="text-lg text-mecg-dark-blue">@mecgmichigan</span>
                   </div>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardHeader>
-                  <CardTitle>Follow Us</CardTitle>
-                  <CardDescription>Stay connected with us on social media and check out our podcast.</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex gap-4">
-                    <Button variant="outline" size="icon" asChild>
-                      <Link href="https://www.instagram.com/MECGconsultingumich?igsh=MXE3OGFpaDA5dnJraA==" aria-label="Instagram">
-                        <Instagram className="h-5 w-5" />
-                      </Link>
-                    </Button>
-                    <Button variant="outline" size="icon" asChild>
-                      <Link href="https://docs.google.com/forms/d/e/1FAIpQLSc-mBvMGKgyuG-h7AomOOVRq8SSRm9jknVB22Qy_SHFWRNFCw/viewform" aria-label="Mailing List">
-                        <Mail className="h-5 w-5" />
-                      </Link>
-                    </Button>
-                    <Button variant="outline" size="icon" asChild>
-                      <Link href="https://www.linkedin.com/company/MECGconsultinggroup/posts/?feedView=all" aria-label="LinkedIn">
-                        <Linkedin className="h-5 w-5" />
-                      </Link>
-                    </Button>
-                    <Button variant="outline" size="icon" asChild>
-                      <Link href="https://creators.spotify.com/pod/profile/MECG-consulting/" aria-label="Spotify Podcast">
-                        <Music className="h-5 w-5" />
-                      </Link>
-                    </Button>
+                  <div className="flex items-center gap-4">
+                    <span className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-mecg-dark-blue">
+                      <Linkedin className="h-6 w-6 text-white" />
+                    </span>
+                    <span className="text-lg text-mecg-dark-blue">Michigan Engineering Consulting Group</span>
                   </div>
-                </CardContent>
-              </Card>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </main>
+      {/* Footer bar as in the image */}
+      <footer className="bg-mecg-dark-blue text-white py-6">
+        <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-2">
+            <span className="font-semibold">Michigan Engineering Consulting Group</span>
+            <span className="hidden md:inline">|</span>
+            <span>University of Michigan – Ann Arbor</span>
+          </div>
+          <div className="flex items-center gap-4 mt-2 md:mt-0">
+            <Link href="mailto:mecg-board@umich.edu" className="hover:text-mecg-orange"><Mail className="h-5 w-5" /></Link>
+            <Link href="https://www.instagram.com/mecgmichigan/" className="hover:text-mecg-orange"><Instagram className="h-5 w-5" /></Link>
+            <Link href="https://www.linkedin.com/company/michigan-engineering-consulting-group/posts/?feedView=all" className="hover:text-mecg-orange"><Linkedin className="h-5 w-5" /></Link>
+            <span className="font-semibold">Contact Us</span>
+          </div>
+        </div>
+      </footer>
     </div>
   )
 }
