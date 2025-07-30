@@ -62,11 +62,11 @@ export default function Navbar() {
               className={cn(
                 item.isCallToAction
                   ? "bg-mecg-dark-blue text-white px-4 py-2 rounded-md font-bold hover:bg-mecg-orange transition-colors"
-                  : "text-sm font-medium transition-colors hover:text-mecg-dark-blue",
+                  : "text-sm font-medium transition-colors hover:text-mecg-orange",
                 !item.isCallToAction && pathname === item.href
-                  ? "text-mecg-dark-blue"
+                  ? "text-mecg-orange"
                   : !item.isCallToAction
-                    ? "text-muted-foreground"
+                    ? "text-white"
                     : "",
               )}
             >
