@@ -18,7 +18,7 @@ export default function Home() {
       {}
       <div className="relative">
         <ParticlesBackground />
-        <section className="relative pt-4 pb-20 md:pt-8 md:pb-32 overflow-hidden">
+        <section className="relative pt-2 pb-20 md:pt-0 md:pb-32 overflow-hidden">
           <div className="container-fluid">
             <div className="flex flex-col md:flex-row items-center justify-between">
               {/* Left side - Rotating Gears */}

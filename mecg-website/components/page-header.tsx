@@ -25,7 +25,7 @@ export default function PageHeader({ title, descriptions, className = "", ctaBut
       <div className="relative py-16 md:py-24">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center text-center space-y-6 max-w-3xl mx-auto">
-            <h1 className="text-4xl md:text-5xl font-bold tracking-tighter text-white">{title}</h1>
+            <h1 className="text-4xl md:text-5xl font-bold tracking-tighter text-mecg-orange">{title}</h1>
             <div className="h-12 md:h-16">
               <TypingEffect texts={descriptions} className="text-lg md:text-xl font-medium text-white" />
             </div>

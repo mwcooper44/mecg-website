@@ -1,6 +1,8 @@
 "use client"
 import React, { useRef, useEffect } from 'react';
 import Image from 'next/image';
+import { useInView } from "react-intersection-observer"
+import { cn } from "@/lib/utils"
 
 const images = [
   '/images/carousel/100_0548.JPG',
@@ -13,6 +15,12 @@ const images = [
 
 export default function Carousel() {
   const containerRef = useRef<HTMLDivElement>(null);
+
+  // Fade-in animation when carousel comes into view
+  const [carouselRef, carouselInView] = useInView({
+    triggerOnce: false,
+    threshold: 0.2,
+  })
 
   // Infinite scrolling effect like the alumni logo carousel
   useEffect(() => {
@@ -93,7 +101,13 @@ export default function Carousel() {
   }, []);
 
   return (
-    <div className="w-full flex flex-col items-center overflow-hidden">
+    <div 
+      ref={carouselRef}
+      className={cn(
+        "w-full flex flex-col items-center overflow-hidden transition-all duration-1000 transform",
+        carouselInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"
+      )}
+    >
       <div className="relative w-full max-w-7xl overflow-hidden">
         <div className="overflow-hidden">
           <div

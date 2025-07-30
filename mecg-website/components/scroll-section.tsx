@@ -10,11 +10,9 @@ import PresidentsWelcome from "@/components/presidents-welcome"
 export default function ScrollSection() {
   // Stats data
   const stats = [
-    { icon: Users, value: "50+", label: "Members" },
-    { icon: GraduationCap, value: "100+", label: "Alumni" },
-    { icon: Building, value: "130+", label: "Businesses Served" },
-    { icon: CalendarCheck, value: "13", label: "Years of Experience" },
-    { icon: LibraryBig, value: "12+", label: "Different Majors" },
+    { icon: Users, value: "80+", label: "Members" },
+    { icon: Building, value: "20+", label: "Businesses Served" },
+    { icon: LibraryBig, value: "15+", label: "Different Majors" },
   ]
 
   // Welcome section with fade-in animation
@@ -89,56 +87,15 @@ export default function ScrollSection() {
       <section
         ref={welcomeRef}
         className={cn(
-          "py-20 md:py-32 transition-all duration-1000 transform",
+          "py-20 md:py-24 transition-all duration-1000 transform bg-mecg-blue-extraLight",
           welcomeInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20",
         )}
       >
         <div className="container px-4 md:px-6">
           <div className="max-w-4xl mx-auto text-center space-y-6">
-            <h2 className="text-3xl md:text-5xl font-bold tracking-tighter bg-gradient-to-r from-mecg-dark-blue to-red-700 bg-clip-text text-transparent">
-              Welcome to MECG
-            </h2>
-            <div className="h-1 w-20 bg-mecg-dark-blue mx-auto"></div>
-            <p className="text-lg md:text-xl leading-relaxed text-muted-foreground">
-              MECG Consulting Group is a pro-bono student-led consulting organization at the University of Michigan.
-              With 50 current members hailing from diverse academic and personal backgrounds and 100+ alumni strong,
-              MECG has served over 130 local businesses, innovative startups, and industry leaders all around the
-              country through semester-long projects, providing clients with data-driven, strategic, and growth-oriented
-              recommendations and impact.
+            <p className="text-lg md:text-xl leading-relaxed text-mecg-dark-blue">
+            MECG places an emphasis on a community of diverse students that share one thing: a passion to learn more about consulting and gain hands-on experiences in the field. Our four pillars (Professional Development, Education, Project Experience, and Community) drive our impact on real companies and members' careers.
             </p>
-            <p className="text-lg md:text-xl leading-relaxed text-muted-foreground">
-              Along with these projects, MECG aids members in securing the professional and personal development they
-              need to succeed in any field or industry through hands-on experience, mentorship, and consulting treks,
-              all while being surrounded by an empathetic, family-like community.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Hype Video Section */}
-      <section
-        ref={videoRef}
-        className={cn(
-          "py-20 md:py-32 bg-gray-50 dark:bg-gray-800 transition-all duration-1000 transform",
-          videoInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20",
-        )}
-      >
-        <div className="container px-4 md:px-6">
-          <div className="max-w-4xl mx-auto text-center space-y-6">
-            <h2 className="text-3xl md:text-5xl font-bold tracking-tighter">See MECG in Action</h2>
-            <div className="h-1 w-20 bg-mecg-dark-blue mx-auto"></div>
-
-            <div className="aspect-video bg-gray-200 dark:bg-gray-700 rounded-xl overflow-hidden shadow-xl">
-              <video
-                className="w-full h-full object-cover"
-                controls
-                preload="auto"
-                poster="/images/hypevidthumbnailw25.JPG"
-              >
-                <source src="/videos/W25hypevid.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            </div>
           </div>
         </div>
       </section>
@@ -147,7 +104,7 @@ export default function ScrollSection() {
       <section
         ref={statsRef}
         className={cn(
-          "py-20 md:py-32 transition-all duration-1000 transform",
+          "py-20 md:py-16 transition-all duration-1000 transform bg-mecg-blue-extraLight",
           statsInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20",
         )}
       >
@@ -158,11 +115,11 @@ export default function ScrollSection() {
               <div className="h-1 w-20 bg-mecg-dark-blue mx-auto mt-4"></div>
             </div>
 
-            <div className="grid grid-cols-3 md:grid-cols-5 gap-6 md:gap-10">
+            <div className="flex justify-between items-center gap-6 md:gap-10">
               {stats.map((stat, index) => (
                   <Card
                     key={index}
-                    className="border-none shadow-lg overflow-hidden group hover:bg-mecg-dark-blue hover:text-white hover:shadow-xl transition-all"
+                    className="border-none shadow-lg overflow-hidden group hover:bg-mecg-dark-blue hover:text-white hover:shadow-xl transition-all flex-1"
                   >
                     <CardContent className="p-6 text-center relative z-10 transition-colors duration-300">
 

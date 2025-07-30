@@ -67,6 +67,7 @@ const config = {
             dark: "#333333",
           },
           blue: {
+            extraLight: "#f0f5ff",
             light: "#ccdeff",
             dark: "#3f63af",
           },

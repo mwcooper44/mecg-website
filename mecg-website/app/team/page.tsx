@@ -11,49 +11,63 @@ import PageHeader from "@/components/page-header"
 const teamMembers = {
   eboard: [
     {
-      name: "Sajni Patel",
+      name: "Jules Hwang",
       role: "President",
-      image: "/images/headshots/Board/SajniP.jpeg",
-      linkedin: "https://www.linkedin.com/in/sajnipatelll/",
-      email: "sajni@umich.edu",
+      image: "/images/headshots/Board/JulesH.png",
+      linkedin: "www.linkedin.com/in/juliannehwang",
+      email: "julhwang@umich.edu",
     },
     {
-      name: "Sreejay Ramakrishnan",
-      role: "VP Internal Development",
-      image: "/images/headshots/Board/SreejayR.JPG",
-      linkedin: "https://www.linkedin.com/in/sreejay-ramakrishnan/",
-      email: "sreejayr@umich.edu",
+      name: "Kyle Cornell",
+      role: "Vice President",
+      image: "/images/headshots/Board/KyleC.jpeg",
+      linkedin: "https://www.linkedin.com/in/kylecornell04",
+      email: "kylcorn@umich.edu",
     },
     {
-      name: "George Perakis",
-      role: "VP External Relations",
-      image: "/images/headshots/Board/GeorgeP.jpeg",
-      linkedin: "https://www.linkedin.com/in/georgepperakis/",
-      email: "gperakis@umich.edu",
-    },
-
-    {
-      name: "Urmi Joglekar",
-      role: "VP Technology and Operations",
-      image: "/images/headshots/Board/UrmiJ.JPG",
-      linkedin: "https://www.linkedin.com/in/urmi-joglekar/",
-      email: "urmij@umich.edu",
+      name: "Katie Slazinski",
+      role: "Director of Professional Development",
+      image: "/images/headshots/Board/KatieS.jpeg",
+      linkedin: " www.linkedin.com/in/katherine-slazinski-96b902270",
+      email: "kslaz@umich.edu",
     },
 
     {
-      name: "Ivan Dashkevich",
-      role: "VP Project Management",
-      image: "/images/headshots/Board/IvanD.JPG",
-      linkedin: "https://www.linkedin.com/in/idashkevich05/",
-      email: "idashkev@umich.edu",
+      name: "Maxwell Cooper",
+      role: "Director of Technical Consulting",
+      image: "/images/headshots/Board/MaxwellC.jpg",
+      linkedin: "https://www.linkedin.com/in/cooper-maxwell",
+      email: "mwcooper@umich.edu",
     },
 
     {
-      name: "Noah Knutsen",
-      role: "VP Client Acquisition",
-      image: "/images/headshots/Board/NoahK.JPG",
-      linkedin: "https://www.linkedin.com/in/noah-knutsen/",
-      email: "nknutsen@umich.edu",
+      name: "Michael Young",
+      role: "Director of Consulting",
+      image: "/images/headshots/Board/MichaelY.jpg",
+      linkedin: "http://www.linkedin.com/in/youngim",
+      email: "youngim@umich.edu",
+    },
+
+    {
+      name: "Sydney Silva",
+      role: "Director of Operations",
+      image: "/images/headshots/Board/SydneyS.avif",
+      linkedin: "https://www.linkedin.com/in/sydney-silva-145405246/",
+      email: "sydsilva@umich.edu",
+    },
+    {
+      name: "James Oosterhouse",
+      role: "Director of Finance",
+      image: "/images/headshots/Board/JamesO.avif",
+      linkedin: "www.linkedin.com/in/james-oosterhouse ",
+      email: "jamesoo@umich.edu",
+    },
+    {
+      name: "David Ebosele",
+      role: "Director of Membership",
+      image: "/images/headshots/Board/DavidE.avif",
+      linkedin: "https://www.linkedin.com/in/david-ebosele-3813aa261/",
+      email: "debosele@umich.edu",
     },
 
   ],
@@ -291,16 +305,16 @@ export default function TeamPage() {
   return (
     <div>
       <PageHeader
-        title="Our Team"
+        title="Meet the Team"
         descriptions={[
           "Meet the Wonderful Minds Behind MECG Consulting",
         ]}
       />
 
-      <div className="py-10 md:py-16">
+      <div className="py-10 md:py-16 bg-mecg-blue-extr">
         <div className="container px-4 md:px-6">
           <div className="flex justify-center mb-8 overflow-x-auto">
-            <div className="inline-flex items-center rounded-md border border-input bg-background p-1 text-muted-foreground">
+            <div className="inline-flex items-center rounded-md border border-input bg-mecg-blue-extraLight p-1 text-muted-foreground">
               <button
                 onClick={() => setCurrentRole("eboard")}
                 className={`inline-flex items-center justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 ${
@@ -323,7 +337,7 @@ export default function TeamPage() {
                   currentRole === "businessAnalystLeads" ? "bg-mecg-dark-blue text-white shadow-sm" : ""
                 }`}
               >
-                Business Analyst Leads
+                Assistant Project Managers
               </button>
               <button
                 onClick={() => setCurrentRole("businessAnalysts")}
@@ -331,7 +345,7 @@ export default function TeamPage() {
                   currentRole === "businessAnalysts" ? "bg-mecg-dark-blue text-white shadow-sm" : ""
                 }`}
               >
-                Business Analysts
+                Analysts
               </button>
               <button
                 onClick={() => setCurrentRole("seniorAdvisors")}
@@ -344,10 +358,10 @@ export default function TeamPage() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-items-center">
             {teamMembers[currentRole as keyof typeof teamMembers].map((member, index) => (
-              <Card key={index} className="overflow-hidden group hover:shadow-lg transition-all">
-                <div className="relative w-full h-[500px]">
+              <Card key={index} className="overflow-hidden group hover:shadow-lg transition-all w-80 bg-mecg-blue-extraLight">
+                <div className="relative w-full h-[400px]">
                 <Image
                   src={member.image || "/placeholder.svg"}
                   alt={member.name}
