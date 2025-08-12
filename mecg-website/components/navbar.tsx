@@ -92,12 +92,12 @@ export default function Navbar() {
                 rel={item.isExternal ? "noopener noreferrer" : undefined}
                 className={cn(
                   item.isCallToAction
-                    ? "bg-mecg-dark-blue text-white px-4 py-2 rounded-md font-bold hover:bg-red-700 transition-colors text-center"
-                    : "text-sm font-medium transition-colors hover:text-red-600 block py-2",
+                    ? "bg-mecg-dark-blue text-white px-4 py-2 rounded-md font-bold hover:bg-mecg-orange transition-colors text-center"
+                    : "text-sm font-medium transition-colors hover:text-mecg-orange block py-2",
                   !item.isCallToAction && pathname === item.href
-                    ? "text-red-600"
+                    ? "text-mecg-orange"
                     : !item.isCallToAction
-                      ? "text-muted-foreground"
+                      ? "text-white"
                       : "",
                 )}
                 onClick={() => setMobileMenuOpen(false)}

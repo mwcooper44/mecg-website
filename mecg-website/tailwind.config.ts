@@ -95,12 +95,18 @@ const config = {
         "spin-reverse": {
           to: { transform: "rotate(-360deg)" },
         },
+        "shake": {
+          "0%, 100%": { transform: "translateX(0) rotate(0deg)" },
+          "25%": { transform: "translateX(-1px) rotate(-1deg)" },
+          "75%": { transform: "translateX(1px) rotate(1deg)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "spin-slow": "spin-slow 8s linear infinite",
         "spin-reverse": "spin-reverse 8s linear infinite",
+        "shake": "shake .5s ease-in-out infinite",
       },
     },
   },

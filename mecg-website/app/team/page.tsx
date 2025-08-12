@@ -59,7 +59,7 @@ const teamMembers = {
       name: "James Oosterhouse",
       role: "Director of Finance",
       image: "/images/headshots/Board/JamesO.avif",
-      linkedin: "www.linkedin.com/in/james-oosterhouse ",
+      linkedin: "https://www.linkedin.com/in/james-oosterhouse ",
       email: "jamesoo@umich.edu",
     },
     {
@@ -69,11 +69,18 @@ const teamMembers = {
       linkedin: "https://www.linkedin.com/in/david-ebosele-3813aa261/",
       email: "debosele@umich.edu",
     },
+    {
+      name: "Daniella Ranario",
+      role: "DEI Chair",
+      image: "/images/headshots/Board/DaniellaR.png",
+      linkedin: "https://www.linkedin.com/in/daniella-ranario/",
+      email: "dranario@umich.edu",
+    },
 
   ],
   projectManagers: [
     {
-      name: "Aparna Srikanth",
+      name: "Blake Stark",
       role: "Project Manager",
       image: "/images/headshots/PM/AparnaS.JPG",
       linkedin: "https://www.linkedin.com/in/aparnasrikanth/",
@@ -370,13 +377,13 @@ export default function TeamPage() {
                 />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-between p-4">
                     <div className="flex gap-2">
-                      <Button variant="outline" size="icon" className="bg-white text-black" asChild>
+                      <Button variant="outline" size="icon" className="bg-blue-500 text-white hover:bg-blue-600 hover:animate-shake transition-all duration-300" asChild>
                         <a href={member.linkedin} target="_blank" rel="noopener noreferrer">
                           <Linkedin className="h-4 w-4" />
                           <span className="sr-only">LinkedIn</span>
                         </a>
                       </Button>
-                      <Button variant="outline" size="icon" className="bg-white text-black" asChild>
+                      <Button variant="outline" size="icon" className="bg-white text-black hover:bg-gray-100 transition-colors" asChild>
                         <a href={`mailto:${member.email}`}>
                           <Mail className="h-4 w-4" />
                           <span className="sr-only">Email</span>
