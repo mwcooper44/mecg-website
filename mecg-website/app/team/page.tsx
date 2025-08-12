@@ -70,87 +70,159 @@ const teamMembers = {
       email: "debosele@umich.edu",
     },
     {
+      name: "Annie Callam",
+      role: "Marketing Chair",
+      image: "/images/headshots/Board/AnnieC.jpeg",
+      linkedin: "https://www.linkedin.com/in/annie-callam-413bb5274/",
+      email: "aicallam@umich.edu",
+    },
+    {
       name: "Daniella Ranario",
       role: "DEI Chair",
       image: "/images/headshots/Board/DaniellaR.png",
       linkedin: "https://www.linkedin.com/in/daniella-ranario/",
       email: "dranario@umich.edu",
     },
+    {
+      name: "Abigail Osterhart",
+      role: "Social Chair",
+      image: "/images/headshots/Board/AbigailO.jpg",
+      linkedin: "https://www.linkedin.com/in/abigailosterhart/",
+      email: "aoste@umich.edu",
+    },
+    
 
   ],
   projectManagers: [
     {
       name: "Blake Stark",
       role: "Project Manager",
-      image: "/images/headshots/PM/AparnaS.JPG",
-      linkedin: "https://www.linkedin.com/in/aparnasrikanth/",
-      email: "aparnsr@umich.edu",
+      image: "/images/headshots/PM/BlakeS.jpg",
+      linkedin: "https://www.linkedin.com/in/blakeastark",
+      email: "starkb@umich.edu",
     },
     {
-      name: "Ayden Simckes",
+      name: "Caden Fedderson",
       role: "Project Manager",
-      image: "/images/headshots/PM/AydenS.jpg",
-      linkedin: "https://www.linkedin.com/in/ayden-simckes/",
-      email: "asimckes@umich.edu",
+      image: "/images/headshots/PM/CadenF.jpeg",
+      linkedin: "https://www.linkedin.com/in/caden-feddersen/",
+      email: "cfedd@umich.edu",
     },
     {
-      name: "Chris Shang",
+      name: "Ethan Showich",
       role: "Project Manager",
-      image: "/images/headshots/PM/ChrisS.jpg",
-      linkedin: "https://www.linkedin.com/in/chrissh/",
-      email: "chrissh@umich.edu",
+      image: "/images/headshots/PM/EthanS.jpeg",
+      linkedin: "www.linkedin.com/in/ethan-showich",
+      email: "eshowich@umich.edu",
     },
     {
-      name: "Kristin Choi",
+      name: "Eve Dragiewicz",
       role: "Project Manager",
-      image: "/images/headshots/PM/KristinC.jpeg",
-      linkedin: "https://www.linkedin.com/in/kristinchoi05/",
-      email: "krischoi@umich.edu",
+      image: "/images/headshots/PM/EveD.jpg",
+      linkedin: "www.linkedin.com/in/eve-dragiewicz-684942327",
+      email: "evedrag@umich.edu",
     },
     {
-      name: "Sophia Rich",
+      name: "Iman Ahmed",
       role: "Project Manager",
-      image: "/images/headshots/PM/SophiaR.jpg",
-      linkedin: "https://www.linkedin.com/in/sophiarich/",
-      email: "sophr@umich.edu",
+      image: "/images/headshots/PM/ImanA.jpeg",
+      linkedin: "https://www.linkedin.com/in/imanahmed07/",
+      email: "imanahm@umich.edu",
+    },
+    {
+      name: "Jacob Hanks",
+      role: "Project Manager",
+      image: "/images/headshots/PM/JacobH.png",
+      linkedin: "www.linkedin.com/in/jacobchanks",
+      email: "jclhanks@umich.edu",
+    },
+    {
+      name: "Jude Adwarka",
+      role: "Project Manager",
+      image: "/images/headshots/PM/JudeA.JPG",
+      linkedin: "https://www.linkedin.com/in/jude-adarkwa",
+      email: "jadarkwa@umich.edu",
     }
   ],
-  businessAnalystLeads: [
+  assistantProjectManagers: [
     {
-      name: "Jacob Harleton",
-      role: "Business Analyst Lead",
-      image: "/images/headshots/BAL/JacobH.JPG",
-      linkedin: "https://www.linkedin.com/in/jacobharleton/",
-      email: "harleton@umich.edu",
+      name: "Anna Czech",
+      role: "Assistant Project Manager",
+      image: "/images/headshots/BAL/AnnaC.jpg",
+      linkedin: " https://www.linkedin.com/in/anna-czech-738463320/ ",
+      email: "arczech@umich.edu",
     },
     {
-      name: "Kavya Doshi",
-      role: "Business Analyst Lead",
-      image: "/images/headshots/BAL/KavyaD.jpeg",
-      linkedin: "https://www.linkedin.com/in/kavya-doshi/",
-      email: "doshika@umich.edu",
+      name: "David Jing",
+      role: "Assistant Project Manager",
+      image: "/images/headshots/BAL/DavidJ.jpeg",
+      linkedin: "https://www.linkedin.com/in/davidsjing/",
+      email: "dsjing@umich.edu",
     },
     {
-      name: "Kritika Singh",
-      role: "Business Analyst Lead",
-      image: "/images/headshots/BAL/KritikaS.jpg",
-      linkedin: "https://www.linkedin.com/in/kritika-singhh/",
-      email: "skritika@umich.edu",
+      name: "Emily Kim",
+      role: "Assistant Project Manager",
+      image: "/images/headshots/BAL/EmilyK.jpeg",
+      linkedin: "https://www.linkedin.com/in/emily-kim-48b050330/",
+      email: "emilkim@umich.edu",
     },
     {
-      name: "Noor Shah",
-      role: "Business Analyst Lead",
-      image: "/images/headshots/BAL/NoorS.JPG",
-      linkedin: "https://www.linkedin.com/in/noor-u-shah/",
-      email: "noorshah@umich.edu",
+      name: "Elijah Frederick",
+      role: "Assistant Project Manager",
+      image: "/images/headshots/BAL/ElijahF.jpeg",
+      linkedin: "https://www.linkedin.com/in/elijah-frederick",
+      email: "elijahfr@umich.edu",
     },
     {
-      name: "Sorelle Kreter",
-      role: "Business Analyst Lead",
-      image: "/images/headshots/BAL/SorelleK.jpeg",
-      linkedin: "https://www.linkedin.com/in/sorelle-kreter/",
-      email: "skreter@umich.edu",
-    }
+      name: "Julius Cohen",
+      role: "Assistant Project Manager",
+      image: "/images/headshots/BAL/JuliusC.png",
+      linkedin: "https://www.linkedin.com/in/julius-cohen-7320a6313/",
+      email: "juliuszc@umich.edu",
+    },
+    {
+      name: "Kyle Velasco",
+      role: "Assistant Project Manager",
+      image: "/images/headshots/BAL/KyleV.jpeg",
+      linkedin: "www.linkedin.com/in/deward-kyle-velasco",
+      email: "velascok@umich.edu",
+    },
+    {
+      name: "Lucy Mclean",
+      role: "Assistant Project Manager",
+      image: "/images/headshots/BAL/LucyM.jpeg",
+      linkedin: "www.linkedin.com/in/lucy-mclean",
+      email: "lpmclean@umich.edu",
+    },
+    {
+      name: "Miguel Palacios",
+      role: "Assistant Project Manager",
+      image: "/images/headshots/BAL/MiguelP.jpeg",
+      linkedin: "https://www.linkedin.com/in/miguel-palacios-933ba7345/",
+      email: "miguelpv@umich.edu",
+    },
+    {
+      name: "Max Winnick",
+      role: "Assistant Project Manager",
+      image: "/images/headshots/BAL/MaxW.jpeg",
+      linkedin: "https://www.linkedin.com/in/maxwinnick",
+      email: "winnickm@umich.edu",
+    },
+    {
+      name: "Nandini Tatiwala",
+      role: "Assistant Project Manager",
+      image: "/images/headshots/BAL/NandiniT.jpg",
+      linkedin: "https://www.linkedin.com/in/nandini-tatiwala/",
+      email: "tnandini@umich.edu",
+    },
+    {
+      name: "Sumedha Katti",
+      role: "Assistant Project Manager",
+      image: "/images/headshots/BAL/SumedhaK.jpeg",
+      linkedin: "www.linkedin.com/in/sumedha-katti-874949240",
+      email: "skatti@umich.edu",
+    },
+    
 
   ],
   businessAnalysts: [    
@@ -246,59 +318,59 @@ const teamMembers = {
       email: "zainsy@umich.edu",
     },
   ],
-  seniorAdvisors: [
+  strategicLeads: [
     {
-      name: "Caleb Hyun",
-      role: "Senior Advisor",
-      image: "/images/headshots/SA/CalebH.jpg",
-      linkedin: "https://www.linkedin.com/in/calebkhyun/",
-      email: "ckhyun@umich.edu",
+      name: "Aaryan Singh",
+      role: "Strategic Lead and Co Founder",
+      image: "/images/headshots/SA/AaryanS.jpeg",
+      linkedin: "https://www.linkedin.com/in/aaryansingh2004/",
+      email: "arysingh@umich.edu",
     },
     {
-      name: "Henry Chapman",
-      role: "Senior Advisor",
-      image: "/images/headshots/SA/HenryC.JPG",
-      linkedin: "https://www.linkedin.com/in/henry-chapman-3436852b4/",
-      email: "hcchap@umich.edu",
+      name: "Charlie Hartman",
+      role: "Strategic Lead",
+      image: "/images/headshots/SA/CharlieH.jpeg",
+      linkedin: "www.linkedin.com/in/charlie-hartman-",
+      email: "hartch@umich.edu",
     },
     {
-      name: "Jaden Douglas",
-      role: "Senior Advisor",
-      image: "/images/headshots/SA/JadenD.JPG",
-      linkedin: "https://www.linkedin.com/in/jadendouglas/",
-      email: "jadend@umich.edu",
+      name: "Cierra Scott",
+      role: "Strategic Lead",
+      image: "/images/headshots/SA/CierraS.jpeg",
+      linkedin: "https://www.linkedin.com/in/cierra-scott-3ba924270/",
+      email: "scierra@umich.edu",
     },
     {
-      name: "Meha Nagireddy",
-      role: "Senior Advisor",
-      image: "/images/headshots/SA/MehaN2.JPG",
-      linkedin: "https://www.linkedin.com/in/mehanagireddy/",
-      email: "mnagired@umich.edu",
+      name: "Jonathan Fay",
+      role: "Strategic Lead",
+      image: "/images/headshots/SA/JonathanF.jpeg",
+      linkedin: "https://www.linkedin.com/in/jonathan-s-fay/",
+      email: "jonfay@umich.edu",
     },
     {
       name: "Rishi Juneja",
-      role: "Senior Advisor",
+      role: "Strategic Lead",
       image: "/images/headshots/SA/RishiJ.JPG",
       linkedin: "https://www.linkedin.com/in/rishijuneja//",
       email: "rishij@umich.edu",
     },
     {
       name: "Ronith Ganjigunta",
-      role: "Senior Advisor",
+      role: "Strategic Lead",
       image: "/images/headshots/SA/RonithG.JPG",
       linkedin: "https://www.linkedin.com/in/ronithganjigunta/",
       email: "rronith@umich.edu",
     },
     {
       name: "Ruthie Yu",
-      role: "Senior Advisor",
+      role: "Strategic Lead",
       image: "/images/headshots/SA/RuthieY.JPG",
       linkedin: "https://www.linkedin.com/in/ruthie-yu/",
       email: "yuruthie@umich.edu",
     },
     {
       name: "Tayla Jankowski",
-      role: "Senior Advisor",
+      role: "Strategic Lead",
       image: "/images/headshots/SA/TaylaJ.jpeg",
       linkedin: "https://www.linkedin.com/in/tayla-jankowski/",
       email: "taylajan@umich.edu",
@@ -311,13 +383,10 @@ export default function TeamPage() {
 
   return (
     <div>
-      <PageHeader
-        title="Meet the Team"
-        descriptions={[
-          "Meet the Wonderful Minds Behind MECG Consulting",
-        ]}
-      />
-
+      <div className="bg-mecg-blue-light">
+        <h1 className="text-5xl md:text-6xl font-bold text-center text-mecg-orange py-16 md:py-20 drop-shadow-lg" style={{ textShadow: '2px 4px 8px rgba(0,0,0,0.15)' }}>Meet the Team</h1>
+      </div>
+      
       <div className="py-10 md:py-16 bg-mecg-blue-extr">
         <div className="container px-4 md:px-6">
           <div className="flex justify-center mb-8 overflow-x-auto">
@@ -339,9 +408,9 @@ export default function TeamPage() {
                 Project Managers
               </button>
               <button
-                onClick={() => setCurrentRole("businessAnalystLeads")}
+                onClick={() => setCurrentRole("assistantProjectManagers")}
                 className={`inline-flex items-center justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 ${
-                  currentRole === "businessAnalystLeads" ? "bg-mecg-dark-blue text-white shadow-sm" : ""
+                  currentRole === "assistantProjectManagers" ? "bg-mecg-dark-blue text-white shadow-sm" : ""
                 }`}
               >
                 Assistant Project Managers
@@ -355,12 +424,12 @@ export default function TeamPage() {
                 Analysts
               </button>
               <button
-                onClick={() => setCurrentRole("seniorAdvisors")}
+                onClick={() => setCurrentRole("strategicLeads")}
                 className={`inline-flex items-center justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 ${
-                  currentRole === "seniorAdvisors" ? "bg-mecg-dark-blue text-white shadow-sm" : ""
+                  currentRole === "strategicLeads" ? "bg-mecg-dark-blue text-white shadow-sm" : ""
                 }`}
               >
-                Senior Advisors
+                Strategic Leads
               </button>
             </div>
           </div>
@@ -375,15 +444,15 @@ export default function TeamPage() {
                   fill
                   className="object-cover object-top rounded-t-md"
                 />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-between p-4">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-end p-4">
                     <div className="flex gap-2">
-                      <Button variant="outline" size="icon" className="bg-blue-500 text-white hover:bg-blue-600 hover:animate-shake transition-all duration-300" asChild>
+                      <Button variant="outline" size="icon" className="bg-blue-500 text-white hover:bg-blue-600 hover:animate-shake transition-all duration-300 rounded-full" asChild>
                         <a href={member.linkedin} target="_blank" rel="noopener noreferrer">
                           <Linkedin className="h-4 w-4" />
                           <span className="sr-only">LinkedIn</span>
                         </a>
                       </Button>
-                      <Button variant="outline" size="icon" className="bg-white text-black hover:bg-gray-100 transition-colors" asChild>
+                      <Button variant="outline" size="icon" className="bg-white text-black hover:bg-gray-100 transition-colors rounded-full" asChild>
                         <a href={`mailto:${member.email}`}>
                           <Mail className="h-4 w-4" />
                           <span className="sr-only">Email</span>
