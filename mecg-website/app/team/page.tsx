@@ -5,6 +5,8 @@ import Image from "next/image"
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Linkedin, Mail } from "lucide-react"
+import { useInView } from "react-intersection-observer"
+import { cn } from "@/lib/utils"
 import PageHeader from "@/components/page-header"
 
 // Team Data
@@ -13,21 +15,21 @@ const teamMembers = {
     {
       name: "Jules Hwang",
       role: "President",
-      image: "/images/headshots/Board/JulesH.png",
+      image: "/images/headshots/Board/JulesH.webp",
       linkedin: "www.linkedin.com/in/juliannehwang",
       email: "julhwang@umich.edu",
     },
     {
       name: "Kyle Cornell",
       role: "Vice President",
-      image: "/images/headshots/Board/KyleC.jpeg",
+      image: "/images/headshots/Board/KyleC.webp",
       linkedin: "https://www.linkedin.com/in/kylecornell04",
       email: "kylcorn@umich.edu",
     },
     {
       name: "Katie Slazinski",
       role: "Director of Professional Development",
-      image: "/images/headshots/Board/KatieS.jpeg",
+      image: "/images/headshots/Board/KatieS.webp",
       linkedin: " www.linkedin.com/in/katherine-slazinski-96b902270",
       email: "kslaz@umich.edu",
     },
@@ -35,7 +37,7 @@ const teamMembers = {
     {
       name: "Maxwell Cooper",
       role: "Director of Technical Consulting",
-      image: "/images/headshots/Board/MaxwellC.jpg",
+      image: "/images/headshots/Board/MaxwellC.webp",
       linkedin: "https://www.linkedin.com/in/cooper-maxwell",
       email: "mwcooper@umich.edu",
     },
@@ -43,7 +45,7 @@ const teamMembers = {
     {
       name: "Michael Young",
       role: "Director of Consulting",
-      image: "/images/headshots/Board/MichaelY.jpg",
+      image: "/images/headshots/Board/MichaelY.webp",
       linkedin: "http://www.linkedin.com/in/youngim",
       email: "youngim@umich.edu",
     },
@@ -51,42 +53,42 @@ const teamMembers = {
     {
       name: "Sydney Silva",
       role: "Director of Operations",
-      image: "/images/headshots/Board/SydneyS.avif",
+      image: "/images/headshots/Board/SydneyS.webp",
       linkedin: "https://www.linkedin.com/in/sydney-silva-145405246/",
       email: "sydsilva@umich.edu",
     },
     {
       name: "James Oosterhouse",
       role: "Director of Finance",
-      image: "/images/headshots/Board/JamesO.avif",
+      image: "/images/headshots/Board/JamesO.webp",
       linkedin: "https://www.linkedin.com/in/james-oosterhouse ",
       email: "jamesoo@umich.edu",
     },
     {
       name: "David Ebosele",
       role: "Director of Membership",
-      image: "/images/headshots/Board/DavidE.avif",
+      image: "/images/headshots/Board/DavidE.webp",
       linkedin: "https://www.linkedin.com/in/david-ebosele-3813aa261/",
       email: "debosele@umich.edu",
     },
     {
       name: "Annie Callam",
       role: "Marketing Chair",
-      image: "/images/headshots/Board/AnnieC.jpeg",
+      image: "/images/headshots/Board/AnnieC.webp",
       linkedin: "https://www.linkedin.com/in/annie-callam-413bb5274/",
       email: "aicallam@umich.edu",
     },
     {
       name: "Daniella Ranario",
       role: "DEI Chair",
-      image: "/images/headshots/Board/DaniellaR.png",
+      image: "/images/headshots/Board/DaniellaR.webp",
       linkedin: "https://www.linkedin.com/in/daniella-ranario/",
       email: "dranario@umich.edu",
     },
     {
       name: "Abigail Osterhart",
       role: "Social Chair",
-      image: "/images/headshots/Board/AbigailO.jpg",
+      image: "/images/headshots/Board/AbigailO.webp",
       linkedin: "https://www.linkedin.com/in/abigailosterhart/",
       email: "aoste@umich.edu",
     },
@@ -97,49 +99,49 @@ const teamMembers = {
     {
       name: "Blake Stark",
       role: "Project Manager",
-      image: "/images/headshots/PM/BlakeS.jpg",
+      image: "/images/headshots/PM/BlakeS.webp",
       linkedin: "https://www.linkedin.com/in/blakeastark",
       email: "starkb@umich.edu",
     },
     {
       name: "Caden Fedderson",
       role: "Project Manager",
-      image: "/images/headshots/PM/CadenF.jpeg",
+      image: "/images/headshots/PM/CadenF.webp",
       linkedin: "https://www.linkedin.com/in/caden-feddersen/",
       email: "cfedd@umich.edu",
     },
     {
       name: "Ethan Showich",
       role: "Project Manager",
-      image: "/images/headshots/PM/EthanS.jpeg",
+      image: "/images/headshots/PM/EthanS.webp",
       linkedin: "www.linkedin.com/in/ethan-showich",
       email: "eshowich@umich.edu",
     },
     {
       name: "Eve Dragiewicz",
       role: "Project Manager",
-      image: "/images/headshots/PM/EveD.jpg",
+      image: "/images/headshots/PM/EveD.webp",
       linkedin: "www.linkedin.com/in/eve-dragiewicz-684942327",
       email: "evedrag@umich.edu",
     },
     {
       name: "Iman Ahmed",
       role: "Project Manager",
-      image: "/images/headshots/PM/ImanA.jpeg",
+      image: "/images/headshots/PM/ImanA.webp",
       linkedin: "https://www.linkedin.com/in/imanahmed07/",
       email: "imanahm@umich.edu",
     },
     {
       name: "Jacob Hanks",
       role: "Project Manager",
-      image: "/images/headshots/PM/JacobH.png",
+      image: "/images/headshots/PM/JacobH.webp",
       linkedin: "www.linkedin.com/in/jacobchanks",
       email: "jclhanks@umich.edu",
     },
     {
       name: "Jude Adwarka",
       role: "Project Manager",
-      image: "/images/headshots/PM/JudeA.JPG",
+      image: "/images/headshots/PM/JudeA.webp",
       linkedin: "https://www.linkedin.com/in/jude-adarkwa",
       email: "jadarkwa@umich.edu",
     }
@@ -148,77 +150,77 @@ const teamMembers = {
     {
       name: "Anna Czech",
       role: "Assistant Project Manager",
-      image: "/images/headshots/BAL/AnnaC.jpg",
+      image: "/images/headshots/BAL/AnnaC.webp",
       linkedin: " https://www.linkedin.com/in/anna-czech-738463320/ ",
       email: "arczech@umich.edu",
     },
     {
       name: "David Jing",
       role: "Assistant Project Manager",
-      image: "/images/headshots/BAL/DavidJ.jpeg",
+      image: "/images/headshots/BAL/DavidJ.webp",
       linkedin: "https://www.linkedin.com/in/davidsjing/",
       email: "dsjing@umich.edu",
     },
     {
       name: "Emily Kim",
       role: "Assistant Project Manager",
-      image: "/images/headshots/BAL/EmilyK.jpeg",
+      image: "/images/headshots/BAL/EmilyK.webp",
       linkedin: "https://www.linkedin.com/in/emily-kim-48b050330/",
       email: "emilkim@umich.edu",
     },
     {
       name: "Elijah Frederick",
       role: "Assistant Project Manager",
-      image: "/images/headshots/BAL/ElijahF.jpeg",
+      image: "/images/headshots/BAL/ElijahF.webp",
       linkedin: "https://www.linkedin.com/in/elijah-frederick",
       email: "elijahfr@umich.edu",
     },
     {
       name: "Julius Cohen",
       role: "Assistant Project Manager",
-      image: "/images/headshots/BAL/JuliusC.png",
+      image: "/images/headshots/BAL/JuliusC.webp",
       linkedin: "https://www.linkedin.com/in/julius-cohen-7320a6313/",
       email: "juliuszc@umich.edu",
     },
     {
       name: "Kyle Velasco",
       role: "Assistant Project Manager",
-      image: "/images/headshots/BAL/KyleV.jpeg",
+      image: "/images/headshots/BAL/KyleV.webp",
       linkedin: "www.linkedin.com/in/deward-kyle-velasco",
       email: "velascok@umich.edu",
     },
     {
       name: "Lucy Mclean",
       role: "Assistant Project Manager",
-      image: "/images/headshots/BAL/LucyM.jpeg",
+      image: "/images/headshots/BAL/LucyM.webp",
       linkedin: "www.linkedin.com/in/lucy-mclean",
       email: "lpmclean@umich.edu",
     },
     {
       name: "Miguel Palacios",
       role: "Assistant Project Manager",
-      image: "/images/headshots/BAL/MiguelP.jpeg",
+      image: "/images/headshots/BAL/MiguelP.webp",
       linkedin: "https://www.linkedin.com/in/miguel-palacios-933ba7345/",
       email: "miguelpv@umich.edu",
     },
     {
       name: "Max Winnick",
       role: "Assistant Project Manager",
-      image: "/images/headshots/BAL/MaxW.jpeg",
+      image: "/images/headshots/BAL/MaxW.webp",
       linkedin: "https://www.linkedin.com/in/maxwinnick",
       email: "winnickm@umich.edu",
     },
     {
       name: "Nandini Tatiwala",
       role: "Assistant Project Manager",
-      image: "/images/headshots/BAL/NandiniT.jpg",
+      image: "/images/headshots/BAL/NandiniT.webp",
       linkedin: "https://www.linkedin.com/in/nandini-tatiwala/",
       email: "tnandini@umich.edu",
     },
     {
       name: "Sumedha Katti",
       role: "Assistant Project Manager",
-      image: "/images/headshots/BAL/SumedhaK.jpeg",
+      image: "/images/headshots/BAL/SumedhaK.webp",
       linkedin: "www.linkedin.com/in/sumedha-katti-874949240",
       email: "skatti@umich.edu",
     },
@@ -229,161 +231,161 @@ const teamMembers = {
     {
     name: "Allison Lukens",
     role: "Business Analyst",
-    image: "/images/headshots/BA/AllisonL.jpg",
+    image: "/images/headshots/BA/AllisonL.webp",
     linkedin: "https://www.linkedin.com/in/chrismunroe12/",
     email: "cmunroe@umich.edu",
     },
     {
       name: "Angela Yang",
       role: "Business Analyst",
-      image: "/images/headshots/BA/AngelaY.jpeg",
+      image: "/images/headshots/BA/AngelaY.webp",
       linkedin: "https://www.linkedin.com/in/angela-yang-a92b9b27a/",
       email: "angely@umich.edu",
     },
     {
       name: "Avery Bakes",
       role: "Business Analyst",
-      image: "/images/headshots/BA/AveryB.JPEG",
+      image: "/images/headshots/BA/AveryB.webp",
       linkedin: "www.linkedin.com/in/avery-bakes-53994a309 ",
       email: "ajbakes@umich.edu",
     },
     {
       name: "Bhumi Kumar",
       role: "Business Analyst",
-      image: "/images/headshots/BA/BhumiK.png",
+      image: "/images/headshots/BA/BhumiK.webp",
       linkedin: "https://www.linkedin.com/in/bhumikumar/",
       email: "bhumik@umich.edu",
     },
     {
       name: "Claire Wattenbach",
       role: "Business Analyst",
-      image: "/images/headshots/BA/ClaireW.jpeg",
+      image: "/images/headshots/BA/ClaireW.webp",
       linkedin: "https://www.linkedin.com/in/clairewattenbach/",
       email: "clmw@umich.edu",
     },
     {
       name: "Connor Klein",
       role: "Business Analyst",
-      image: "/images/headshots/BA/ConnorK.jpg",
+      image: "/images/headshots/BA/ConnorK.webp",
       linkedin: "https://www.linkedin.com/in/connor-klein-727118a6/",
       email: "tcklein@umich.edu",
     },
     {
       name: "Daniel Okoye",
       role: "Business Analyst",
-      image: "/images/headshots/BA/DanielO.jpeg",
+      image: "/images/headshots/BA/DanielO.webp",
       linkedin: "www.linkedin.com/in/daniel-okoye-7a1229319",
       email: "dokoye@umich.edu",
     },
     {
       name: "Daniel Rombaut",
       role: "Business Analyst",
-      image: "/images/headshots/BA/DanielR.jpeg",
+      image: "/images/headshots/BA/DanielR.webp",
       linkedin: "www.linkedin.com/in/dromb",
       email: "drombaut@umich.edu",
     },
     {
       name: "Erin Beiley",
       role: "Business Analyst",
-      image: "/images/headshots/BA/ErinB.jpeg",
+      image: "/images/headshots/BA/ErinB.webp",
       linkedin: "www.linkedin.com/in/erin-beiley-392a14258",
       email: "beiley@umich.edu",
     }, 
     {
       name: "Hannah TerHaar",
       role: "Business Analyst",
-      image: "/images/headshots/BA/HannahT.jpeg",
+      image: "/images/headshots/BA/HannahT.webp",
       linkedin: "https://www.linkedin.com/in/hannahterhaar",
       email: "terhaarh@umich.edu",
     },   
     {
       name: "Hayley Holder",
       role: "Business Analyst",
-      image: "/images/headshots/BA/HayleyH.jpg",
+      image: "/images/headshots/BA/HayleyH.webp",
       linkedin: "https://www.linkedin.com/in/hayley-holder/",
       email: "hholder@umich.edu",
     },
     {
       name: "Jandy Arias",
       role: "Business Analyst",
-      image: "/images/headshots/BA/JandyA.jpeg",
+      image: "/images/headshots/BA/JandyA.webp",
       linkedin: "http://www.linkedin.com/in/jandy-arias-90bb09264",
       email: "jandyari@umich.edu",
     },
     {
       name: "Jed Roseman",
       role: "Business Analyst",
-      image: "/images/headshots/BA/JedR.jpg",
+      image: "/images/headshots/BA/JedR.webp",
       linkedin: "https://www.linkedin.com/in/jedidiah-roseman/",
       email: "jedrose@umich.edu",
     },    
     {
       name: "Jihyo Yoo",
       role: "Business Analyst",
-      image: "/images/headshots/BA/JihyoY.jpg",
+      image: "/images/headshots/BA/JihyoY.webp",
       linkedin: "www.linkedin.com/in/jihyoyoo",
       email: "jihyoyoo@umich.edu",
     },
     {
       name: "Joshua Ng",
       role: "Business Analyst",
-      image: "/images/headshots/BA/JoshuaN.JPEG",
+      image: "/images/headshots/BA/JoshuaN.webp",
       linkedin: "www.linkedin.com/in/joshuang42",
       email: "joshng@umich.edu",
     },
     {
       name: "Martynas (MJ) Jurciukonis",
       role: "Business Analyst",
-      image: "/images/headshots/BA/MartynasJ.jpg",
+      image: "/images/headshots/BA/MartynasJ.webp",
       linkedin: "www.linkedin.com/in/martynas-jurciukonis ",
       email: "mjurciuk@umich.edu",
     },
     {
       name: "Mason Pratt",
       role: "Business Analyst",
-      image: "/images/headshots/BA/MasonP.jpeg",
+      image: "/images/headshots/BA/MasonP.webp",
       linkedin: "https://www.linkedin.com/in/mason-pratt-404055284/",
       email: "maspratt@umich.edu",
     },
     {
       name: "Maxwell Franz",
       role: "Business Analyst",
-      image: "/images/headshots/BA/MaxwellF.jpeg",
+      image: "/images/headshots/BA/MaxwellF.webp",
       linkedin: "http://linkedin.com/in/maxwell-franz-439188334",
       email: "maxfranz@umich.edu",
     },
     {
       name: "Maya Menon",
       role: "Business Analyst",
-      image: "/images/headshots/BA/MayaM.jpeg",
+      image: "/images/headshots/BA/MayaM.webp",
       linkedin: "www.linkedin.com/in/mayamenon28",
       email: "mayameno@umich.edu",
     },
     {
       name: "Molly Bluestein",
       role: "Business Analyst",
-      image: "/images/headshots/BA/MollyB.jpg",
+      image: "/images/headshots/BA/MollyB.webp",
       linkedin: "www.linkedin.com/in/mollybluestein",
       email: "mollyblu@umich.edu",
     },
     {
       name: "Natalie Woolridge",
       role: "Business Analyst",
-      image: "/images/headshots/BA/NateR.jpeg",
+      image: "/images/headshots/BA/NateR.webp",
       linkedin: "https://www.linkedin.com/in/natalie-wooldridge-1380a6329/",
       email: "nwool@umich.edu",
     },
     {
       name: "Nate Reynders",
       role: "Business Analyst",
-      image: "/images/headshots/BA/NateR.jpeg",
+      image: "/images/headshots/BA/NateR.webp",
       linkedin: "www.linkedin.com/in/nate-reynders",
       email: "reynders@umich.edu",
     },
     {
       name: "Ryan Hoehler",
       role: "Business Analyst",
-      image: "/images/headshots/BA/RyanH.jpeg",
+      image: "/images/headshots/BA/RyanH.webp",
       linkedin: "www.linkedin.com/in/ryan-hoehler125",
       email: "rhoehler@umich.edu",
     },
@@ -392,56 +394,56 @@ const teamMembers = {
     {
       name: "Aaryan Singh",
       role: "Strategic Lead and Co Founder",
-      image: "/images/headshots/SA/AaryanS.jpeg",
+      image: "/images/headshots/SA/AaryanS.webp",
       linkedin: "https://www.linkedin.com/in/aaryansingh2004/",
       email: "arysingh@umich.edu",
     },
     {
       name: "Charlie Hartman",
       role: "Strategic Lead",
-      image: "/images/headshots/SA/CharlieH.jpeg",
+      image: "/images/headshots/SA/CharlieH.webp",
       linkedin: "www.linkedin.com/in/charlie-hartman-",
       email: "hartch@umich.edu",
     },
     {
       name: "Cierra Scott",
       role: "Strategic Lead",
-      image: "/images/headshots/SA/CierraS.jpeg",
+      image: "/images/headshots/SA/CierraS.webp",
       linkedin: "https://www.linkedin.com/in/cierra-scott-3ba924270/",
       email: "scierra@umich.edu",
     },
     {
       name: "Jonathan Fay",
       role: "Strategic Lead",
-      image: "/images/headshots/SA/JonathanF.jpeg",
+      image: "/images/headshots/SA/JonathanF.webp",
       linkedin: "https://www.linkedin.com/in/jonathan-s-fay/",
       email: "jonfay@umich.edu",
     },
     {
       name: "Mark Mitu",
       role: "Strategic Lead",
-      image: "/images/headshots/SA/MarkM.jpeg",
+      image: "/images/headshots/SA/MarkM.webp",
       linkedin: "https://www.linkedin.com/in/markmitu/",
       email: "markmitu@umich.edu",
     },
     {
       name: "Michael Cornell",
       role: "Strategic Lead",
-      image: "/images/headshots/SA/MichaelC.jpg",
+      image: "/images/headshots/SA/MichaelC.webp",
       linkedin: "www.linkedin.com/in/michael-cornell-6737242a6",
       email: "mtcornel@umich.edu",
     },
     {
       name: "Thomas Carano",
       role: "Strategic Lead",
-      image: "/images/headshots/SA/ThomasC.jpeg",
+      image: "/images/headshots/SA/ThomasC.webp",
       linkedin: "https://www.linkedin.com/in/t-carano/",
       email: "tcaranno@umich.edu",
     },
     {
       name: "Victor Iyer",
       role: "Strategic Lead",
-      image: "/images/headshots/SA/VictorI.png",
+      image: "/images/headshots/SA/VictorI.webp",
       linkedin: "https://www.linkedin.com/in/victor-iyer",
       email: "viciyer@umich.edu",
     },
@@ -450,6 +452,12 @@ const teamMembers = {
 
 export default function TeamPage() {
   const [currentRole, setCurrentRole] = useState("eboard")
+
+  // Intersection observer for staggered animations
+  const [containerRef, containerInView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  })
 
   return (
     <div>
@@ -504,15 +512,36 @@ export default function TeamPage() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-items-center">
-            {teamMembers[currentRole as keyof typeof teamMembers].map((member, index) => (
-              <Card key={index} className="overflow-hidden group hover:shadow-lg transition-all w-80 bg-mecg-blue-extraLight">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-items-center" ref={containerRef}>
+            {teamMembers[currentRole as keyof typeof teamMembers].map((member, index) => {
+              // Calculate delay based on row position (3 cards per row)
+              const row = Math.floor(index / 3)
+              const delay = row * 200 // 200ms delay per row
+              
+              return (
+                <Card 
+                  key={index} 
+                  className={cn(
+                    "overflow-hidden group hover:shadow-lg transition-all w-80 bg-mecg-blue-extraLight transform",
+                    containerInView 
+                      ? "opacity-100 translate-y-0" 
+                      : "opacity-0 translate-y-20"
+                  )}
+                  style={{
+                    transitionDelay: containerInView ? `${delay}ms` : "0ms",
+                    transitionDuration: "600ms",
+                    transitionProperty: "opacity, transform"
+                  }}
+                >
                 <div className="relative w-full h-[400px]">
                 <Image
                   src={member.image || "/placeholder.svg"}
                   alt={member.name}
                   fill
                   className="object-cover object-top rounded-t-md"
+                  priority={index < 6} // Only prioritize first 6 images
+                  quality={75} // Reduce quality for better performance
+                  sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw" // Responsive sizes
                 />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-end p-4">
                     <div className="flex gap-2">
@@ -536,7 +565,8 @@ export default function TeamPage() {
                   <CardDescription>{member.role}</CardDescription>
                 </CardHeader>
               </Card>
-            ))}
+            )
+          })}
           </div>
         </div>
       </div>
