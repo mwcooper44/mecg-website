@@ -453,22 +453,16 @@ const teamMembers = {
 export default function TeamPage() {
   const [currentRole, setCurrentRole] = useState("eboard")
 
-  // Intersection observer for staggered animations
-  const [containerRef, containerInView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  })
-
   return (
     <div>
       <div className="bg-mecg-blue-light">
         <h1 className="text-5xl md:text-6xl font-bold text-center text-mecg-orange py-16 md:py-20 drop-shadow-lg" style={{ textShadow: '2px 4px 8px rgba(0,0,0,0.15)' }}>Meet the Team</h1>
       </div>
       
-      <div className="py-10 md:py-16 bg-mecg-blue-extr">
+      <div className="py-10 md:py-16 bg-mecg-blue-extraLight">
         <div className="container px-4 md:px-6">
           <div className="flex justify-center mb-8 overflow-x-auto">
-            <div className="inline-flex items-center rounded-md border border-input bg-mecg-blue-extraLight p-1 text-muted-foreground">
+            <div className="inline-flex items-center rounded-md border border-input bg-background p-1 text-muted-foreground">
               <button
                 onClick={() => setCurrentRole("eboard")}
                 className={`inline-flex items-center justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 ${
@@ -499,7 +493,7 @@ export default function TeamPage() {
                   currentRole === "businessAnalysts" ? "bg-mecg-dark-blue text-white shadow-sm" : ""
                 }`}
               >
-                Analysts
+                Business Analysts
               </button>
               <button
                 onClick={() => setCurrentRole("strategicLeads")}
@@ -512,64 +506,77 @@ export default function TeamPage() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-items-center" ref={containerRef}>
-            {teamMembers[currentRole as keyof typeof teamMembers].map((member, index) => {
-              // Calculate delay based on row position (3 cards per row)
-              const row = Math.floor(index / 3)
-              const delay = row * 200 // 200ms delay per row
-              
-              return (
-                <Card 
-                  key={index} 
-                  className={cn(
-                    "overflow-hidden group hover:shadow-lg transition-all w-80 bg-mecg-blue-extraLight transform",
-                    containerInView 
-                      ? "opacity-100 translate-y-0" 
-                      : "opacity-0 translate-y-20"
-                  )}
-                  style={{
-                    transitionDelay: containerInView ? `${delay}ms` : "0ms",
-                    transitionDuration: "600ms",
-                    transitionProperty: "opacity, transform"
-                  }}
-                >
-                <div className="relative w-full h-[400px]">
-                <Image
-                  src={member.image || "/placeholder.svg"}
-                  alt={member.name}
-                  fill
-                  className="object-cover object-top rounded-t-md"
-                  priority={index < 6} // Only prioritize first 6 images
-                  quality={75} // Reduce quality for better performance
-                  sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw" // Responsive sizes
-                />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-end p-4">
-                    <div className="flex gap-2">
-                      <Button variant="outline" size="icon" className="bg-blue-500 text-white hover:bg-blue-600 hover:animate-shake transition-all duration-300 rounded-full" asChild>
-                        <a href={member.linkedin} target="_blank" rel="noopener noreferrer">
-                          <Linkedin className="h-4 w-4" />
-                          <span className="sr-only">LinkedIn</span>
-                        </a>
-                      </Button>
-                      <Button variant="outline" size="icon" className="bg-white text-black hover:bg-gray-100 transition-colors rounded-full" asChild>
-                        <a href={`mailto:${member.email}`}>
-                          <Mail className="h-4 w-4" />
-                          <span className="sr-only">Email</span>
-                        </a>
-                      </Button>
-                    </div>
-                  </div>
-                </div>
-                <CardHeader className="p-4">
-                  <CardTitle className="text-lg">{member.name}</CardTitle>
-                  <CardDescription>{member.role}</CardDescription>
-                </CardHeader>
-              </Card>
-            )
-          })}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-items-center">
+            {teamMembers[currentRole as keyof typeof teamMembers].map((member, index) => (
+              <TeamMemberCard key={index} member={member} index={index} />
+            ))}
           </div>
         </div>
       </div>
+      
+      {/* Light blue divider section */}
+      <div className="py-16 md:py-20 bg-mecg-blue-light"></div>
+      
+      {/* Light blue border at the bottom of the page */}
+      <div className="h-1 bg-mecg-blue-light"></div>
     </div>
+  )
+}
+
+// Separate component for team member card to handle hooks properly
+function TeamMemberCard({ member, index }: { member: any; index: number }) {
+  const [cardRef, cardInView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+    rootMargin: "50px",
+  })
+
+  return (
+    <Card 
+      ref={cardRef}
+      className={cn(
+        "overflow-hidden group hover:shadow-lg transition-all w-80 bg-mecg-blue-extraLight transform",
+        cardInView 
+          ? "opacity-100 translate-y-0" 
+          : "opacity-0 translate-y-10"
+      )}
+      style={{
+        transitionDuration: "400ms",
+        transitionProperty: "opacity, transform"
+      }}
+    >
+      <div className="relative w-full h-[400px]">
+        <Image
+          src={member.image || "/placeholder.svg"}
+          alt={member.name}
+          fill
+          className="object-cover object-top rounded-t-md"
+          priority={index < 3}
+          quality={60}
+          sizes="320px"
+          loading={index < 3 ? "eager" : "lazy"}
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-end p-4">
+          <div className="flex gap-2">
+            <Button variant="outline" size="icon" className="bg-blue-500 text-white hover:bg-blue-600 hover:animate-shake transition-all duration-300 rounded-full" asChild>
+              <a href={member.linkedin} target="_blank" rel="noopener noreferrer">
+                <Linkedin className="h-4 w-4" />
+                <span className="sr-only">LinkedIn</span>
+              </a>
+            </Button>
+            <Button variant="outline" size="icon" className="bg-white text-black hover:bg-gray-100 transition-colors rounded-full" asChild>
+              <a href={`mailto:${member.email}`}>
+                <Mail className="h-4 w-4" />
+                <span className="sr-only">Email</span>
+              </a>
+            </Button>
+          </div>
+        </div>
+      </div>
+      <CardHeader className="p-3">
+        <CardTitle className="text-sm">{member.name}</CardTitle>
+        <CardDescription className="text-xs">{member.role}</CardDescription>
+      </CardHeader>
+    </Card>
   )
 }
