@@ -90,9 +90,26 @@ const timelineEvents = [
         }
 ];
 
+// Community photos for the Join Our Community section (randomized order)
+const communityPhotos = [
+  "/images/join/IMG_5088.jpeg",
+  "/images/join/100_0640.JPG",
+  "/images/join/100_0516.JPG",
+  "/images/join/IMG_2727.jpeg",
+  "/images/join/100_0658.JPG",
+  "/images/join/100_0637.JPG",
+  "/images/join/100_0525.JPG",
+  "/images/join/IMG_0128.jpeg",
+  "/images/join/100_0671.JPG",
+  "/images/join/100_0502.JPG"
+];
+
 export default function JoinPage() {
   const [activeEvent, setActiveEvent] = useState<number | null>(1);
-  const [pictureOrder, setPictureOrder] = useState([1, 2, 3]);
+  const [pictureOrder, setPictureOrder] = useState([1, 2, 3, 4, 5]);
+  const [openFAQ, setOpenFAQ] = useState<number | null>(null);
+  const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
+  const [scrollY, setScrollY] = useState(0);
 
   const handlePictureClick = (pictureId: number) => {
     setPictureOrder(prev => {
@@ -108,6 +125,28 @@ export default function JoinPage() {
     });
   };
 
+  const toggleFAQ = (faqId: number) => {
+    setOpenFAQ(openFAQ === faqId ? null : faqId);
+  };
+
+  const nextPhoto = () => {
+    setCurrentPhotoIndex((prev) => (prev + 1) % communityPhotos.length);
+  };
+
+  const prevPhoto = () => {
+    setCurrentPhotoIndex((prev) => (prev - 1 + communityPhotos.length) % communityPhotos.length);
+  };
+
+  // Scroll effect for dynamic background
+  React.useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const getEventDetails = () => {
     const event = timelineEvents.find(e => e.id === activeEvent);
     return event || timelineEvents[0];
@@ -116,13 +155,55 @@ export default function JoinPage() {
   const currentEvent = getEventDetails()
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-blue-100">
-      <main className="flex-1 flex flex-col justify-center">
+    <div className="min-h-screen relative overflow-hidden">
+      {/* Dynamic background with scroll effects */}
+      <div 
+        className="fixed inset-0 transition-all duration-1000 ease-out"
+        style={{
+          background: `linear-gradient(${135 + (scrollY * 0.02)}deg, 
+            rgba(239, 246, 255, ${0.8 + (scrollY * 0.0001)}) 0%, 
+            rgba(219, 234, 254, ${0.9 + (scrollY * 0.0001)}) 50%, 
+            rgba(191, 219, 254, ${1 + (scrollY * 0.0001)}) 100%)`
+        }}
+      />
+      
+      {/* Floating geometric shapes for dynamic feel */}
+      <div className="fixed inset-0 pointer-events-none">
+        <div 
+          className="absolute top-20 left-10 w-32 h-32 bg-blue-200/20 rounded-full blur-xl transition-all duration-2000"
+          style={{
+            transform: `translate(${scrollY * 0.1}px, ${scrollY * 0.05}px)`,
+            opacity: 0.3 + (scrollY * 0.0001)
+          }}
+        />
+        <div 
+          className="absolute top-40 right-20 w-24 h-24 bg-blue-300/15 rounded-full blur-xl transition-all duration-2000"
+          style={{
+            transform: `translate(${-scrollY * 0.08}px, ${scrollY * 0.03}px)`,
+            opacity: 0.2 + (scrollY * 0.0001)
+          }}
+        />
+        <div 
+          className="absolute bottom-40 left-1/4 w-20 h-20 bg-blue-400/10 rounded-full blur-xl transition-all duration-2000"
+          style={{
+            transform: `translate(${scrollY * 0.06}px, ${-scrollY * 0.04}px)`,
+            opacity: 0.15 + (scrollY * 0.0001)
+          }}
+        />
+      </div>
+      
+      <main className="flex-1 flex flex-col justify-center relative z-10">
         <div className="w-full px-4 md:px-8">
           <div className="max-w-7xl mx-auto">
             
             {/* Call to Action Section */}
-            <div className="text-center mb-20 pt-20">
+            <div 
+              className="text-center mb-20 pt-20 transition-all duration-1000 ease-out"
+              style={{
+                transform: `translateY(${Math.max(0, scrollY * 0.05)}px)`,
+                opacity: Math.max(0.9, 1 - (scrollY * 0.0002))
+              }}
+            >
               <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 text-mecg-orange">
                 Apply to MECG this Fall!
               </h1>
@@ -138,7 +219,13 @@ export default function JoinPage() {
             <div className="w-full h-0.5 bg-mecg-orange mb-20 rounded-full"></div>
 
             {/* Main Timeline Header - Left Aligned */}
-            <div className="mb-12 pl-4 md:pl-8">
+            <div 
+              className="mb-12 pl-4 md:pl-8 transition-all duration-1000 ease-out"
+              style={{
+                transform: `translateY(${Math.max(0, scrollY * 0.03)}px)`,
+                opacity: Math.max(0.95, 1 - (scrollY * 0.0001))
+              }}
+            >
               <h2 className="text-2xl md:text-3xl font-bold text-mecg-dark-blue mb-4">
                 Fall 2025 Recruitment Timeline
               </h2>
@@ -163,7 +250,14 @@ export default function JoinPage() {
               {/* Timeline Events */}
               <div className="space-y-6 relative z-10">
                 {timelineEvents.map((event, index) => (
-                  <div key={event.id} className="flex items-start gap-4">
+                  <div 
+                    key={event.id} 
+                    className="flex items-start gap-4 transition-all duration-800 ease-out"
+                    style={{
+                      transform: `translateY(${Math.max(0, scrollY * 0.01)}px)`,
+                      opacity: Math.max(0.98, 1 - (scrollY * 0.00005))
+                    }}
+                  >
                     {/* Event Icon positioned to align with orange line */}
                     <div className="relative flex-shrink-0 w-20">
                       {/* Event Icon */}
@@ -372,39 +466,67 @@ export default function JoinPage() {
             {/* Orange separator line */}
             <div className="w-full h-0.5 bg-mecg-orange mb-20 rounded-full"></div>
 
-            {/* Pictures and FAQ Section */}
-            <div className="flex gap-12 items-start">
-              {/* Left side - Stacked picture boxes */}
-              <div className="flex-1 max-w-md">
+                        {/* Pictures and FAQ Section */}
+            <div 
+              className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start mb-32 transition-all duration-1000 ease-out"
+              style={{
+                transform: `translateY(${Math.max(0, scrollY * 0.02)}px)`,
+                opacity: Math.max(0.95, 1 - (scrollY * 0.00008))
+              }}
+            >
+              {/* Left side - Join Our Community Section */}
+              <div className="flex-1 w-full lg:w-auto">
+                <div className="text-center mb-6 lg:mb-8">
+                  <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-mecg-dark-blue mb-6 lg:mb-8">
+                    Join Our Community!!
+                  </h2>
+                </div>
                 <div className="relative">
-                  {/* Picture boxes with dynamic ordering */}
-                  {pictureOrder.map((pictureId, index) => (
-                    <div 
-                      key={pictureId}
-                      className="bg-white/80 backdrop-blur-sm rounded-xl p-8 shadow-lg border border-gray-200 h-64 flex items-center justify-center absolute cursor-pointer hover:shadow-xl transition-all duration-300"
-                      style={{
-                        top: `${index * 2}px`,
-                        left: `${index * 2}px`,
-                        zIndex: 30 - index * 10,
-                        transform: `rotate(${index === 0 ? 0 : index === 1 ? 2 : -1}deg)`
-                      }}
-                      onClick={() => handlePictureClick(pictureId)}
+                  {/* Main photo display */}
+                  <div className="bg-white rounded-3xl p-2 lg:p-4 shadow-lg border border-gray-200 h-64 lg:h-96 w-full max-w-lg mx-auto overflow-hidden">
+                    <Image 
+                      src={communityPhotos[currentPhotoIndex]}
+                      alt={`MECG Community Photo ${currentPhotoIndex + 1}`}
+                      width={400}
+                      height={400}
+                      className="w-full h-full object-cover rounded-2xl"
+                    />
+                  </div>
+                  
+                  {/* Navigation arrows - perfectly centered with the photo */}
+                  <div className="absolute -left-4 lg:-left-6 top-1/2 transform -translate-y-1/2 z-40">
+                    <button 
+                      onClick={prevPhoto}
+                      className="bg-mecg-dark-blue hover:bg-mecg-dark-blue/80 text-white p-2 lg:p-3 rounded-full shadow-lg transition-colors duration-200"
                     >
-                      <span className="text-mecg-dark-blue text-lg">Picture {pictureId}</span>
-                    </div>
-                  ))}
+                      <svg className="w-5 h-5 lg:w-6 lg:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                      </svg>
+                    </button>
+                  </div>
+                  
+                  <div className="absolute -right-4 lg:-right-6 top-1/2 transform -translate-y-1/2 z-40">
+                    <button 
+                      onClick={nextPhoto}
+                      className="bg-mecg-dark-blue hover:bg-mecg-dark-blue/80 text-white p-2 lg:p-3 rounded-full shadow-lg transition-colors duration-200"
+                    >
+                      <svg className="w-5 h-5 lg:w-6 lg:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </button>
+                  </div>
                 </div>
               </div>
 
               {/* Right side - FAQ Section */}
-              <div className="flex-1">
-                <div className="mb-8">
-                  <h2 className="text-2xl md:text-3xl font-bold text-mecg-dark-blue mb-4">
-                    Frequently Asked Questions
+              <div className="flex-1 w-full lg:w-auto mt-8 lg:mt-0">
+                <div className="mb-4">
+                  <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-mecg-dark-blue mb-2">
+                    Frequently Asked Questions:
                   </h2>
                   <div className="flex items-center gap-4">
                     <div 
-                      className="w-32 h-2 rounded-full"
+                      className="w-24 lg:w-32 h-2 rounded-full"
                       style={{
                         backgroundImage: 'url(/images/blue-line.png)',
                         backgroundSize: 'contain',
@@ -413,60 +535,114 @@ export default function JoinPage() {
                       }}
                     ></div>
                   </div>
+
                 </div>
 
                 {/* FAQ Items */}
-                <div className="space-y-4">
+                <div className="space-y-3 lg:space-y-4">
                   {/* FAQ Item 1 */}
-                  <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-lg border border-gray-200">
-                    <div className="flex items-center justify-between">
-                      <h3 className="text-lg font-semibold text-mecg-dark-blue">
-                        Who is eligible to apply to MECG?
+                  <div className="bg-white/80 backdrop-blur-sm rounded-xl p-3 lg:p-4 shadow-lg border border-gray-200">
+                    <div className="flex items-center justify-between cursor-pointer" onClick={() => toggleFAQ(1)}>
+                      <h3 className="text-base lg:text-lg font-semibold text-mecg-dark-blue">
+                        What prior experience do I need to join MECG?
                       </h3>
-                      <svg className="w-5 h-5 text-mecg-dark-blue transform rotate-0 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className={`w-4 h-4 lg:w-5 lg:h-5 text-mecg-dark-blue transform transition-transform duration-200 ${openFAQ === 1 ? 'rotate-180' : 'rotate-0'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                       </svg>
                     </div>
+                    {openFAQ === 1 && (
+                      <div className="mt-3 pt-3 border-t border-gray-200">
+                        <p className="text-sm lg:text-base text-mecg-dark-blue leading-relaxed">
+                          No prior consulting or professional experience is required. We welcome students from all backgrounds who are genuinely interested in learning about consulting and contributing to MECG. What matters most is enthusiasm, willingness to engage, and the potential to grow into leadership roles within the club.
+                        </p>
+                      </div>
+                    )}
+
                   </div>
 
                   {/* FAQ Item 2 */}
-                  <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-lg border border-gray-200">
-                    <div className="flex items-center justify-between">
-                      <h3 className="text-lg font-semibold text-mecg-dark-blue">
-                        So, what does MECG look for in candidates?
+                  <div className="bg-white/80 backdrop-blur-sm rounded-xl p-3 lg:p-4 shadow-lg border border-gray-200">
+                    <div className="flex items-center justify-between cursor-pointer" onClick={() => toggleFAQ(2)}>
+                      <h3 className="text-base lg:text-lg font-semibold text-mecg-dark-blue">
+                        What is the expected time commitment for members?
                       </h3>
-                      <svg className="w-5 h-5 text-mecg-dark-blue transform rotate-0 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className={`w-4 h-4 lg:w-5 lg:h-5 text-mecg-dark-blue transform transition-transform duration-200 ${openFAQ === 2 ? 'rotate-180' : 'rotate-0'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                       </svg>
                     </div>
+                    {openFAQ === 2 && (
+                      <div className="mt-3 pt-3 border-t border-gray-200">
+                        <p className="text-sm lg:text-base text-mecg-dark-blue leading-relaxed">
+                          New members can expect to dedicate about 5-6 hours per week. This includes weekly education meetings, project work, and additional activities like coffee chats, mentorship, and socials.
+                        </p>
+                      </div>
+                    )}
                   </div>
 
                   {/* FAQ Item 3 */}
-                  <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-lg border border-gray-200">
-                    <div className="flex items-center justify-between">
-                      <h3 className="text-lg font-semibold text-mecg-dark-blue">
-                        What does the time commitment look like for members?
+                  <div className="bg-white/80 backdrop-blur-sm rounded-xl p-3 lg:p-4 shadow-lg border border-gray-200">
+                    <div className="flex items-center justify-between cursor-pointer" onClick={() => toggleFAQ(3)}>
+                      <h3 className="text-base lg:text-lg font-semibold text-mecg-dark-blue">
+                        Who is eligible to apply—are there restrictions by major or year?
                       </h3>
-                      <svg className="w-5 h-5 text-mecg-dark-blue transform rotate-0 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className={`w-4 h-4 lg:w-5 lg:h-5 text-mecg-dark-blue transform transition-transform duration-200 ${openFAQ === 3 ? 'rotate-180' : 'rotate-0'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                       </svg>
                     </div>
+                    {openFAQ === 3 && (
+                      <div className="mt-3 pt-3 border-t border-gray-200">
+                        <p className="text-sm lg:text-base text-mecg-dark-blue leading-relaxed">
+                          MECG is open to all majors and all undergraduate years. We especially encourage freshmen and sophomores to apply, as they have the most time to grow within the club. Juniors and seniors are also eligible, though upperclassmen should note that spots may be more competitive due to limited availability and alignment with club goals. There are no GPA requirements.
+                        </p>
+                      </div>
+                    )}
                   </div>
 
                   {/* FAQ Item 4 */}
-                  <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-lg border border-gray-200">
-                    <div className="flex items-center justify-between">
-                      <h3 className="text-lg font-semibold text-mecg-dark-blue">
-                        How do I apply?
+                  <div className="bg-white/80 backdrop-blur-sm rounded-xl p-3 lg:p-4 shadow-lg border border-gray-200">
+                    <div className="flex items-center justify-between cursor-pointer" onClick={() => toggleFAQ(4)}>
+                      <h3 className="text-base lg:text-lg font-semibold text-mecg-dark-blue">
+                        What will my first semester as a member look like?
                       </h3>
-                      <svg className="w-5 h-5 text-mecg-dark-blue transform rotate-0 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className={`w-4 h-4 lg:w-5 lg:h-5 text-mecg-dark-blue transform transition-transform duration-200 ${openFAQ === 4 ? 'rotate-180' : 'rotate-0'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                       </svg>
                     </div>
+                    {openFAQ === 4 && (
+                      <div className="mt-3 pt-3 border-t border-gray-200">
+                        <p className="text-sm lg:text-base text-mecg-dark-blue leading-relaxed">
+                          Your first semester will be structured and supportive. New members join a project team, attend weekly education sessions on consulting skills, and participate in workshops and bonding events. You'll also have opportunities to connect socially at club events and retreats. This combination of professional training and community-building ensures you feel prepared and welcomed from the start.
+                        </p>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* FAQ Item 5 */}
+                  <div className="bg-white/80 backdrop-blur-sm rounded-xl p-3 lg:p-4 shadow-lg border border-gray-200">
+                    <div className="flex items-center justify-between cursor-pointer" onClick={() => toggleFAQ(5)}>
+                      <h3 className="text-base lg:text-lg font-semibold text-mecg-dark-blue">
+                        What does the recruitment process look like?
+                      </h3>
+                      <svg className={`w-4 h-4 lg:w-5 lg:h-5 text-mecg-dark-blue transform transition-transform duration-200 ${openFAQ === 5 ? 'rotate-180' : 'rotate-0'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </div>
+                    {openFAQ === 5 && (
+                      <div className="mt-3 pt-3 border-t border-gray-200">
+                        <p className="text-sm lg:text-base text-mecg-dark-blue leading-relaxed">
+                          Recruitment begins with open rush events such as our mass meeting, career panel, and office hours, where you can meet members and learn about MECG. Selected applicants are invited to closed rush, which includes: coffee chats, speed-dating, and interviews.
+                          <br /><br />
+                          Throughout the process, we look for candidates who show genuine interest, consistency, and engagement.
+                        </p>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
             </div>
+
+            {/* Bottom spacing section to ensure proper distance from footer */}
+            <div className="h-32 lg:h-40"></div>
 
           </div>
         </div>
