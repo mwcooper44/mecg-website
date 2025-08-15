@@ -63,21 +63,21 @@ const timelineEvents = [
   },
           {
           id: 7,
-          title: "Coffee Chats",
-          icon: "/images/join/8.png",
-          date: "Monday, September 15th - Thursday, September 18th",
-          time: null,
-          location: null,
-          description: "Get to know members and our club culture on a more personal level."
-        },
-        {
-          id: 8,
           title: "Speed Dating",
           icon: "/images/join/7.png",
           date: "Monday, September 15th",
           time: null,
           location: null,
           description: "Speak to current members in a casual but fast-paced environment."
+        },
+        {
+          id: 8,
+          title: "Coffee Chats",
+          icon: "/images/join/8.png",
+          date: "Tuesday, September 16th - Friday, September 19th",
+          time: null,
+          location: null,
+          description: "Get to know members and our club culture on a more personal level."
         },
         {
           id: 9,
@@ -137,13 +137,21 @@ export default function JoinPage() {
     setCurrentPhotoIndex((prev) => (prev - 1 + communityPhotos.length) % communityPhotos.length);
   };
 
-  // Scroll effect for dynamic background
+  // Scroll effect for dynamic background - optimized with throttling
   React.useEffect(() => {
+    let ticking = false;
+    
     const handleScroll = () => {
-      setScrollY(window.scrollY);
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          setScrollY(window.scrollY);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -156,39 +164,27 @@ export default function JoinPage() {
 
   return (
     <div className="min-h-screen relative overflow-hidden">
-      {/* Dynamic background with scroll effects */}
+      {/* Dynamic background with scroll effects - optimized */}
       <div 
         className="fixed inset-0 transition-all duration-1000 ease-out"
         style={{
-          background: `linear-gradient(${135 + (scrollY * 0.02)}deg, 
-            rgba(239, 246, 255, ${0.8 + (scrollY * 0.0001)}) 0%, 
-            rgba(219, 234, 254, ${0.9 + (scrollY * 0.0001)}) 50%, 
-            rgba(191, 219, 254, ${1 + (scrollY * 0.0001)}) 100%)`
+          background: `linear-gradient(135deg, 
+            rgba(239, 246, 255, 0.9) 0%, 
+            rgba(219, 234, 254, 0.95) 50%, 
+            rgba(191, 219, 254, 1) 100%)`
         }}
       />
       
-      {/* Floating geometric shapes for dynamic feel */}
+      {/* Floating geometric shapes - simplified for performance */}
       <div className="fixed inset-0 pointer-events-none">
         <div 
-          className="absolute top-20 left-10 w-32 h-32 bg-blue-200/20 rounded-full blur-xl transition-all duration-2000"
-          style={{
-            transform: `translate(${scrollY * 0.1}px, ${scrollY * 0.05}px)`,
-            opacity: 0.3 + (scrollY * 0.0001)
-          }}
+          className="absolute top-20 left-10 w-32 h-32 bg-blue-200/20 rounded-full blur-xl animate-float-slow"
         />
         <div 
-          className="absolute top-40 right-20 w-24 h-24 bg-blue-300/15 rounded-full blur-xl transition-all duration-2000"
-          style={{
-            transform: `translate(${-scrollY * 0.08}px, ${scrollY * 0.03}px)`,
-            opacity: 0.2 + (scrollY * 0.0001)
-          }}
+          className="absolute top-40 right-20 w-24 h-24 bg-blue-300/15 rounded-full blur-xl animate-float-medium"
         />
         <div 
-          className="absolute bottom-40 left-1/4 w-20 h-20 bg-blue-400/10 rounded-full blur-xl transition-all duration-2000"
-          style={{
-            transform: `translate(${scrollY * 0.06}px, ${-scrollY * 0.04}px)`,
-            opacity: 0.15 + (scrollY * 0.0001)
-          }}
+          className="absolute bottom-40 left-1/4 w-20 h-20 bg-blue-400/10 rounded-full blur-xl animate-float-fast"
         />
       </div>
       
@@ -197,13 +193,7 @@ export default function JoinPage() {
           <div className="max-w-7xl mx-auto">
             
             {/* Call to Action Section */}
-            <div 
-              className="text-center mb-20 pt-20 transition-all duration-1000 ease-out"
-              style={{
-                transform: `translateY(${Math.max(0, scrollY * 0.05)}px)`,
-                opacity: Math.max(0.9, 1 - (scrollY * 0.0002))
-              }}
-            >
+            <div className="text-center mb-20 pt-20 animate-fade-in">
               <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 text-mecg-orange">
                 Apply to MECG this Fall!
               </h1>
@@ -219,13 +209,7 @@ export default function JoinPage() {
             <div className="w-full h-0.5 bg-mecg-orange mb-20 rounded-full"></div>
 
             {/* Main Timeline Header - Left Aligned */}
-            <div 
-              className="mb-12 pl-4 md:pl-8 transition-all duration-1000 ease-out"
-              style={{
-                transform: `translateY(${Math.max(0, scrollY * 0.03)}px)`,
-                opacity: Math.max(0.95, 1 - (scrollY * 0.0001))
-              }}
-            >
+            <div className="mb-12 pl-4 md:pl-8 animate-fade-in-delay">
               <h2 className="text-2xl md:text-3xl font-bold text-mecg-dark-blue mb-4">
                 Fall 2025 Recruitment Timeline
               </h2>
@@ -252,11 +236,7 @@ export default function JoinPage() {
                 {timelineEvents.map((event, index) => (
                   <div 
                     key={event.id} 
-                    className="flex items-start gap-4 transition-all duration-800 ease-out"
-                    style={{
-                      transform: `translateY(${Math.max(0, scrollY * 0.01)}px)`,
-                      opacity: Math.max(0.98, 1 - (scrollY * 0.00005))
-                    }}
+                    className="flex items-start gap-4 animate-fade-in-up"
                   >
                     {/* Event Icon positioned to align with orange line */}
                     <div className="relative flex-shrink-0 w-20">
@@ -467,13 +447,7 @@ export default function JoinPage() {
             <div className="w-full h-0.5 bg-mecg-orange mb-20 rounded-full"></div>
 
                         {/* Pictures and FAQ Section */}
-            <div 
-              className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start mb-32 transition-all duration-1000 ease-out"
-              style={{
-                transform: `translateY(${Math.max(0, scrollY * 0.02)}px)`,
-                opacity: Math.max(0.95, 1 - (scrollY * 0.00008))
-              }}
-            >
+            <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start mb-32 animate-fade-in-delay-2">
               {/* Left side - Join Our Community Section */}
               <div className="flex-1 w-full lg:w-auto">
                 <div className="text-center mb-6 lg:mb-8">
