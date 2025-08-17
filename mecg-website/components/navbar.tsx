@@ -62,7 +62,7 @@ export default function Navbar() {
               className={cn(
                 item.isCallToAction
                   ? "bg-mecg-dark-blue text-white px-4 py-2 rounded-md font-bold hover:bg-mecg-orange transition-colors"
-                  : "text-sm font-medium transition-colors hover:text-mecg-orange",
+                  : "text-base font-medium transition-colors hover:text-mecg-orange",
                 !item.isCallToAction && pathname === item.href
                   ? "text-mecg-orange"
                   : !item.isCallToAction
@@ -93,7 +93,7 @@ export default function Navbar() {
                 className={cn(
                   item.isCallToAction
                     ? "bg-mecg-dark-blue text-white px-4 py-2 rounded-md font-bold hover:bg-mecg-orange transition-colors text-center"
-                    : "text-sm font-medium transition-colors hover:text-mecg-orange block py-2",
+                    : "text-base font-medium transition-colors hover:text-mecg-orange block py-2",
                   !item.isCallToAction && pathname === item.href
                     ? "text-mecg-orange"
                     : !item.isCallToAction

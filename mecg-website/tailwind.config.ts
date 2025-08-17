@@ -21,6 +21,22 @@ const config = {
     extend: {
       fontFamily: {
         lora: ["var(--font-lora), serif"],
+        glacial: ["var(--font-glacial), sans-serif"],
+      },
+      fontSize: {
+        'xs': ['0.75rem', { lineHeight: '1rem' }], // 12px
+        'sm': ['0.875rem', { lineHeight: '1.25rem' }], // 14px
+        'base': ['1.15rem', { lineHeight: '1.75rem' }], // 18.4px (15% larger than 16px)
+        'lg': ['1.265rem', { lineHeight: '1.9rem' }], // 20.24px (15% larger than 17.6px)
+        'xl': ['1.38rem', { lineHeight: '2rem' }], // 22.08px (15% larger than 19.2px)
+        '2xl': ['1.725rem', { lineHeight: '2.25rem' }], // 27.6px (15% larger than 24px)
+        '3xl': ['2.07rem', { lineHeight: '2.5rem' }], // 33.12px (15% larger than 28.8px)
+        '4xl': ['2.76rem', { lineHeight: '1' }], // 44.16px (15% larger than 38.4px)
+        '5xl': ['3.45rem', { lineHeight: '1' }], // 55.2px (15% larger than 48px)
+        '6xl': ['4.14rem', { lineHeight: '1' }], // 66.24px (15% larger than 57.6px)
+        '7xl': ['4.83rem', { lineHeight: '1' }], // 77.28px (15% larger than 67.2px)
+        '8xl': ['5.52rem', { lineHeight: '1' }], // 88.32px (15% larger than 76.8px)
+        '9xl': ['6.9rem', { lineHeight: '1' }], // 110.4px (15% larger than 96px)
       },
       colors: {
         border: "hsl(var(--border))",
