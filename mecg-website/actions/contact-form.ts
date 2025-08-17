@@ -45,7 +45,7 @@ export async function submitContactForm(formData: FormData): Promise<{ success: 
     // Email content
     const mailOptions = {
       from: `"MECG Website Contact" <${process.env.EMAIL_USER || "your-email@gmail.com"}>`,
-      to: "MECG.board2025@umich.edu",
+      to: "mecg-board@umich.edu",
       replyTo: email,
       subject: `MECG Contact Form: ${subject}`,
       text: `
