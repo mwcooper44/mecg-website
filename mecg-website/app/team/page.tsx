@@ -493,7 +493,7 @@ export default function TeamPage() {
                   currentRole === "businessAnalysts" ? "bg-mecg-dark-blue text-white shadow-sm" : ""
                 }`}
               >
-                Business Analysts
+                Analysts
               </button>
               <button
                 onClick={() => setCurrentRole("strategicLeads")}
