@@ -87,13 +87,13 @@ export default function ScrollSection() {
       <section
         ref={welcomeRef}
         className={cn(
-          "py-20 md:py-24 transition-all duration-1000 transform bg-mecg-blue-extraLight",
+          "py-16 md:py-20 lg:py-24 transition-all duration-1000 transform bg-mecg-blue-extraLight",
           welcomeInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20",
         )}
       >
         <div className="container px-4 md:px-6">
-          <div className="max-w-4xl mx-auto text-center space-y-6">
-            <p className="text-lg md:text-xl leading-relaxed text-mecg-dark-blue">
+          <div className="max-w-4xl mx-auto text-center space-y-4 md:space-y-6">
+            <p className="text-base sm:text-lg md:text-xl leading-relaxed text-mecg-dark-blue px-4">
             MECG places an emphasis on a community of diverse students that share one thing: a passion to learn more about consulting and gain hands-on experiences in the field. Our four pillars (Professional Development, Education, Project Experience, and Community) drive our impact on real companies and members' careers.
             </p>
           </div>

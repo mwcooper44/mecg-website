@@ -125,21 +125,24 @@ export default function Carousel() {
               <React.Fragment key={`image-1-${index}`}>
                 <div
                   className="flex-shrink-0 flex flex-col items-center"
-                  style={{ minWidth: 600, maxWidth: 600 }}
+                  style={{ 
+                    minWidth: window.innerWidth < 640 ? 300 : window.innerWidth < 1024 ? 400 : 600, 
+                    maxWidth: window.innerWidth < 640 ? 300 : window.innerWidth < 1024 ? 400 : 600 
+                  }}
                 >
                   <Image
                     src={src}
                     alt={`Carousel image ${index + 1}`}
                     width={600}
                     height={400}
-                    className="rounded-2xl border-8 border-mecg-orange object-cover bg-white shadow-xl"
+                    className="rounded-lg sm:rounded-xl md:rounded-2xl border-4 sm:border-6 md:border-8 border-mecg-orange object-cover bg-white shadow-lg md:shadow-xl"
                     style={{ aspectRatio: '3/2' }}
                     priority={index < 3}
                   />
                 </div>
                 {/* Gear icon between all images */}
                 <span className="text-mecg-orange flex items-center">
-                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <svg className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="12" cy="12" r="6" stroke="currentColor" strokeWidth="2" />
                     <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" stroke="currentColor" strokeWidth="2" />
                   </svg>
@@ -152,21 +155,24 @@ export default function Carousel() {
               <React.Fragment key={`image-2-${index}`}>
                 <div
                   className="flex-shrink-0 flex flex-col items-center"
-                  style={{ minWidth: 600, maxWidth: 600 }}
+                  style={{ 
+                    minWidth: window.innerWidth < 640 ? 300 : window.innerWidth < 1024 ? 400 : 600, 
+                    maxWidth: window.innerWidth < 640 ? 300 : window.innerWidth < 1024 ? 400 : 600 
+                  }}
                 >
                   <Image
                     src={src}
                     alt={`Carousel image ${index + 1}`}
                     width={600}
                     height={400}
-                    className="rounded-2xl border-8 border-mecg-orange object-cover bg-white shadow-xl"
+                    className="rounded-lg sm:rounded-xl md:rounded-2xl border-4 sm:border-6 md:border-8 border-mecg-orange object-cover bg-white shadow-lg md:shadow-xl"
                     style={{ aspectRatio: '3/2' }}
                     priority={index < 3}
                   />
                 </div>
                 {/* Gear icon between all images */}
                 <span className="text-mecg-orange flex items-center">
-                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <svg className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="12" cy="12" r="6" stroke="currentColor" strokeWidth="2" />
                     <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" stroke="currentColor" strokeWidth="2" />
                   </svg>

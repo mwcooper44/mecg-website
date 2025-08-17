@@ -18,29 +18,29 @@ export default function Home() {
       {}
       <div className="relative">
         <ParticlesBackground />
-        <section className="relative pt-2 pb-20 md:pt-0 md:pb-32 overflow-hidden">
-          <div className="container-fluid">
-            <div className="flex flex-col md:flex-row items-center justify-between">
+        <section className="relative pt-4 pb-16 md:pt-0 md:pb-32 overflow-hidden">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="flex flex-col lg:flex-row items-center justify-between gap-4 md:gap-8 lg:gap-12">
               {/* Left side - Rotating Gears */}
-              <div className="flex-1 flex justify-start">
+              <div className="flex-1 flex justify-center lg:justify-start order-2 lg:order-1 w-full">
                 <RotatingGears />
               </div>
               
               {/* Right side - Text content */}
-              <div className="flex-1 flex flex-col items-start text-left space-y-6">
-                {/* Remove the blue background div, keep only the styled span */}
+              <div className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left space-y-3 md:space-y-4 lg:space-y-6 order-1 lg:order-2 w-full">
+                {/* Main motto text */}
                 <span
-                  className="block text-orange-400 text-5xl md:text-7xl font-bold italic drop-shadow-lg leading-tight"
+                  className="block text-orange-400 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold italic drop-shadow-lg leading-tight px-4"
                   style={{ textShadow: '2px 4px 8px rgba(0,0,0,0.15)' }}
                 >
                   Multifaceted.<br />Driven.<br />Inclusive.
                 </span>
-                <p className="text-lg md:text-xl text-mecg-dark-blue text-left max-w-3xl font-normal">
+                <p className="text-base sm:text-lg md:text-xl text-mecg-dark-blue text-center lg:text-left max-w-2xl lg:max-w-3xl font-normal px-4">
                 Michigan Engineering Consulting Group is a pro-bono consulting group open to <span className="italic underline">all</span> majors at the University of Michigan.
                 </p>
               </div>
             </div>
-            <div className="w-full mt-12">
+            <div className="w-full mt-8 md:mt-12">
               <Carousel />
             </div>
           </div>

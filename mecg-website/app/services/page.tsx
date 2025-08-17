@@ -15,31 +15,31 @@ export default function ProjectsPage() {
       id: 'strategy',
       name: 'Strategy',
       icon: '/images/client services/strategy.png',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+      description: 'We help organizations define their vision, set strategic priorities, and create actionable roadmaps for sustainable growth and competitive advantage.'
     },
     {
       id: 'operations',
       name: 'Operations & Management',
       icon: '/images/client services/operations.png',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+      description: 'Our team analyzes workflows, identifies bottlenecks, and implements solutions to streamline operations and reduce costs while maintaining quality.'
     },
     {
       id: 'data-analytics',
       name: 'Data Analytics',
       icon: '/images/client services/data-analytics.png',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+      description: 'We help organizations make data-driven decisions, identify trends, and uncover opportunities for optimization and growth.'
     },
     {
       id: 'product-dev',
       name: 'Product Development',
       icon: '/images/client services/product-dev.png',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+      description: 'We help companies develop innovative tech focus products and internal workflows that meet customer needs and drive business success.'
     },
     {
       id: 'marketing',
       name: 'Marketing',
       icon: '/images/client services/marketing.png',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+      description: 'We help organizations build strong brand identities, reach target audiences effectively, and drive customer engagement and loyalty.'
     }
   ]
 
@@ -148,7 +148,7 @@ export default function ProjectsPage() {
       </section>
 
       {/* Services Section with Fade Transition */}
-      <section id="services-section" className={`py-20 bg-gradient-to-b from-mecg-blue-light to-mecg-blue-light transition-all duration-1000 ${isServicesVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+      <section id="services-section" className={`py-20 bg-blue-100 transition-all duration-1000 ${isServicesVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
         <div className="container mx-auto px-6">
           {/* Section Header */}
           <div className="text-center mb-16">
@@ -202,7 +202,7 @@ export default function ProjectsPage() {
       </section>
 
       {/* Past Clients Section */}
-      <section id="past-clients-section" className={`py-20 bg-gradient-to-b from-mecg-blue-light to-mecg-blue-light transition-all duration-1000 ${isPastClientsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+      <section id="past-clients-section" className={`py-20 bg-gradient-to-b from-blue-100 to-white transition-all duration-1000 ${isPastClientsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
         <div className="container mx-auto px-6">
           {/* Section Header */}
           <div className="text-center mb-16">
@@ -255,7 +255,7 @@ export default function ProjectsPage() {
                     alt="Legendary Sports Xperiences"
                     width={128}
                     height={128}
-                    className="object-contain rounded-2xl"
+                    className="object-contain rounded-2xl max-w-[128px] max-h-[128px]"
                   />
                 </div>
                 <h3 className="text-white font-semibold text-base leading-none">Legendary Sports<br/>Xperiences</h3>
@@ -277,7 +277,7 @@ export default function ProjectsPage() {
                     alt="Lynkr"
                     width={128}
                     height={128}
-                    className="object-contain rounded-2xl"
+                    className="object-contain rounded-2xl max-w-[128px] max-h-[128px]"
                   />
                 </div>
                 <h3 className="text-white font-semibold text-base leading-none">Lynkr</h3>
@@ -299,7 +299,7 @@ export default function ProjectsPage() {
                     alt="Frankel Jewish Academy"
                     width={128}
                     height={128}
-                    className="object-contain rounded-2xl"
+                    className="object-contain rounded-2xl max-w-[128px] max-h-[128px]"
                   />
                 </div>
                 <h3 className="text-white font-semibold text-base leading-none">Frankel Jewish<br/>Academy</h3>
@@ -321,7 +321,7 @@ export default function ProjectsPage() {
                     alt="Dani Plan"
                     width={128}
                     height={128}
-                    className="object-contain rounded-2xl"
+                    className="object-contain rounded-2xl max-w-[128px] max-h-[128px]"
                   />
                 </div>
                 <h3 className="text-white font-semibold text-base leading-none">Dani Plan</h3>
@@ -343,7 +343,7 @@ export default function ProjectsPage() {
                     alt="Fired and Fused"
                     width={128}
                     height={128}
-                    className="object-contain rounded-2xl"
+                    className="object-contain rounded-2xl max-w-[128px] max-h-[128px]"
                   />
                 </div>
                 <h3 className="text-white font-semibold text-base leading-none">Fired and<br/>Fused</h3>
@@ -365,7 +365,7 @@ export default function ProjectsPage() {
                     alt="The Probate Pro"
                     width={128}
                     height={128}
-                    className="object-contain rounded-2xl"
+                    className="object-contain rounded-2xl max-w-[128px] max-h-[128px]"
                   />
                 </div>
                 <h3 className="text-white font-semibold text-base leading-none">The Probate Pro</h3>
@@ -387,7 +387,7 @@ export default function ProjectsPage() {
                     alt="Michigan Creamery"
                     width={128}
                     height={128}
-                    className="object-contain rounded-2xl"
+                    className="object-contain rounded-2xl max-w-[128px] max-h-[128px]"
                   />
                 </div>
                 <h3 className="text-white font-semibold text-base leading-none">Michigan Creamery</h3>
@@ -409,7 +409,7 @@ export default function ProjectsPage() {
                     alt="Homeschool Connections"
                     width={128}
                     height={128}
-                    className="object-contain rounded-2xl"
+                    className="object-contain rounded-2xl max-w-[128px] max-h-[128px]"
                   />
                 </div>
                 <h3 className="text-white font-semibold text-base leading-none">Homeschool<br/>Connections</h3>
@@ -431,11 +431,141 @@ export default function ProjectsPage() {
                     alt="The Store House"
                     width={128}
                     height={128}
-                    className="object-contain rounded-2xl"
+                    className="object-contain rounded-2xl max-w-[128px] max-h-[128px]"
                   />
                 </div>
                 <h3 className="text-white font-semibold text-base leading-none">The Store House</h3>
                 <p className="text-mecg-blue-light text-sm">Fall 2024</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Project Timeline Section */}
+      <section className="py-20 bg-gradient-to-b from-white to-mecg-blue-light">
+        <div className="container mx-auto px-6">
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-mecg-dark-blue mb-4">
+              Project Timeline
+            </h2>
+            <div className="w-24 h-1 bg-mecg-orange mx-auto"></div>
+          </div>
+
+          {/* Timeline Container */}
+          <div className="relative">
+            {/* Main Timeline Line */}
+            <div className="absolute top-1/2 left-0 right-0 h-1 bg-mecg-dark-blue transform -translate-y-1/2 z-0"></div>
+            
+            {/* Timeline Items - Desktop */}
+            <div className="relative z-10 hidden md:flex justify-between items-center max-w-6xl mx-auto">
+              {/* First Contact - Above Line */}
+              <div className="flex flex-col items-center">
+                <h3 className="text-mecg-dark-blue font-semibold text-lg text-center mb-4">First Contact</h3>
+                <div className="w-36 h-36 bg-mecg-dark-blue rounded-full flex items-center justify-center mb-4 border-4 border-white shadow-lg">
+                  <svg className="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                  </svg>
+                </div>
+              </div>
+
+              {/* Scoping - Below Line */}
+              <div className="flex flex-col items-center">
+                <div className="w-36 h-36 bg-mecg-dark-blue rounded-full flex items-center justify-center mb-4 border-4 border-white shadow-lg">
+                  <svg className="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+                  </svg>
+                </div>
+                <h3 className="text-mecg-dark-blue font-semibold text-lg text-center">Scoping</h3>
+              </div>
+
+              {/* Midterm Deliverable - Above Line */}
+              <div className="flex flex-col items-center">
+                <h3 className="text-mecg-dark-blue font-semibold text-lg text-center mb-4">Midterm Deliverable</h3>
+                <div className="w-36 h-36 bg-mecg-dark-blue rounded-full flex items-center justify-center mb-4 border-4 border-white shadow-lg">
+                  <svg className="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+              </div>
+
+              {/* Final Deliverable - Below Line */}
+              <div className="flex flex-col items-center">
+                <div className="w-36 h-36 bg-mecg-dark-blue rounded-full flex items-center justify-center mb-4 border-4 border-white shadow-lg">
+                  <svg className="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                  </svg>
+                </div>
+                <h3 className="text-mecg-dark-blue font-semibold text-lg text-center">Final Deliverable</h3>
+              </div>
+            </div>
+
+            {/* Timeline Items - Mobile (Scrollable) */}
+            <div className="relative z-10 md:hidden overflow-x-auto pb-4">
+              <div className="flex space-x-8 min-w-max px-4">
+                {/* First Contact - Above Line */}
+                <div className="flex flex-col items-center min-w-[200px]">
+                  <h3 className="text-mecg-dark-blue font-semibold text-lg text-center mb-4">First Contact</h3>
+                  <div className="w-36 h-36 bg-mecg-dark-blue rounded-full flex items-center justify-center mb-4 border-4 border-white shadow-lg">
+                    <svg className="w-18 h-18 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                    </svg>
+                  </div>
+                </div>
+
+                {/* Scoping - Below Line */}
+                <div className="flex flex-col items-center min-w-[200px]">
+                  <div className="w-36 h-36 bg-mecg-dark-blue rounded-full flex items-center justify-center mb-4 border-4 border-white shadow-lg">
+                    <svg className="w-18 h-18 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-6-4h.01M9 16h.01" />
+                    </svg>
+                  </div>
+                  <h3 className="text-mecg-dark-blue font-semibold text-lg text-center">Scoping</h3>
+                </div>
+
+                {/* Midterm Deliverable - Above Line */}
+                <div className="flex flex-col items-center min-w-[200px]">
+                  <h3 className="text-mecg-dark-blue font-semibold text-lg text-center mb-4">Midterm Deliverable</h3>
+                  <div className="w-36 h-36 bg-mecg-dark-blue rounded-full flex items-center justify-center mb-4 border-4 border-white shadow-lg">
+                    <svg className="w-18 h-18 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                </div>
+
+                {/* Final Deliverable - Below Line */}
+                <div className="flex flex-col items-center min-w-[200px]">
+                  <div className="w-36 h-36 bg-mecg-dark-blue rounded-full flex items-center justify-center mb-4 border-4 border-white shadow-lg">
+                    <svg className="w-18 h-18 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                    </svg>
+                  </div>
+                  <h3 className="text-mecg-dark-blue font-semibold text-lg text-center">Final Deliverable</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Additional Info Box */}
+          <div className="mt-16 bg-white rounded-2xl p-8 shadow-lg max-w-4xl mx-auto">
+            <h3 className="text-2xl font-bold text-mecg-dark-blue mb-4 text-center">What to Expect</h3>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div>
+                <h4 className="font-semibold text-mecg-dark-blue mb-2">Project Duration</h4>
+                <p className="text-gray-600">Typically 10-12 weeks per semester, with weekly check-ins and milestone reviews.</p>
+              </div>
+              <div>
+                <h4 className="font-semibold text-mecg-dark-blue mb-2">Team Structure</h4>
+                <p className="text-gray-600">Dedicated team of 5-8 consultants led by a project manager and strategic lead.</p>
+              </div>
+              <div>
+                <h4 className="font-semibold text-mecg-dark-blue mb-2">Deliverables</h4>
+                <p className="text-gray-600">Comprehensive reports, presentations, and actionable recommendations tailored to your needs.</p>
+              </div>
+              <div>
+                <h4 className="font-semibold text-mecg-dark-blue mb-2">Implementation Guidance</h4>
+                <p className="text-gray-600">Guidance for post-project implementation to ensure successful execution.</p>
               </div>
             </div>
           </div>
