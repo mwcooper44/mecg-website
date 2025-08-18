@@ -78,9 +78,6 @@ export default function EnhancedFooter() {
                 <Link href="/team" className="text-gray-300 hover:text-mecg-dark-blue transition-colors">
                   Our Team
                 </Link>
-                <Link href="/alumni" className="text-gray-300 hover:text-mecg-dark-blue transition-colors">
-                  Alumni
-                </Link>
                 <Link href="/services" className="text-gray-300 hover:text-mecg-dark-blue transition-colors">
                   Services
                 </Link>

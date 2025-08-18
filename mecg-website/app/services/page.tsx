@@ -463,19 +463,27 @@ export default function ProjectsPage() {
               {/* First Contact - Above Line */}
               <div className="flex flex-col items-center">
                 <h3 className="text-mecg-dark-blue font-semibold text-lg text-center mb-4">First Contact</h3>
-                <div className="w-36 h-36 bg-mecg-dark-blue rounded-full flex items-center justify-center mb-4 border-4 border-white shadow-lg">
-                  <svg className="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                  </svg>
+                <div className="w-36 h-36 bg-mecg-dark-blue rounded-full flex items-center justify-center mb-4 border-4 border-white shadow-lg overflow-hidden">
+                  <Image
+                    src="/images/client services/first-contact.png"
+                    alt="First Contact"
+                    width={80}
+                    height={80}
+                    className="object-contain"
+                  />
                 </div>
               </div>
 
               {/* Scoping - Below Line */}
               <div className="flex flex-col items-center">
-                <div className="w-36 h-36 bg-mecg-dark-blue rounded-full flex items-center justify-center mb-4 border-4 border-white shadow-lg">
-                  <svg className="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
-                  </svg>
+                <div className="w-36 h-36 bg-mecg-dark-blue rounded-full flex items-center justify-center mb-4 border-4 border-white shadow-lg overflow-hidden">
+                  <Image
+                    src="/images/client services/scoping.png"
+                    alt="Scoping"
+                    width={80}
+                    height={80}
+                    className="object-contain"
+                  />
                 </div>
                 <h3 className="text-mecg-dark-blue font-semibold text-lg text-center">Scoping</h3>
               </div>
@@ -483,19 +491,27 @@ export default function ProjectsPage() {
               {/* Midterm Deliverable - Above Line */}
               <div className="flex flex-col items-center">
                 <h3 className="text-mecg-dark-blue font-semibold text-lg text-center mb-4">Midterm Deliverable</h3>
-                <div className="w-36 h-36 bg-mecg-dark-blue rounded-full flex items-center justify-center mb-4 border-4 border-white shadow-lg">
-                  <svg className="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
+                <div className="w-36 h-36 bg-mecg-dark-blue rounded-full flex items-center justify-center mb-4 border-4 border-white shadow-lg overflow-hidden">
+                  <Image
+                    src="/images/client services/midterm.png"
+                    alt="Midterm Deliverable"
+                    width={80}
+                    height={80}
+                    className="object-contain"
+                  />
                 </div>
               </div>
 
               {/* Final Deliverable - Below Line */}
               <div className="flex flex-col items-center">
-                <div className="w-36 h-36 bg-mecg-dark-blue rounded-full flex items-center justify-center mb-4 border-4 border-white shadow-lg">
-                  <svg className="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
-                  </svg>
+                <div className="w-36 h-36 bg-mecg-dark-blue rounded-full flex items-center justify-center mb-4 border-4 border-white shadow-lg overflow-hidden">
+                  <Image
+                    src="/images/client services/final.png"
+                    alt="Final Deliverable"
+                    width={80}
+                    height={80}
+                    className="object-contain"
+                  />
                 </div>
                 <h3 className="text-mecg-dark-blue font-semibold text-lg text-center">Final Deliverable</h3>
               </div>
@@ -507,19 +523,27 @@ export default function ProjectsPage() {
                 {/* First Contact - Above Line */}
                 <div className="flex flex-col items-center min-w-[200px]">
                   <h3 className="text-mecg-dark-blue font-semibold text-lg text-center mb-4">First Contact</h3>
-                  <div className="w-36 h-36 bg-mecg-dark-blue rounded-full flex items-center justify-center mb-4 border-4 border-white shadow-lg">
-                    <svg className="w-18 h-18 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                    </svg>
+                  <div className="w-36 h-36 bg-mecg-dark-blue rounded-full flex items-center justify-center mb-4 border-4 border-white shadow-lg overflow-hidden">
+                    <Image
+                      src="/images/client services/first-contact.png"
+                      alt="First Contact"
+                      width={80}
+                      height={80}
+                      className="object-contain"
+                    />
                   </div>
                 </div>
 
                 {/* Scoping - Below Line */}
                 <div className="flex flex-col items-center min-w-[200px]">
-                  <div className="w-36 h-36 bg-mecg-dark-blue rounded-full flex items-center justify-center mb-4 border-4 border-white shadow-lg">
-                    <svg className="w-18 h-18 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-6-4h.01M9 16h.01" />
-                    </svg>
+                  <div className="w-36 h-36 bg-mecg-dark-blue rounded-full flex items-center justify-center mb-4 border-4 border-white shadow-lg overflow-hidden">
+                    <Image
+                      src="/images/client services/scoping.png"
+                      alt="Scoping"
+                      width={80}
+                      height={80}
+                      className="object-contain"
+                    />
                   </div>
                   <h3 className="text-mecg-dark-blue font-semibold text-lg text-center">Scoping</h3>
                 </div>
@@ -527,19 +551,27 @@ export default function ProjectsPage() {
                 {/* Midterm Deliverable - Above Line */}
                 <div className="flex flex-col items-center min-w-[200px]">
                   <h3 className="text-mecg-dark-blue font-semibold text-lg text-center mb-4">Midterm Deliverable</h3>
-                  <div className="w-36 h-36 bg-mecg-dark-blue rounded-full flex items-center justify-center mb-4 border-4 border-white shadow-lg">
-                    <svg className="w-18 h-18 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
+                  <div className="w-36 h-36 bg-mecg-dark-blue rounded-full flex items-center justify-center mb-4 border-4 border-white shadow-lg overflow-hidden">
+                    <Image
+                      src="/images/client services/midterm.png"
+                      alt="Midterm Deliverable"
+                      width={80}
+                      height={80}
+                      className="object-contain"
+                    />
                   </div>
                 </div>
 
                 {/* Final Deliverable - Below Line */}
                 <div className="flex flex-col items-center min-w-[200px]">
-                  <div className="w-36 h-36 bg-mecg-dark-blue rounded-full flex items-center justify-center mb-4 border-4 border-white shadow-lg">
-                    <svg className="w-18 h-18 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
-                    </svg>
+                  <div className="w-36 h-36 bg-mecg-dark-blue rounded-full flex items-center justify-center mb-4 border-4 border-white shadow-lg overflow-hidden">
+                    <Image
+                      src="/images/client services/final.png"
+                      alt="Final Deliverable"
+                      width={80}
+                      height={80}
+                      className="object-contain"
+                    />
                   </div>
                   <h3 className="text-mecg-dark-blue font-semibold text-lg text-center">Final Deliverable</h3>
                 </div>
