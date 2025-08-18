@@ -408,11 +408,31 @@ export default function TeamPage() {
 
   // Create a combined array of all members for the "View All" option
   const allMembers = [
-    ...teamMembers.eboard.map(member => ({ ...member, category: 'Executive Board' })),
-    ...teamMembers.projectManagers.map(member => ({ ...member, category: 'Project Manager' })),
-    ...teamMembers.assistantProjectManagers.map(member => ({ ...member, category: 'Assistant Project Manager' })),
-    ...teamMembers.businessAnalysts.map(member => ({ ...member, category: 'Business Analyst' })),
-    ...teamMembers.strategicLeads.map(member => ({ ...member, category: 'Strategic Lead' }))
+    ...teamMembers.eboard.map(member => ({ 
+      ...member, 
+      category: 'Executive Board',
+      image: `/images/headshots/VIEW ALL/${member.name.split(' ')[0]}${member.name.split(' ')[1][0]}.webp`
+    })),
+    ...teamMembers.projectManagers.map(member => ({ 
+      ...member, 
+      category: 'Project Manager',
+      image: `/images/headshots/VIEW ALL/${member.name.split(' ')[0]}${member.name.split(' ')[1][0]}.webp`
+    })),
+    ...teamMembers.assistantProjectManagers.map(member => ({ 
+      ...member, 
+      category: 'Assistant Project Manager',
+      image: `/images/headshots/VIEW ALL/${member.name.split(' ')[0]}${member.name.split(' ')[1][0]}.webp`
+    })),
+    ...teamMembers.businessAnalysts.map(member => ({ 
+      ...member, 
+      category: 'Business Analyst',
+      image: `/images/headshots/VIEW ALL/${member.name.split(' ')[0]}${member.name.split(' ')[1][0]}.webp`
+    })),
+    ...teamMembers.strategicLeads.map(member => ({ 
+      ...member, 
+      category: 'Strategic Lead',
+      image: `/images/headshots/VIEW ALL/${member.name.split(' ')[0]}${member.name.split(' ')[1][0]}.webp`
+    }))
   ].sort((a, b) => a.name.localeCompare(b.name))
 
   const getCurrentMembers = () => {
@@ -553,7 +573,7 @@ function TeamMemberCard({ member, index }: { member: any; index: number }) {
       <CardHeader className="p-3">
         <CardTitle className="text-lg text-mecg-dark-blue">{member.name}</CardTitle>
         {member.role && <CardDescription className="text-xs text-mecg-dark-blue">{member.role}</CardDescription>}
-        {member.category && currentRole === "all" && <CardDescription className="text-xs text-mecg-dark-blue">{member.category}</CardDescription>}
+        {member.category && <CardDescription className="text-xs text-mecg-dark-blue">{member.category}</CardDescription>}
       </CardHeader>
     </Card>
   )
