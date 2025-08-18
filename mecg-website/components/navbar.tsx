@@ -11,12 +11,12 @@ import { Menu, X } from "lucide-react"
 const navItems = [
   { name: "Home", href: "/" },
   { name: "Our Team", href: "/team" },
-  { name: "Client Services", href: "/services" },
+  { name: "Projects", href: "/services" },
   { name: "Prospective Members", href: "/join" },
   { name: "Contact Us", href: "/contact" },
   {
     name: "Apply Now",
-    href: "https://docs.google.com/forms/d/e/1FAIpQLSf6rtQgTm84YtamSkkP38ruzoLwPCTaRcb1BvZRWw6EuQADLg/closedform",
+    href: "https://forms.gle/hJFLV8aXhaLNsHBB9",
     isExternal: true,
     isCallToAction: true,
   },
@@ -27,7 +27,7 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-mecg-dark-blue/90 backdrop-blur supports-[backdrop-filter]:bg-mecg-dark-blue/80">
+    <header className="sticky top-0 z-50 w-full bg-mecg-dark-blue shadow-lg">
       <div className="container flex h-16 items-center justify-between">
         <Link href="/" className="flex items-center space-x-2">
           {/* Updated Image component with proper error handling and fallback */}
@@ -51,7 +51,10 @@ export default function Navbar() {
           </div>
         </Link>
 
-        <nav className="hidden md:flex items-center gap-6">
+
+
+        {/* Large screen navigation */}
+        <nav className="hidden lg:flex items-center gap-4 xl:gap-6">
           {navItems.map((item) => (
             <Link
               key={item.href}
@@ -60,7 +63,7 @@ export default function Navbar() {
               rel={item.isExternal ? "noopener noreferrer" : undefined}
               className={cn(
                 item.isCallToAction
-                  ? "bg-mecg-dark-blue text-white px-4 py-2 rounded-md font-bold hover:bg-mecg-orange transition-colors"
+                  ? "bg-mecg-orange text-white px-4 py-2 rounded-md font-bold hover:bg-orange-400 transition-colors text-base"
                   : "text-base font-medium transition-colors hover:text-mecg-orange",
                 !item.isCallToAction && pathname === item.href
                   ? "text-mecg-orange"
@@ -74,14 +77,14 @@ export default function Navbar() {
           ))}
         </nav>
 
-        <Button variant="ghost" className="md:hidden" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+        <Button variant="ghost" className="lg:hidden text-white" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
           {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           <span className="sr-only">Toggle menu</span>
         </Button>
       </div>
 
       {mobileMenuOpen && (
-        <div className="md:hidden">
+        <div className="lg:hidden">
           <div className="container py-4 grid gap-4">
             {navItems.map((item) => (
               <Link
@@ -91,7 +94,7 @@ export default function Navbar() {
                 rel={item.isExternal ? "noopener noreferrer" : undefined}
                 className={cn(
                   item.isCallToAction
-                    ? "bg-mecg-dark-blue text-white px-4 py-2 rounded-md font-bold hover:bg-mecg-orange transition-colors text-center"
+                    ? "bg-mecg-orange text-white px-4 py-2 rounded-md font-bold hover:bg-orange-400 transition-colors text-center"
                     : "text-base font-medium transition-colors hover:text-mecg-orange block py-2",
                   !item.isCallToAction && pathname === item.href
                     ? "text-mecg-orange"

@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import Image from "next/image"
@@ -18,7 +18,7 @@ const timelineEvents = [
   },
           {
           id: 2,
-          title: "Mass Meeting",
+    title: "Mass Meeting",
           icon: "/images/join/3.png",
           date: "Wednesday, September 4th",
           time: "7:00 - 8:00 PM",
@@ -110,6 +110,11 @@ export default function JoinPage() {
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
   const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
   const [scrollY, setScrollY] = useState(0);
+  const [isPageVisible, setIsPageVisible] = useState(false);
+
+  useEffect(() => {
+    setIsPageVisible(true)
+  }, []);
 
   const handlePictureClick = (pictureId: number) => {
     setPictureOrder(prev => {
@@ -163,7 +168,9 @@ export default function JoinPage() {
   const currentEvent = getEventDetails()
 
   return (
-    <div className="min-h-screen relative overflow-hidden">
+    <div className={`min-h-screen relative overflow-hidden transition-opacity duration-700 ease-out ${
+      isPageVisible ? 'opacity-100' : 'opacity-0'
+    }`}>
       {/* MECG Blue Light Background */}
       <div 
         className="fixed inset-0 transition-all duration-1000 ease-out bg-mecg-blue-light"
@@ -187,10 +194,10 @@ export default function JoinPage() {
           <div className="max-w-7xl mx-auto">
             
             {/* Call to Action Section */}
-            <div className="text-center mb-20 pt-20 animate-fade-in">
-              <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 text-mecg-orange">
+            <div className="text-center mb-20 pt-20">
+              <h2 className="text-3xl md:text-5xl font-bold mb-6 text-mecg-orange">
                 Apply to MECG this Fall!
-              </h1>
+              </h2>
 
               <Button asChild className="bg-mecg-dark-blue hover:bg-mecg-orange text-white px-8 py-4 text-lg font-semibold rounded-lg transition-colors duration-300">
                 <Link href="https://forms.gle/S4FTRZU5SnGcoyE47" target="_blank" rel="noopener noreferrer">
@@ -200,24 +207,14 @@ export default function JoinPage() {
             </div>
 
             {/* Orange separator line */}
-            <div className="w-full h-0.5 bg-mecg-orange mb-20 rounded-full"></div>
+            <div className="w-full h-1 bg-mecg-orange mb-20 rounded-full"></div>
 
-            {/* Main Timeline Header - Left Aligned */}
-            <div className="mb-12 pl-4 md:pl-8 animate-fade-in-delay">
-              <h2 className="text-2xl md:text-3xl font-bold text-mecg-dark-blue mb-4">
+            {/* Main Timeline Header - Centered */}
+            <div className="mb-12 text-center animate-fade-in-delay">
+              <h2 className="text-2xl md:text-4xl font-bold text-mecg-dark-blue mb-4">
                 Fall 2025 Recruitment Timeline
               </h2>
-              <div className="flex items-center gap-4">
-                <div 
-                  className="w-32 h-2 rounded-full"
-                  style={{
-                    backgroundImage: 'url(/images/blue-line.png)',
-                    backgroundSize: 'contain',
-                    backgroundRepeat: 'no-repeat',
-                    backgroundPosition: 'center'
-                  }}
-                ></div>
-              </div>
+              <div className="w-40 h-1 bg-mecg-dark-blue mx-auto"></div>
             </div>
 
             {/* Vertical Timeline with Orange Line */}
@@ -228,8 +225,8 @@ export default function JoinPage() {
               {/* Timeline Events */}
               <div className="space-y-6 relative z-10">
                 {timelineEvents.map((event, index) => (
-                  <div 
-                    key={event.id} 
+                  <div
+                    key={event.id}
                     className="flex items-start gap-2 md:gap-4 animate-fade-in-up"
                   >
                     {/* Event Icon positioned to align with orange line */}
@@ -255,13 +252,13 @@ export default function JoinPage() {
                         <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 mb-2">
                           <div className="flex items-center gap-2 flex-wrap">
                             <h3 className="text-lg md:text-xl font-bold text-mecg-dark-blue">
-                              {event.title}
+                      {event.title}
                             </h3>
                             <span className="text-xs md:text-sm text-mecg-dark-blue bg-mecg-orange/10 px-2 md:px-3 py-1 rounded-full whitespace-nowrap">
                               {index < 6 ? "Open Rush" : "Closed Rush"}
                             </span>
-                          </div>
-                          
+            </div>
+
                           {/* Application button for Application Opens event */}
                           {event.id === 3 && (
                             <button 
@@ -390,7 +387,7 @@ export default function JoinPage() {
                             <span className="text-sm md:text-base font-bold text-mecg-dark-blue">
                               {event.date}
                             </span>
-                          </div>
+                            </div>
                           
                           {/* Time with clock icon if available */}
                           {event.time && (
@@ -399,7 +396,7 @@ export default function JoinPage() {
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                               </svg>
                               <span className="text-sm md:text-base font-bold text-mecg-dark-blue">
-                                {event.time}
+                              {event.time}
                               </span>
                             </div>
                           )}
@@ -424,8 +421,8 @@ export default function JoinPage() {
                               <span className="text-sm md:text-base font-bold text-mecg-dark-blue">Invite-Only</span>
                             </div>
                           )}
-                        </div>
-                        
+                      </div>
+
                         {/* Event description for non-application events */}
                         {event.id !== 3 && (
                           <p className="text-sm text-mecg-dark-blue leading-relaxed break-words">
@@ -434,22 +431,23 @@ export default function JoinPage() {
                         )}
                       </div>
                     </div>
-                  </div>
-                ))}
-              </div>
+                </div>
+              ))}
             </div>
+          </div>
 
             {/* Orange separator line */}
-            <div className="w-full h-0.5 bg-mecg-orange mb-20 rounded-full"></div>
+            <div className="w-full h-1 bg-mecg-orange mb-20 rounded-full"></div>
 
                         {/* Pictures and FAQ Section */}
             <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start mb-32 animate-fade-in-delay-2">
               {/* Left side - Join Our Community Section */}
               <div className="flex-1 w-full lg:w-auto">
                 <div className="text-center mb-6 lg:mb-8">
-                  <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-mecg-dark-blue mb-6 lg:mb-8">
+                  <h2 className="text-2xl md:text-4xl font-bold text-mecg-dark-blue mb-4">
                     Join Our Community!!
                   </h2>
+                  <div className="w-40 h-1 bg-mecg-dark-blue mx-auto mb-6 lg:mb-8"></div>
                 </div>
                 <div className="relative px-4 lg:px-0">
                   {/* Main photo display */}
@@ -473,7 +471,7 @@ export default function JoinPage() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                       </svg>
                     </button>
-                  </div>
+                    </div>
                   
                   <div className="absolute -right-2 lg:-right-6 top-1/2 transform -translate-y-1/2 z-40">
                     <button 
@@ -490,10 +488,11 @@ export default function JoinPage() {
 
               {/* Right side - FAQ Section */}
               <div className="flex-1 w-full lg:w-auto mt-8 lg:mt-0">
-                <div className="mb-4">
-                  <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-mecg-dark-blue mb-2">
+                <div className="mb-4 text-center">
+                  <h2 className="text-2xl md:text-4xl font-bold text-mecg-dark-blue mb-4">
                     Frequently Asked Questions:
                   </h2>
+                  <div className="w-40 h-1 bg-mecg-dark-blue mx-auto mb-2"></div>
                   <div className="flex items-center gap-4">
                     <div 
                       className="w-24 lg:w-32 h-2 rounded-full"
@@ -519,16 +518,16 @@ export default function JoinPage() {
                       <svg className={`w-4 h-4 lg:w-5 lg:h-5 text-mecg-dark-blue transform transition-transform duration-200 ${openFAQ === 1 ? 'rotate-180' : 'rotate-0'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                       </svg>
-                    </div>
+                  </div>
                     {openFAQ === 1 && (
                       <div className="mt-3 pt-3 border-t border-gray-200">
                         <p className="text-sm lg:text-base text-mecg-dark-blue leading-relaxed">
                           No prior consulting or professional experience is required. We welcome students from all backgrounds who are genuinely interested in learning about consulting and contributing to MECG. What matters most is enthusiasm, willingness to engage, and the potential to grow into leadership roles within the club.
-                        </p>
-                      </div>
+                    </p>
+                  </div>
                     )}
 
-                  </div>
+                </div>
 
                   {/* FAQ Item 2 */}
                   <div className="bg-white/80 backdrop-blur-sm rounded-xl p-3 lg:p-4 shadow-lg border border-gray-200">
@@ -539,15 +538,15 @@ export default function JoinPage() {
                       <svg className={`w-4 h-4 lg:w-5 lg:h-5 text-mecg-dark-blue transform transition-transform duration-200 ${openFAQ === 2 ? 'rotate-180' : 'rotate-0'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                       </svg>
-                    </div>
+                  </div>
                     {openFAQ === 2 && (
                       <div className="mt-3 pt-3 border-t border-gray-200">
                         <p className="text-sm lg:text-base text-mecg-dark-blue leading-relaxed">
                           New members can expect to dedicate about 5-6 hours per week. This includes weekly education meetings, project work, and additional activities like coffee chats, mentorship, and socials.
-                        </p>
-                      </div>
-                    )}
+                    </p>
                   </div>
+                    )}
+          </div>
 
                   {/* FAQ Item 3 */}
                   <div className="bg-white/80 backdrop-blur-sm rounded-xl p-3 lg:p-4 shadow-lg border border-gray-200">
@@ -585,7 +584,7 @@ export default function JoinPage() {
                         </p>
                       </div>
                     )}
-                  </div>
+                    </div>
 
                   {/* FAQ Item 5 */}
                   <div className="bg-white/80 backdrop-blur-sm rounded-xl p-3 lg:p-4 shadow-lg border border-gray-200">
@@ -604,7 +603,7 @@ export default function JoinPage() {
                           <br /><br />
                           Throughout the process, we look for candidates who show genuine interest, consistency, and engagement.
                         </p>
-                      </div>
+                  </div>
                     )}
                   </div>
                 </div>

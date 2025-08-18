@@ -112,8 +112,8 @@ export default function ScrollSection() {
         <div className="container px-4 md:px-6">
           <div className="max-w-5xl mx-auto text-center space-y-10">
             <div>
-              <h2 className="text-3xl md:text-5xl font-bold tracking-tighter">Our Impact</h2>
-              <div className="h-1 w-20 bg-mecg-dark-blue mx-auto mt-4"></div>
+              <h2 className="text-3xl md:text-5xl font-bold tracking-tighter text-mecg-dark-blue">Our Impact</h2>
+              <div className="w-40 h-1 bg-mecg-dark-blue mx-auto mt-4"></div>
             </div>
 
             <div className="flex justify-between items-center gap-6 md:gap-10">
@@ -125,7 +125,7 @@ export default function ScrollSection() {
                     <CardContent className="p-6 text-center relative z-10 transition-colors duration-300">
 
                     <stat.icon className="h-8 w-8 mx-auto mb-2 text-mecg-dark-blue group-hover:text-white transition-colors duration-300" />
-                    <div className="text-3xl font-bold">
+                    <div className="text-3xl font-bold text-mecg-dark-blue">
                       {statsInView ? (
                         <>
                           {countedStats[index]}
@@ -135,7 +135,7 @@ export default function ScrollSection() {
                         "0"
                       )}
                     </div>
-                    <p className="text-sm text-muted-foreground group-hover:text-white/90 transition-colors duration-300">
+                    <p className="text-sm text-mecg-dark-blue group-hover:text-white/90 transition-colors duration-300">
                       {stat.label}
                     </p>
                   </CardContent>

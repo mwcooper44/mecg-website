@@ -79,7 +79,7 @@ export default function EnhancedFooter() {
                   Our Team
                 </Link>
                 <Link href="/services" className="text-gray-300 hover:text-mecg-dark-blue transition-colors">
-                  Services
+                  Projects
                 </Link>
               </nav>
             </div>

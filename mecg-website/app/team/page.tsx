@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Image from "next/image"
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
@@ -66,7 +66,7 @@ const teamMembers = {
     },
     {
       name: "David Ebosele",
-      role: "Director of Membership",
+      role: "Director of Recruitment and Membership",
       image: "/images/headshots/Board/DavidE.webp",
       linkedin: "https://www.linkedin.com/in/david-ebosele-3813aa261/",
       email: "debosele@umich.edu",
@@ -405,12 +405,16 @@ const teamMembers = {
 
 export default function TeamPage() {
   const [currentRole, setCurrentRole] = useState("eboard")
+  const [isPageVisible, setIsPageVisible] = useState(false)
+
+  useEffect(() => {
+    setIsPageVisible(true)
+  }, [])
 
   // Create a combined array of all members for the "View All" option
   const allMembers = [
     ...teamMembers.eboard.map(member => ({ 
       ...member, 
-      category: 'Executive Board',
       image: `/images/headshots/VIEW ALL/${member.name.split(' ')[0]}${member.name.split(' ')[1][0]}.webp`
     })),
     ...teamMembers.projectManagers.map(member => ({ 
@@ -443,12 +447,15 @@ export default function TeamPage() {
   }
 
   return (
-    <div className="min-h-screen bg-blue-100">
-      <div className="bg-blue-100">
-        <h1 className="text-5xl md:text-6xl font-bold text-center text-mecg-orange py-16 md:py-20">Meet the Team</h1>
+    <div className={`min-h-screen bg-mecg-blue-light transition-opacity duration-700 ease-out ${
+      isPageVisible ? 'opacity-100' : 'opacity-0'
+    }`}>
+      <div className="bg-mecg-blue-light">
+        <h2 className="text-3xl md:text-5xl font-bold text-center text-mecg-orange py-16 md:py-16">Meet the Team</h2>
+        <div className="w-40 h-1 bg-mecg-orange mx-auto -mt-8"></div>
       </div>
       
-      <div className="py-10 md:py-16 bg-blue-100">
+      <div className="py-10 md:py-16 bg-mecg-blue-light">
         <div className="container px-4 md:px-6">
           <div className="flex justify-center mb-8 overflow-x-auto">
             <div className="inline-flex items-center rounded-md border border-input bg-background p-1 text-muted-foreground">
@@ -512,10 +519,10 @@ export default function TeamPage() {
       </div>
       
       {/* Light blue divider section */}
-      <div className="py-16 md:py-20 bg-blue-100"></div>
+      <div className="py-16 md:py-20 bg-mecg-blue-light"></div>
       
       {/* Light blue border at the bottom of the page */}
-      <div className="h-1 bg-blue-100"></div>
+      <div className="h-1 bg-mecg-blue-light"></div>
     </div>
   )
 }
@@ -572,8 +579,8 @@ function TeamMemberCard({ member, index }: { member: any; index: number }) {
       </div>
       <CardHeader className="p-3">
         <CardTitle className="text-lg text-mecg-dark-blue">{member.name}</CardTitle>
-        {member.role && <CardDescription className="text-xs text-mecg-dark-blue">{member.role}</CardDescription>}
-        {member.category && <CardDescription className="text-xs text-mecg-dark-blue">{member.category}</CardDescription>}
+                         {member.role && <CardDescription className="text-xs sm:text-sm md:text-base text-mecg-dark-blue" style={{ lineHeight: '1' }}>{member.role}</CardDescription>}
+                 {member.category && <CardDescription className="text-xs sm:text-sm md:text-base text-mecg-dark-blue" style={{ lineHeight: '1' }}>{member.category}</CardDescription>}
       </CardHeader>
     </Card>
   )

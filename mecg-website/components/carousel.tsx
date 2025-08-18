@@ -157,15 +157,15 @@ export default function Carousel() {
                 <div
                   className="flex-shrink-0 flex flex-col items-center"
                   style={{ 
-                    minWidth: windowWidth < 640 ? 300 : windowWidth < 1024 ? 400 : 600, 
-                    maxWidth: windowWidth < 640 ? 300 : windowWidth < 1024 ? 400 : 600 
+                    minWidth: windowWidth < 640 ? 250 : windowWidth < 1024 ? 350 : 500, 
+                    maxWidth: windowWidth < 640 ? 250 : windowWidth < 1024 ? 350 : 500 
                   }}
                 >
                   <Image
                     src={src}
                     alt={`Carousel image ${index + 1}`}
-                    width={600}
-                    height={400}
+                    width={500}
+                    height={333}
                     className="rounded-lg sm:rounded-xl md:rounded-2xl border-4 sm:border-6 md:border-8 border-mecg-orange object-cover bg-white shadow-lg md:shadow-xl"
                     style={{ aspectRatio: '3/2' }}
                     priority={index < 3}
@@ -173,9 +173,8 @@ export default function Carousel() {
                 </div>
                 {/* Gear icon between all images */}
                 <span className="text-mecg-orange flex items-center">
-                  <svg className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="12" cy="12" r="6" stroke="currentColor" strokeWidth="2" />
-                    <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" stroke="currentColor" strokeWidth="2" />
+                  <svg className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 15.5A3.5 3.5 0 0 1 8.5 12A3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5a3.5 3.5 0 0 1-3.5 3.5m7.43-2.53c.04-.32.07-.64.07-.97c0-.33-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.08 2.14 13.82 2 13.53 2h-4c-.29 0-.55.14-.74.38l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.22-.08-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98c0 .33.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.19.24.45.38.74.38h4c.29 0 .55-.14.74-.38l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.22.08.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65z"/>
                   </svg>
                 </span>
               </React.Fragment>
@@ -187,15 +186,15 @@ export default function Carousel() {
                 <div
                   className="flex-shrink-0 flex flex-col items-center"
                   style={{ 
-                    minWidth: windowWidth < 640 ? 300 : windowWidth < 1024 ? 400 : 600, 
-                    maxWidth: windowWidth < 640 ? 300 : windowWidth < 1024 ? 400 : 600 
+                    minWidth: windowWidth < 640 ? 250 : windowWidth < 1024 ? 350 : 500, 
+                    maxWidth: windowWidth < 640 ? 250 : windowWidth < 1024 ? 350 : 500 
                   }}
                 >
                   <Image
                     src={src}
                     alt={`Carousel image ${index + 1}`}
-                    width={600}
-                    height={400}
+                    width={500}
+                    height={333}
                     className="rounded-lg sm:rounded-xl md:rounded-2xl border-4 sm:border-6 md:border-8 border-mecg-orange object-cover bg-white shadow-lg md:shadow-xl"
                     style={{ aspectRatio: '3/2' }}
                     priority={index < 3}
@@ -203,9 +202,8 @@ export default function Carousel() {
                 </div>
                 {/* Gear icon between all images */}
                 <span className="text-mecg-orange flex items-center">
-                  <svg className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="12" cy="12" r="6" stroke="currentColor" strokeWidth="2" />
-                    <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" stroke="currentColor" strokeWidth="2" />
+                  <svg className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 15.5A3.5 3.5 0 0 1 8.5 12A3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5a3.5 3.5 0 0 1-3.5 3.5m7.43-2.53c.04-.32.07-.64.07-.97c0-.33-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.08 2.14 13.82 2 13.53 2h-4c-.29 0-.55.14-.74.38l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.22-.08-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98c0 .33.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.19.24.45.38.74.38h4c.29 0 .55-.14.74-.38l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.22.08.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65z"/>
                   </svg>
                 </span>
               </React.Fragment>

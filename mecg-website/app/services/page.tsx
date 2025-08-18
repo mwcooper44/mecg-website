@@ -5,13 +5,16 @@ import Image from 'next/image'
 
 export default function ProjectsPage() {
   const [selectedService, setSelectedService] = useState<string | null>(null)
-  const [isServicesVisible, setIsServicesVisible] = useState(false)
-  const [isPastClientsVisible, setIsPastClientsVisible] = useState(false)
   const [isScrolling, setIsScrolling] = useState(false)
   const scrollContainerRef = useRef<HTMLDivElement>(null)
 
-  const services = [
-    {
+  const [isServicesVisible, setIsServicesVisible] = useState(false)
+  const [isPastClientsVisible, setIsPastClientsVisible] = useState(false)
+  const [isTimelineVisible, setIsTimelineVisible] = useState(false)
+  const [isPageVisible, setIsPageVisible] = useState(false)
+
+const services = [
+  {
       id: 'strategy',
       name: 'Strategy',
       icon: '/images/client services/strategy.png',
@@ -48,9 +51,14 @@ export default function ProjectsPage() {
   }
 
   useEffect(() => {
+    setIsPageVisible(true)
+  }, [])
+
+  useEffect(() => {
     const handleScroll = () => {
       const servicesSection = document.getElementById('services-section')
       const pastClientsSection = document.getElementById('past-clients-section')
+      const timelineSection = document.getElementById('timeline-section')
       
       if (servicesSection) {
         const rect = servicesSection.getBoundingClientRect()
@@ -63,6 +71,13 @@ export default function ProjectsPage() {
         const rect = pastClientsSection.getBoundingClientRect()
         if (rect.top < window.innerHeight * 0.8) {
           setIsPastClientsVisible(true)
+        }
+      }
+      
+      if (timelineSection) {
+        const rect = timelineSection.getBoundingClientRect()
+        if (rect.top < window.innerHeight * 0.8) {
+          setIsTimelineVisible(true)
         }
       }
     }
@@ -117,7 +132,9 @@ export default function ProjectsPage() {
   }
 
   return (
-    <div className="min-h-screen bg-mecg-blue-light">
+    <div className={`min-h-screen bg-gradient-to-b from-blue-100 via-mecg-blue-light to-mecg-blue-light transition-opacity duration-700 ease-out ${
+      isPageVisible ? 'opacity-100' : 'opacity-0'
+    }`}>
       {/* Landing Section */}
       <section className="relative h-[95vh] flex items-center justify-start overflow-hidden">
         {/* Background Image */}
@@ -130,12 +147,12 @@ export default function ProjectsPage() {
             priority
           />
           {/* Dark overlay for better text readability */}
-          <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+          <div className="absolute inset-0 bg-black bg-opacity-60"></div>
         </div>
         
         {/* Content */}
-        <div className="relative z-10 text-left text-mecg-orange px-6 max-w-6xl ml-8 md:ml-16 -mt-16">
-          <h1 className="text-4xl md:text-6xl font-bold mb-8 leading-tight drop-shadow-lg">
+        <div className="relative z-10 text-left text-mecg-orange px-4 sm:px-6 max-w-2xl sm:max-w-3xl md:max-w-4xl lg:max-w-5xl ml-4 sm:ml-6 md:ml-8 lg:ml-16 -mt-8 sm:-mt-12 md:-mt-16">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-8 leading-tight drop-shadow-lg">
             At MECG, we focus on offering a{' '}
             <span className="relative inline-block">
               <span className="relative z-20">diverse</span>
@@ -143,19 +160,19 @@ export default function ProjectsPage() {
               <div className="absolute inset-0 w-full h-full border-2 border-mecg-blue-light rounded-[50%] transform -rotate-3 scale-130 opacity-70"></div>
             </span>
             {' '}mix of traditional consulting and tech consulting projects.
-          </h1>
+          </h2>
         </div>
       </section>
 
       {/* Services Section with Fade Transition */}
-      <section id="services-section" className={`py-20 bg-blue-100 transition-all duration-1000 ${isServicesVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+      <section id="services-section" className={`py-20 transition-all duration-1000 ${isServicesVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
         <div className="container mx-auto px-6">
           {/* Section Header */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-mecg-dark-blue mb-4">
-              Our Services
-            </h2>
-            <div className="w-24 h-1 bg-mecg-orange mx-auto"></div>
+                                    <h2 className="text-2xl md:text-4xl font-bold text-mecg-dark-blue mb-4">
+                          Our Services
+                        </h2>
+            <div className="w-40 h-1 bg-mecg-dark-blue mx-auto"></div>
           </div>
 
           {/* Service Cards */}
@@ -193,7 +210,7 @@ export default function ProjectsPage() {
                           <h3 className="text-2xl font-bold text-mecg-dark-blue mb-4">
               {services.find(s => s.id === selectedService)?.name} Consulting
             </h3>
-              <p className="text-gray-700 text-lg leading-relaxed">
+              <p className="text-mecg-dark-blue text-lg leading-relaxed">
                 {services.find(s => s.id === selectedService)?.description}
               </p>
             </div>
@@ -201,15 +218,185 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-      {/* Past Clients Section */}
-      <section id="past-clients-section" className={`py-20 bg-gradient-to-b from-blue-100 to-white transition-all duration-1000 ${isPastClientsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-        <div className="container mx-auto px-6">
+
+
+      {/* Project Timeline Section */}
+      <section id="timeline-section" className="py-20">
+        <div className={`container mx-auto px-6 transition-all duration-1000 transform ${
+          isTimelineVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}>
           {/* Section Header */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-mecg-dark-blue mb-4">
-              Past Clients
-            </h2>
-            <div className="w-24 h-1 bg-mecg-orange mx-auto"></div>
+                                    <h2 className="text-2xl md:text-4xl font-bold text-mecg-dark-blue mb-4">
+                          Project Timeline
+                        </h2>
+            <div className="w-40 h-1 bg-mecg-dark-blue mx-auto"></div>
+                      </div>
+
+          {/* Timeline Container */}
+                      <div className="relative">
+            {/* Main Timeline Line */}
+            <div className="absolute top-1/2 left-0 right-0 h-1 bg-mecg-dark-blue transform -translate-y-1/2 z-0"></div>
+            
+            {/* Timeline Items - Desktop */}
+            <div className="relative z-10 hidden md:flex justify-between items-center max-w-6xl mx-auto">
+              {/* First Contact - Above Line */}
+              <div className="flex flex-col items-center">
+                <h3 className="text-mecg-dark-blue text-lg text-center mb-4">First Contact</h3>
+                <div className="w-36 h-36 bg-mecg-dark-blue rounded-full flex items-center justify-center mb-4 border-4 border-white shadow-lg overflow-hidden">
+                  <Image
+                    src="/images/client services/first-contact.png"
+                    alt="First Contact"
+                    width={80}
+                    height={80}
+                    className="object-contain"
+                  />
+                </div>
+              </div>
+
+              {/* Scoping - Below Line */}
+              <div className="flex flex-col items-center">
+                <div className="w-36 h-36 bg-mecg-dark-blue rounded-full flex items-center justify-center mb-4 border-4 border-white shadow-lg overflow-hidden">
+                  <Image
+                    src="/images/client services/scoping.png"
+                    alt="Scoping"
+                    width={80}
+                    height={80}
+                    className="object-contain"
+                  />
+                </div>
+                <h3 className="text-mecg-dark-blue font-semibold text-lg text-center">Scoping</h3>
+              </div>
+
+              {/* Midterm Deliverable - Above Line */}
+              <div className="flex flex-col items-center">
+                <h3 className="text-mecg-dark-blue font-semibold text-lg text-center mb-4">Midterm Deliverable</h3>
+                <div className="w-36 h-36 bg-mecg-dark-blue rounded-full flex items-center justify-center mb-4 border-4 border-white shadow-lg overflow-hidden">
+                  <Image
+                    src="/images/client services/midterm.png"
+                    alt="Midterm Deliverable"
+                    width={80}
+                    height={80}
+                    className="object-contain"
+                  />
+                          </div>
+                      </div>
+
+              {/* Final Deliverable - Below Line */}
+              <div className="flex flex-col items-center">
+                <div className="w-36 h-36 bg-mecg-dark-blue rounded-full flex items-center justify-center mb-4 border-4 border-white shadow-lg overflow-hidden">
+                  <Image
+                    src="/images/client services/final.png"
+                    alt="Final Deliverable"
+                    width={80}
+                    height={80}
+                    className="object-contain"
+                  />
+                </div>
+                <h3 className="text-mecg-dark-blue font-semibold text-lg text-center">Final Deliverable</h3>
+                              </div>
+                            </div>
+
+            {/* Timeline Items - Mobile (Scrollable) */}
+            <div className="relative z-10 md:hidden overflow-x-auto pb-4">
+              <div className="flex space-x-8 min-w-max px-4">
+                {/* First Contact - Above Line */}
+                <div className="flex flex-col items-center min-w-[200px]">
+                  <h3 className="text-mecg-dark-blue font-semibold text-lg text-center mb-4">First Contact</h3>
+                  <div className="w-36 h-36 bg-mecg-dark-blue rounded-full flex items-center justify-center mb-4 border-4 border-white shadow-lg overflow-hidden">
+                    <Image
+                      src="/images/client services/first-contact.png"
+                      alt="First Contact"
+                      width={80}
+                      height={80}
+                      className="object-contain"
+                    />
+                  </div>
+                              </div>
+
+                {/* Scoping - Below Line */}
+                <div className="flex flex-col items-center min-w-[200px]">
+                  <div className="w-36 h-36 bg-mecg-dark-blue rounded-full flex items-center justify-center mb-4 border-4 border-white shadow-lg overflow-hidden">
+                    <Image
+                      src="/images/client services/scoping.png"
+                      alt="Scoping"
+                      width={80}
+                      height={80}
+                      className="object-contain"
+                    />
+                  </div>
+                  <h3 className="text-mecg-dark-blue font-semibold text-lg text-center">Scoping</h3>
+                </div>
+
+                {/* Midterm Deliverable - Above Line */}
+                <div className="flex flex-col items-center min-w-[200px]">
+                  <h3 className="text-mecg-dark-blue font-semibold text-lg text-center mb-4">Midterm Deliverable</h3>
+                  <div className="w-36 h-36 bg-mecg-dark-blue rounded-full flex items-center justify-center mb-4 border-4 border-white shadow-lg overflow-hidden">
+                    <Image
+                      src="/images/client services/midterm.png"
+                      alt="Midterm Deliverable"
+                      width={80}
+                      height={80}
+                      className="object-contain"
+                    />
+                  </div>
+                              </div>
+
+                {/* Final Deliverable - Below Line */}
+                <div className="flex flex-col items-center min-w-[200px]">
+                  <div className="w-36 h-36 bg-mecg-dark-blue rounded-full flex items-center justify-center mb-4 border-4 border-white shadow-lg overflow-hidden">
+                    <Image
+                      src="/images/client services/final.png"
+                      alt="Final Deliverable"
+                      width={80}
+                      height={80}
+                      className="object-contain"
+                    />
+                  </div>
+                  <h3 className="text-mecg-dark-blue font-semibold text-lg text-center">Final Deliverable</h3>
+                </div>
+              </div>
+                                      </div>
+                            </div>
+
+          {/* Additional Info Box */}
+          <div className="mt-16 bg-white rounded-2xl p-8 shadow-lg max-w-4xl mx-auto">
+            <h3 className="text-2xl font-bold text-mecg-dark-blue mb-4 text-center">What to Expect</h3>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div>
+                <h4 className="font-semibold text-mecg-dark-blue mb-2">Project Duration</h4>
+                <p className="text-mecg-dark-blue">Typically 10-12 weeks per semester, with weekly check-ins and milestone reviews.</p>
+              </div>
+              <div>
+                <h4 className="font-semibold text-mecg-dark-blue mb-2">Team Structure</h4>
+                <p className="text-mecg-dark-blue">Dedicated team of 5-8 consultants led by a project manager and strategic lead.</p>
+              </div>
+              <div>
+                <h4 className="font-semibold text-mecg-dark-blue mb-2">Deliverables</h4>
+                <p className="text-mecg-dark-blue">Comprehensive reports, presentations, and actionable recommendations tailored to the client's needs.</p>
+              </div>
+              <div>
+                <h4 className="font-semibold text-mecg-dark-blue mb-2">Implementation Guidance</h4>
+                <p className="text-mecg-dark-blue">Guidance for post-project implementation to ensure successful execution.</p>
+              </div>
+                      </div>
+          </div>
+        </div>
+      </section>
+
+
+
+      {/* Past Clients Section */}
+      <section id="past-clients-section" className="py-20">
+        <div className={`container mx-auto px-6 transition-all duration-1000 transform ${
+          isPastClientsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}>
+          {/* Section Header */}
+          <div className="text-center mb-16">
+                                    <h2 className="text-2xl md:text-4xl font-bold text-mecg-dark-blue mb-4">
+                          Past Clients
+                        </h2>
+            <div className="w-40 h-1 bg-mecg-dark-blue mx-auto"></div>
           </div>
 
           {/* Scrollable Client Logos Box */}
@@ -265,7 +452,7 @@ export default function ProjectsPage() {
               {/* Gear Separator */}
               <div className="flex-shrink-0 flex items-start justify-center w-16 pt-12">
                 <svg className="w-8 h-8 text-mecg-orange" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 15.5A3.5 3.5 0 0 1 8.5 12A3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5a3.5 3.5 0 0 1-3.5 3.5m7.43-2.53c.04-.32.07-.64.07-.97c0-.33-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.08 2.14 13.82 2 13.53 2h-4c-.29 0-.55.14-.74.38l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.22-.08-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98c0 .33.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.19.24.45.38.74.38h4c.29 0 .55-.14.74-.38l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.22.08.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65z"/>
+                  <path d="M12 15.5A3.5 3.5 0 0 1 8.5 12A3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5a3.5 3.5 0 0 1-3.5 3.5m7.43-2.53c.04-.32.07-.64.07-.97c0-.33-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2-49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.08 2.14 13.82 2 13.53 2h-4c-.29 0-.55.14-.74.38l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.22-.08-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98c0 .33.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.19.24.45.38.74.38h4c.29 0 .55-.14.74-.38l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.22.08.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65z"/>
                 </svg>
               </div>
 
@@ -287,7 +474,7 @@ export default function ProjectsPage() {
               {/* Gear Separator */}
               <div className="flex-shrink-0 flex items-start justify-center w-16 pt-12">
                 <svg className="w-8 h-8 text-mecg-orange" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 15.5A3.5 3.5 0 0 1 8.5 12A3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5a3.5 3.5 0 0 1-3.5 3.5m7.43-2.53c.04-.32.07-.64.07-.97c0-.33-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.08 2.14 13.82 2 13.53 2h-4c-.29 0-.55.14-.74.38l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.22-.08-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98c0 .33.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.19.24.45.38.74.38h4c.29 0 .55-.14.74-.38l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.22.08.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65z"/>
+                  <path d="M12 15.5A3.5 3.5 0 0 1 8.5 12A3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5a3.5 3.5 0 0 1-3.5 3.5m7.43-2.53c.04-.32.07-.64.07-.97c0-.33-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2-49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.08 2.14 13.82 2 13.53 2h-4c-.29 0-.55.14-.74.38l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.22-.08-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98c0 .33.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.19.24.45.38.74.38h4c.29 0 .55-.14.74-.38l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.22.08.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65z"/>
                 </svg>
               </div>
 
@@ -309,7 +496,7 @@ export default function ProjectsPage() {
               {/* Gear Separator */}
               <div className="flex-shrink-0 flex items-start justify-center w-16 pt-12">
                 <svg className="w-8 h-8 text-mecg-orange" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 15.5A3.5 3.5 0 0 1 8.5 12A3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5a3.5 3.5 0 0 1-3.5 3.5m7.43-2.53c.04-.32.07-.64.07-.97c0-.33-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.08 2.14 13.82 2 13.53 2h-4c-.29 0-.55.14-.74.38l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.22-.08-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98c0 .33.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.19.24.45.38.74.38h4c.29 0 .55-.14.74-.38l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.22.08.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65z"/>
+                  <path d="M12 15.5A3.5 3.5 0 0 1 8.5 12A3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5a3.5 3.5 0 0 1-3.5 3.5m7.43-2.53c.04-.32.07-.64.07-.97c0-.33-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2-49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.08 2.14 13.82 2 13.53 2h-4c-.29 0-.55.14-.74.38l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.22-.08-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98c0 .33.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.19.24.45.38.74.38h4c.29 0 .55-.14.74-.38l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.22.08.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65z"/>
                 </svg>
               </div>
 
@@ -331,7 +518,7 @@ export default function ProjectsPage() {
               {/* Gear Separator */}
               <div className="flex-shrink-0 flex items-start justify-center w-16 pt-12">
                 <svg className="w-8 h-8 text-mecg-orange" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 15.5A3.5 3.5 0 0 1 8.5 12A3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5a3.5 3.5 0 0 1-3.5 3.5m7.43-2.53c.04-.32.07-.64.07-.97c0-.33-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.08 2.14 13.82 2 13.53 2h-4c-.29 0-.55.14-.74.38l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.22-.08-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98c0 .33.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.19.24.45.38.74.38h4c.29 0 .55-.14.74-.38l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.22.08.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65z"/>
+                  <path d="M12 15.5A3.5 3.5 0 0 1 8.5 12A3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5a3.5 3.5 0 0 1-3.5 3.5m7.43-2.53c.04-.32.07-.64.07-.97c0-.33-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2-49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.08 2.14 13.82 2 13.53 2h-4c-.29 0-.55.14-.74.38l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.22-.08-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98c0 .33.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.19.24.45.38.74.38h4c.29 0 .55-.14.74-.38l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.22.08.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65z"/>
                 </svg>
               </div>
 
@@ -353,7 +540,7 @@ export default function ProjectsPage() {
               {/* Gear Separator */}
               <div className="flex-shrink-0 flex items-start justify-center w-16 pt-12">
                 <svg className="w-8 h-8 text-mecg-orange" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 15.5A3.5 3.5 0 0 1 8.5 12A3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5a3.5 3.5 0 0 1-3.5 3.5m7.43-2.53c.04-.32.07-.64.07-.97c0-.33-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.08 2.14 13.82 2 13.53 2h-4c-.29 0-.55.14-.74.38l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.22-.08-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98c0 .33.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.19.24.45.38.74.38h4c.29 0 .55-.14.74-.38l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.22.08.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65z"/>
+                  <path d="M12 15.5A3.5 3.5 0 0 1 8.5 12A3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5a3.5 3.5 0 0 1-3.5 3.5m7.43-2.53c.04-.32.07-.64.07-.97c0-.33-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2-49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.08 2.14 13.82 2 13.53 2h-4c-.29 0-.55.14-.74.38l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.22-.08-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98c0 .33.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.19.24.45.38.74.38h4c.29 0 .55-.14.74-.38l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.22.08.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65z"/>
                 </svg>
               </div>
 
@@ -375,7 +562,7 @@ export default function ProjectsPage() {
               {/* Gear Separator */}
               <div className="flex-shrink-0 flex items-start justify-center w-16 pt-12">
                 <svg className="w-8 h-8 text-mecg-orange" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 15.5A3.5 3.5 0 0 1 8.5 12A3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5a3.5 3.5 0 0 1-3.5 3.5m7.43-2.53c.04-.32.07-.64.07-.97c0-.33-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.08 2.14 13.82 2 13.53 2h-4c-.29 0-.55.14-.74.38l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.22-.08-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98c0 .33.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.19.24.45.38.74.38h4c.29 0 .55-.14.74-.38l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.22.08.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65z"/>
+                  <path d="M12 15.5A3.5 3.5 0 0 1 8.5 12A3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5a3.5 3.5 0 0 1-3.5 3.5m7.43-2.53c.04-.32.07-.64.07-.97c0-.33-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2-49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.08 2.14 13.82 2 13.53 2h-4c-.29 0-.55.14-.74.38l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.22-.08-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98c0 .33.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.19.24.45.38.74.38h4c.29 0 .55-.14.74-.38l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.22.08.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65z"/>
                 </svg>
               </div>
 
@@ -397,7 +584,7 @@ export default function ProjectsPage() {
               {/* Gear Separator */}
               <div className="flex-shrink-0 flex items-start justify-center w-16 pt-12">
                 <svg className="w-8 h-8 text-mecg-orange" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 15.5A3.5 3.5 0 0 1 8.5 12A3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5a3.5 3.5 0 0 1-3.5 3.5m7.43-2.53c.04-.32.07-.64.07-.97c0-.33-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.08 2.14 13.82 2 13.53 2h-4c-.29 0-.55.14-.74.38l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.22-.08-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98c0 .33.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.19.24.45.38.74.38h4c.29 0 .55-.14.74-.38l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.22.08.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65z"/>
+                  <path d="M12 15.5A3.5 3.5 0 0 1 8.5 12A3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5a3.5 3.5 0 0 1-3.5 3.5m7.43-2.53c.04-.32.07-.64.07-.97c0-.33-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2-49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.08 2.14 13.82 2 13.53 2h-4c-.29 0-.55.14-.74.38l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.22-.08-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98c0 .33.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.19.24.45.38.74.38h4c.29 0 .55-.14.74-.38l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.22.08.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65z"/>
                 </svg>
               </div>
 
@@ -419,7 +606,7 @@ export default function ProjectsPage() {
               {/* Gear Separator */}
               <div className="flex-shrink-0 flex items-start justify-center w-16 pt-12">
                 <svg className="w-8 h-8 text-mecg-orange" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 15.5A3.5 3.5 0 0 1 8.5 12A3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5a3.5 3.5 0 0 1-3.5 3.5m7.43-2.53c.04-.32.07-.64.07-.97c0-.33-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.08 2.14 13.82 2 13.53 2h-4c-.29 0-.55.14-.74.38l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.22-.08-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98c0 .33.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.19.24.45.38.74.38h4c.29 0 .55-.14.74-.38l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.22.08.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65z"/>
+                  <path d="M12 15.5A3.5 3.5 0 0 1 8.5 12A3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5a3.5 3.5 0 0 1-3.5 3.5m7.43-2.53c.04-.32.07-.64.07-.97c0-.33-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2-49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.08 2.14 13.82 2 13.53 2h-4c-.29 0-.55.14-.74.38l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.22-.08-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98c0 .33.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.19.24.45.38.74.38h4c.29 0 .55-.14.74-.38l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.22.08.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65z"/>
                 </svg>
               </div>
 
@@ -442,165 +629,10 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-      {/* Project Timeline Section */}
-      <section className="py-20 bg-gradient-to-b from-white to-mecg-blue-light">
+      {/* Bottom spacing section to ensure proper distance from footer */}
+      <section className="py-16">
         <div className="container mx-auto px-6">
-          {/* Section Header */}
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-mecg-dark-blue mb-4">
-              Project Timeline
-            </h2>
-            <div className="w-24 h-1 bg-mecg-orange mx-auto"></div>
-          </div>
-
-          {/* Timeline Container */}
-          <div className="relative">
-            {/* Main Timeline Line */}
-            <div className="absolute top-1/2 left-0 right-0 h-1 bg-mecg-dark-blue transform -translate-y-1/2 z-0"></div>
-            
-            {/* Timeline Items - Desktop */}
-            <div className="relative z-10 hidden md:flex justify-between items-center max-w-6xl mx-auto">
-              {/* First Contact - Above Line */}
-              <div className="flex flex-col items-center">
-                <h3 className="text-mecg-dark-blue font-semibold text-lg text-center mb-4">First Contact</h3>
-                <div className="w-36 h-36 bg-mecg-dark-blue rounded-full flex items-center justify-center mb-4 border-4 border-white shadow-lg overflow-hidden">
-                  <Image
-                    src="/images/client services/first-contact.png"
-                    alt="First Contact"
-                    width={80}
-                    height={80}
-                    className="object-contain"
-                  />
-                </div>
-              </div>
-
-              {/* Scoping - Below Line */}
-              <div className="flex flex-col items-center">
-                <div className="w-36 h-36 bg-mecg-dark-blue rounded-full flex items-center justify-center mb-4 border-4 border-white shadow-lg overflow-hidden">
-                  <Image
-                    src="/images/client services/scoping.png"
-                    alt="Scoping"
-                    width={80}
-                    height={80}
-                    className="object-contain"
-                  />
-                </div>
-                <h3 className="text-mecg-dark-blue font-semibold text-lg text-center">Scoping</h3>
-              </div>
-
-              {/* Midterm Deliverable - Above Line */}
-              <div className="flex flex-col items-center">
-                <h3 className="text-mecg-dark-blue font-semibold text-lg text-center mb-4">Midterm Deliverable</h3>
-                <div className="w-36 h-36 bg-mecg-dark-blue rounded-full flex items-center justify-center mb-4 border-4 border-white shadow-lg overflow-hidden">
-                  <Image
-                    src="/images/client services/midterm.png"
-                    alt="Midterm Deliverable"
-                    width={80}
-                    height={80}
-                    className="object-contain"
-                  />
-                </div>
-              </div>
-
-              {/* Final Deliverable - Below Line */}
-              <div className="flex flex-col items-center">
-                <div className="w-36 h-36 bg-mecg-dark-blue rounded-full flex items-center justify-center mb-4 border-4 border-white shadow-lg overflow-hidden">
-                  <Image
-                    src="/images/client services/final.png"
-                    alt="Final Deliverable"
-                    width={80}
-                    height={80}
-                    className="object-contain"
-                  />
-                </div>
-                <h3 className="text-mecg-dark-blue font-semibold text-lg text-center">Final Deliverable</h3>
-              </div>
-            </div>
-
-            {/* Timeline Items - Mobile (Scrollable) */}
-            <div className="relative z-10 md:hidden overflow-x-auto pb-4">
-              <div className="flex space-x-8 min-w-max px-4">
-                {/* First Contact - Above Line */}
-                <div className="flex flex-col items-center min-w-[200px]">
-                  <h3 className="text-mecg-dark-blue font-semibold text-lg text-center mb-4">First Contact</h3>
-                  <div className="w-36 h-36 bg-mecg-dark-blue rounded-full flex items-center justify-center mb-4 border-4 border-white shadow-lg overflow-hidden">
-                    <Image
-                      src="/images/client services/first-contact.png"
-                      alt="First Contact"
-                      width={80}
-                      height={80}
-                      className="object-contain"
-                    />
-                  </div>
-                </div>
-
-                {/* Scoping - Below Line */}
-                <div className="flex flex-col items-center min-w-[200px]">
-                  <div className="w-36 h-36 bg-mecg-dark-blue rounded-full flex items-center justify-center mb-4 border-4 border-white shadow-lg overflow-hidden">
-                    <Image
-                      src="/images/client services/scoping.png"
-                      alt="Scoping"
-                      width={80}
-                      height={80}
-                      className="object-contain"
-                    />
-                  </div>
-                  <h3 className="text-mecg-dark-blue font-semibold text-lg text-center">Scoping</h3>
-                </div>
-
-                {/* Midterm Deliverable - Above Line */}
-                <div className="flex flex-col items-center min-w-[200px]">
-                  <h3 className="text-mecg-dark-blue font-semibold text-lg text-center mb-4">Midterm Deliverable</h3>
-                  <div className="w-36 h-36 bg-mecg-dark-blue rounded-full flex items-center justify-center mb-4 border-4 border-white shadow-lg overflow-hidden">
-                    <Image
-                      src="/images/client services/midterm.png"
-                      alt="Midterm Deliverable"
-                      width={80}
-                      height={80}
-                      className="object-contain"
-                    />
-                  </div>
-                </div>
-
-                {/* Final Deliverable - Below Line */}
-                <div className="flex flex-col items-center min-w-[200px]">
-                  <div className="w-36 h-36 bg-mecg-dark-blue rounded-full flex items-center justify-center mb-4 border-4 border-white shadow-lg overflow-hidden">
-                    <Image
-                      src="/images/client services/final.png"
-                      alt="Final Deliverable"
-                      width={80}
-                      height={80}
-                      className="object-contain"
-                    />
-                  </div>
-                  <h3 className="text-mecg-dark-blue font-semibold text-lg text-center">Final Deliverable</h3>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Additional Info Box */}
-          <div className="mt-16 bg-white rounded-2xl p-8 shadow-lg max-w-4xl mx-auto">
-            <h3 className="text-2xl font-bold text-mecg-dark-blue mb-4 text-center">What to Expect</h3>
-            <div className="grid md:grid-cols-2 gap-6">
-              <div>
-                <h4 className="font-semibold text-mecg-dark-blue mb-2">Project Duration</h4>
-                <p className="text-gray-600">Typically 10-12 weeks per semester, with weekly check-ins and milestone reviews.</p>
-              </div>
-              <div>
-                <h4 className="font-semibold text-mecg-dark-blue mb-2">Team Structure</h4>
-                <p className="text-gray-600">Dedicated team of 5-8 consultants led by a project manager and strategic lead.</p>
-              </div>
-              <div>
-                <h4 className="font-semibold text-mecg-dark-blue mb-2">Deliverables</h4>
-                <p className="text-gray-600">Comprehensive reports, presentations, and actionable recommendations tailored to your needs.</p>
-              </div>
-              <div>
-                <h4 className="font-semibold text-mecg-dark-blue mb-2">Implementation Guidance</h4>
-                <p className="text-gray-600">Guidance for post-project implementation to ensure successful execution.</p>
-              </div>
-            </div>
-          </div>
+          {/* This section provides proper spacing before the footer */}
         </div>
       </section>
     </div>
