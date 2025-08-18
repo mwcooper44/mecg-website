@@ -240,13 +240,13 @@ const services = [
             
             {/* Timeline Items - Desktop */}
             <div className="relative z-10 hidden md:flex justify-between items-center max-w-6xl mx-auto">
-              {/* First Contact - Above Line */}
+              {/* Initial Contact - Above Line */}
               <div className="flex flex-col items-center">
-                <h3 className="text-mecg-dark-blue text-lg text-center mb-4">First Contact</h3>
+                <h3 className="text-mecg-dark-blue font-bold text-lg text-center mb-4">Initial Contact</h3>
                 <div className="w-36 h-36 bg-mecg-dark-blue rounded-full flex items-center justify-center mb-4 border-4 border-white shadow-lg overflow-hidden">
                   <Image
                     src="/images/client services/first-contact.png"
-                    alt="First Contact"
+                    alt="Initial Contact"
                     width={80}
                     height={80}
                     className="object-contain"
@@ -300,19 +300,19 @@ const services = [
             {/* Timeline Items - Mobile (Scrollable) */}
             <div className="relative z-10 md:hidden overflow-x-auto pb-4">
               <div className="flex space-x-8 min-w-max px-4">
-                {/* First Contact - Above Line */}
+                                {/* Initial Contact - Above Line */}
                 <div className="flex flex-col items-center min-w-[200px]">
-                  <h3 className="text-mecg-dark-blue font-semibold text-lg text-center mb-4">First Contact</h3>
+                  <h3 className="text-mecg-dark-blue font-bold text-lg text-center mb-4">Initial Contact</h3>
                   <div className="w-36 h-36 bg-mecg-dark-blue rounded-full flex items-center justify-center mb-4 border-4 border-white shadow-lg overflow-hidden">
                     <Image
                       src="/images/client services/first-contact.png"
-                      alt="First Contact"
+                      alt="Initial Contact"
                       width={80}
                       height={80}
                       className="object-contain"
                     />
                   </div>
-                              </div>
+                </div>
 
                 {/* Scoping - Below Line */}
                 <div className="flex flex-col items-center min-w-[200px]">
