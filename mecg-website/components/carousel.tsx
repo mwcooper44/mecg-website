@@ -1,8 +1,32 @@
 "use client"
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import Image from 'next/image';
 import { useInView } from "react-intersection-observer"
 import { cn } from "@/lib/utils"
+
+// Hook to safely access window object
+const useWindowSize = () => {
+  const [windowSize, setWindowSize] = useState({
+    width: typeof window !== 'undefined' ? window.innerWidth : 1024,
+    height: typeof window !== 'undefined' ? window.innerHeight : 768,
+  });
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    const handleResize = () => {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  return windowSize;
+};
 
 const images = [
   '/images/carousel/100_0548.JPG',
@@ -15,6 +39,7 @@ const images = [
 
 export default function Carousel() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const { width: windowWidth } = useWindowSize();
 
   // Fade-in animation when carousel comes into view
   const [carouselRef, carouselInView] = useInView({
@@ -109,6 +134,12 @@ export default function Carousel() {
       )}
     >
       <div className="relative w-full max-w-7xl overflow-hidden">
+        {/* Left fade gradient */}
+        <div className="absolute left-0 top-0 bottom-0 w-20 md:w-32 bg-gradient-to-r from-mecg-blue-light via-mecg-blue-light/80 to-transparent z-10 pointer-events-none"></div>
+        
+        {/* Right fade gradient */}
+        <div className="absolute right-0 top-0 bottom-0 w-20 md:w-32 bg-gradient-to-l from-mecg-blue-light via-mecg-blue-light/80 to-transparent z-10 pointer-events-none"></div>
+        
         <div className="overflow-hidden">
           <div
             ref={containerRef}
@@ -126,8 +157,8 @@ export default function Carousel() {
                 <div
                   className="flex-shrink-0 flex flex-col items-center"
                   style={{ 
-                    minWidth: window.innerWidth < 640 ? 300 : window.innerWidth < 1024 ? 400 : 600, 
-                    maxWidth: window.innerWidth < 640 ? 300 : window.innerWidth < 1024 ? 400 : 600 
+                    minWidth: windowWidth < 640 ? 300 : windowWidth < 1024 ? 400 : 600, 
+                    maxWidth: windowWidth < 640 ? 300 : windowWidth < 1024 ? 400 : 600 
                   }}
                 >
                   <Image
@@ -156,8 +187,8 @@ export default function Carousel() {
                 <div
                   className="flex-shrink-0 flex flex-col items-center"
                   style={{ 
-                    minWidth: window.innerWidth < 640 ? 300 : window.innerWidth < 1024 ? 400 : 600, 
-                    maxWidth: window.innerWidth < 640 ? 300 : window.innerWidth < 1024 ? 400 : 600 
+                    minWidth: windowWidth < 640 ? 300 : windowWidth < 1024 ? 400 : 600, 
+                    maxWidth: windowWidth < 640 ? 300 : windowWidth < 1024 ? 400 : 600 
                   }}
                 >
                   <Image

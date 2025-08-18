@@ -54,14 +54,14 @@ export default function ContactPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center">
+    <div className="min-h-screen bg-mecg-blue-light flex items-center justify-center">
       <main className="w-full">
         <div className="w-full px-4 md:px-8">
           <div className="max-w-7xl mx-auto">
             <div className="grid md:grid-cols-2 gap-16 md:gap-24 items-start">
               {/* Left: Form */}
               <div className="space-y-6">
-                <h1 className="text-4xl md:text-5xl font-bold mb-6 text-mecg-dark-blue" style={{ fontFamily: 'Geist, Inter, sans-serif' }}>
+                <h1 className="text-4xl md:text-5xl font-bold mb-6 text-mecg-dark-blue">
                   Send us a <span className="relative inline-block font-signature text-mecg-dark-blue">message!
                     <span className="absolute left-0 right-0 -bottom-2 h-3 pointer-events-none" style={{ zIndex: -1 }}>
                       <svg width="100%" height="20" viewBox="0 0 220 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -139,7 +139,7 @@ export default function ContactPage() {
               </div>
               {/* Right: Contact Info - Moved closer to right edge */}
               <div className="space-y-8 md:ml-8 md:pr-0">
-                <h2 className="text-4xl md:text-5xl font-bold mb-6 text-mecg-dark-blue" style={{ fontFamily: 'Geist, Inter, sans-serif' }}>
+                <h2 className="text-4xl md:text-5xl font-bold mb-6 text-mecg-dark-blue">
                   Connect with us...
                 </h2>
                 <div className="space-y-6">

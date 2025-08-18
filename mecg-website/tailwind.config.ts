@@ -22,6 +22,8 @@ const config = {
       fontFamily: {
         lora: ["var(--font-lora), serif"],
         glacial: ["var(--font-glacial), sans-serif"],
+        sans: ["Glacial Indifference", "sans-serif"],
+        serif: ["Glacial Indifference", "serif"],
       },
       fontSize: {
         'xs': ['0.75rem', { lineHeight: '1rem' }], // 12px

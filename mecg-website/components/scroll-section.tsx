@@ -6,13 +6,14 @@ import { cn } from "@/lib/utils"
 import { Card, CardContent } from "@/components/ui/card"
 import { BarChart3, Building, GraduationCap, Users, CalendarCheck, LibraryBig } from "lucide-react"
 import PresidentsWelcome from "@/components/presidents-welcome"
+import Link from "next/link"
 
 export default function ScrollSection() {
   // Stats data
   const stats = [
-    { icon: Users, value: "80+", label: "Members" },
-    { icon: Building, value: "20+", label: "Businesses Served" },
-    { icon: LibraryBig, value: "15+", label: "Different Majors" },
+    { icon: Users, value: "80+", label: "Members", href: "/team" },
+    { icon: Building, value: "20+", label: "Projects Completed", href: "/services" },
+    { icon: LibraryBig, value: "15+", label: "Different Majors", href: "/team" },
   ]
 
   // Welcome section with fade-in animation
@@ -94,7 +95,7 @@ export default function ScrollSection() {
         <div className="container px-4 md:px-6">
           <div className="max-w-4xl mx-auto text-center space-y-4 md:space-y-6">
             <p className="text-base sm:text-lg md:text-xl leading-relaxed text-mecg-dark-blue px-4">
-            MECG places an emphasis on a community of diverse students that share one thing: a passion to learn more about consulting and gain hands-on experiences in the field. Our four pillars (Professional Development, Education, Project Experience, and Community) drive our impact on real companies and members' careers.
+            MECG places an emphasis on a community of diverse students that share one thing: <br></br><strong>a passion to learn more about consulting and gain experiences in the field</strong>. Our four pillars (Professional Development, Education, Project Experience, and Community) drive our impact on real companies and members' careers.
             </p>
           </div>
         </div>
@@ -117,9 +118,9 @@ export default function ScrollSection() {
 
             <div className="flex justify-between items-center gap-6 md:gap-10">
               {stats.map((stat, index) => (
+                <Link key={index} href={stat.href} className="flex-1">
                   <Card
-                    key={index}
-                    className="border-none shadow-lg overflow-hidden group hover:bg-mecg-dark-blue hover:text-white hover:shadow-xl transition-all flex-1"
+                    className="border-none shadow-lg overflow-hidden group hover:bg-mecg-dark-blue hover:text-white hover:shadow-xl transition-all cursor-pointer"
                   >
                     <CardContent className="p-6 text-center relative z-10 transition-colors duration-300">
 
@@ -139,6 +140,7 @@ export default function ScrollSection() {
                     </p>
                   </CardContent>
                 </Card>
+                </Link>
               ))}
             </div>
           </div>

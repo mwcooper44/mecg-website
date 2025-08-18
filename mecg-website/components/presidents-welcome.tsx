@@ -78,7 +78,7 @@ export default function PresidentsWelcome({ className }: PresidentsWelcomeProps)
                     <p className="text-md font-medium">
                       Best,<br />
                       <span className="text-3xl font-signature">Jules Hwang</span><br />
-                      President of MECG,2025
+                      President of MECG, 2025
                     </p>
                 </div>
               </div>
