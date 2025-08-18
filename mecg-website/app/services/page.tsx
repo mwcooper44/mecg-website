@@ -167,13 +167,14 @@ const services = [
       {/* Services Section with Fade Transition */}
       <section id="services-section" className={`py-20 transition-all duration-1000 ${isServicesVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
         <div className="container mx-auto px-6">
-          {/* Section Header */}
-          <div className="text-center mb-16">
-                                    <h2 className="text-2xl md:text-4xl font-bold text-mecg-dark-blue mb-4">
-                          Our Services
-                        </h2>
-            <div className="w-40 h-1 bg-mecg-dark-blue mx-auto"></div>
-          </div>
+                      {/* Section Header */}
+            <div className="text-center mb-16">
+              <h2 className="text-2xl md:text-4xl font-bold text-mecg-dark-blue mb-4">
+                Our Services
+              </h2>
+              <div className="w-40 h-1 bg-mecg-dark-blue mx-auto mb-4"></div>
+              <p className="text-mecg-dark-blue text-base md:text-lg">Click on any card below to learn more!</p>
+            </div>
 
           {/* Service Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-12">
@@ -242,7 +243,7 @@ const services = [
             <div className="relative z-10 hidden md:flex justify-between items-center max-w-6xl mx-auto">
               {/* Initial Contact - Above Line */}
               <div className="flex flex-col items-center">
-                <h3 className="text-mecg-dark-blue font-bold text-lg text-center mb-4">Initial Contact</h3>
+                <h3 className="text-lg font-semibold text-mecg-dark-blue text-center mb-4">Initial Contact</h3>
                 <div className="w-36 h-36 bg-mecg-dark-blue rounded-full flex items-center justify-center mb-4 border-4 border-white shadow-lg overflow-hidden">
                   <Image
                     src="/images/client services/first-contact.png"
@@ -265,12 +266,12 @@ const services = [
                     className="object-contain"
                   />
                 </div>
-                <h3 className="text-mecg-dark-blue font-semibold text-lg text-center">Scoping</h3>
+                <h3 className="text-lg font-semibold text-mecg-dark-blue text-center">Scoping</h3>
               </div>
 
               {/* Midterm Deliverable - Above Line */}
               <div className="flex flex-col items-center">
-                <h3 className="text-mecg-dark-blue font-semibold text-lg text-center mb-4">Midterm Deliverable</h3>
+                <h3 className="text-lg font-semibold text-mecg-dark-blue text-center mb-4">Midterm Deliverable</h3>
                 <div className="w-36 h-36 bg-mecg-dark-blue rounded-full flex items-center justify-center mb-4 border-4 border-white shadow-lg overflow-hidden">
                   <Image
                     src="/images/client services/midterm.png"
@@ -282,9 +283,9 @@ const services = [
                           </div>
                       </div>
 
-              {/* Final Deliverable - Below Line */}
+                            {/* Final Deliverable - Below Line */}
               <div className="flex flex-col items-center">
-                <div className="w-36 h-36 bg-mecg-dark-blue rounded-full flex items-center justify-center mb-4 border-4 border-white shadow-lg overflow-hidden">
+                <div className="w-36 h-36 bg-mecg-dark-blue rounded-full flex items-center justify-center mb-4 border-4 border-white shadow-lg shadow-lg overflow-hidden">
                   <Image
                     src="/images/client services/final.png"
                     alt="Final Deliverable"
@@ -293,8 +294,8 @@ const services = [
                     className="object-contain"
                   />
                 </div>
-                <h3 className="text-mecg-dark-blue font-semibold text-lg text-center">Final Deliverable</h3>
-                              </div>
+                <h3 className="text-lg font-semibold text-mecg-dark-blue text-center">Final Deliverable</h3>
+              </div>
                             </div>
 
             {/* Timeline Items - Mobile (Scrollable) */}
@@ -325,12 +326,12 @@ const services = [
                       className="object-contain"
                     />
                   </div>
-                  <h3 className="text-mecg-dark-blue font-semibold text-lg text-center">Scoping</h3>
+                  <h3 className="text-lg font-semibold text-mecg-dark-blue text-center">Scoping</h3>
                 </div>
 
                 {/* Midterm Deliverable - Above Line */}
                 <div className="flex flex-col items-center min-w-[200px]">
-                  <h3 className="text-mecg-dark-blue font-semibold text-lg text-center mb-4">Midterm Deliverable</h3>
+                  <h3 className="text-lg font-semibold text-mecg-dark-blue text-center mb-4">Midterm Deliverable</h3>
                   <div className="w-36 h-36 bg-mecg-dark-blue rounded-full flex items-center justify-center mb-4 border-4 border-white shadow-lg overflow-hidden">
                     <Image
                       src="/images/client services/midterm.png"
