@@ -9,7 +9,7 @@ export default function RotatingGears() {
       <div className="absolute left-[0px] md:top-[200px] top-0 animate-spin-slow z-10">
         {/* Desktop */}
         <Image
-          src="/images/gear.png"
+          src="/images/Gear.png"
           alt="Large rotating gear"
           width={600}
           height={600}
@@ -17,7 +17,7 @@ export default function RotatingGears() {
         />
         {/* Mobile */}
         <Image
-          src="/images/gear.png"
+          src="/images/Gear.png"
           alt="Large rotating gear"
           width={400}
           height={400}
@@ -28,7 +28,7 @@ export default function RotatingGears() {
       <div className="absolute left-[80px] top-[60px] md:left-[340px] md:top-[-175px] animate-spin-reverse">
         {/* Desktop */}
         <Image
-          src="/images/gear.png"
+          src="/images/Gear.png"
           alt="Small rotating gear"
           width={600}
           height={600}
@@ -36,7 +36,7 @@ export default function RotatingGears() {
         />
         {/* Mobile */}
         <Image
-          src="/images/gear.png"
+          src="/images/Gear.png"
           alt="Small rotating gear"
           width={400}
           height={400}
