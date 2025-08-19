@@ -16,7 +16,7 @@ const teamMembers = {
       name: "Jules Hwang",
       role: "President",
       image: "/images/headshots/Board/JulesH.webp",
-      linkedin: "www.linkedin.com/in/juliannehwang",
+      linkedin: "https://www.linkedin.com/in/juliannehwang",
       email: "julhwang@umich.edu",
     },
     {
@@ -30,7 +30,7 @@ const teamMembers = {
       name: "Katie Slazinski",
       role: "Director of Professional Development",
       image: "/images/headshots/Board/KatieS.webp",
-      linkedin: " www.linkedin.com/in/katherine-slazinski-96b902270",
+      linkedin: "https://www.linkedin.com/in/katherine-slazinski-96b902270",
       email: "kslaz@umich.edu",
     },
 
