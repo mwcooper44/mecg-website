@@ -4,16 +4,16 @@ import React, { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
 
 export default function ProjectsPage() {
-  const [selectedService, setSelectedService] = useState<string | null>(null)
+  const [selectedProject, setSelectedProject] = useState<string | null>(null)
   const [isScrolling, setIsScrolling] = useState(false)
   const scrollContainerRef = useRef<HTMLDivElement>(null)
 
-  const [isServicesVisible, setIsServicesVisible] = useState(false)
+  const [isProjectsVisible, setIsProjectsVisible] = useState(false)
   const [isPastClientsVisible, setIsPastClientsVisible] = useState(false)
   const [isTimelineVisible, setIsTimelineVisible] = useState(false)
   const [isPageVisible, setIsPageVisible] = useState(false)
 
-const services = [
+const projects = [
   {
       id: 'strategy',
       name: 'Strategy',
@@ -46,8 +46,8 @@ const services = [
     }
   ]
 
-  const handleServiceClick = (serviceId: string) => {
-    setSelectedService(selectedService === serviceId ? null : serviceId)
+  const handleProjectClick = (serviceId: string) => {
+    setSelectedProject(selectedProject === serviceId ? null : serviceId)
   }
 
   useEffect(() => {
@@ -56,14 +56,14 @@ const services = [
 
   useEffect(() => {
     const handleScroll = () => {
-      const servicesSection = document.getElementById('services-section')
+      const projectsSection = document.getElementById('projects-section')
       const pastClientsSection = document.getElementById('past-clients-section')
       const timelineSection = document.getElementById('timeline-section')
       
-      if (servicesSection) {
-        const rect = servicesSection.getBoundingClientRect()
+      if (projectsSection) {
+        const rect = projectsSection.getBoundingClientRect()
         if (rect.top < window.innerHeight * 0.8) {
-          setIsServicesVisible(true)
+          setIsProjectsVisible(true)
         }
       }
       
@@ -164,8 +164,8 @@ const services = [
         </div>
       </section>
 
-      {/* Services Section with Fade Transition */}
-      <section id="services-section" className={`py-20 transition-all duration-1000 ${isServicesVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+      {/* Projects Section with Fade Transition */}
+      <section id="projects-section" className={`py-20 transition-all duration-1000 ${isProjectsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
         <div className="container mx-auto px-6">
                       {/* Section Header */}
             <div className="text-center mb-16">
@@ -176,15 +176,15 @@ const services = [
               <p className="text-mecg-dark-blue text-base md:text-lg">Click on any card below to learn more!</p>
             </div>
 
-          {/* Service Cards */}
+          {/* Project Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-12">
-            {services.map((service) => (
+            {projects.map((service) => (
               <div
                 key={service.id}
-                onClick={() => handleServiceClick(service.id)}
+                onClick={() => handleProjectClick(service.id)}
                 className={`
                   relative p-6 rounded-2xl cursor-pointer transition-all duration-300 transform hover:scale-105
-                  ${selectedService === service.id 
+                  ${selectedProject === service.id 
                     ? 'bg-mecg-orange shadow-lg' 
                     : 'bg-mecg-dark-blue hover:bg-mecg-orange shadow-md'
                   }
@@ -205,14 +205,14 @@ const services = [
             ))}
           </div>
 
-          {/* Service Description Box */}
-          {selectedService && (
+          {/* Project Description Box */}
+          {selectedProject && (
             <div className="bg-white rounded-2xl p-8 shadow-xl border border-gray-200 animate-fade-in">
                           <h3 className="text-2xl font-bold text-mecg-dark-blue mb-4">
-              {services.find(s => s.id === selectedService)?.name} Consulting
+              {projects.find(s => s.id === selectedProject)?.name} Consulting
             </h3>
               <p className="text-mecg-dark-blue text-lg leading-relaxed">
-                {services.find(s => s.id === selectedService)?.description}
+                {projects.find(s => s.id === selectedProject)?.description}
               </p>
             </div>
           )}

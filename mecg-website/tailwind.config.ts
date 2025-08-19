@@ -78,6 +78,7 @@ const config = {
         'mecg-dark-blue': '#3f63af',
         'mecg-blue-light': '#ccdeff',
         'mecg-blue-extraLight': '#f0f5ff',
+        'mecg-orange': '#f58e4f',
         mecg: {
           red: "#E4002B",
           black: "#000000",
