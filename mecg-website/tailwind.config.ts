@@ -76,6 +76,8 @@ const config = {
         },
         // Custom colors
         'mecg-dark-blue': '#3f63af',
+        'mecg-blue-light': '#ccdeff',
+        'mecg-blue-extraLight': '#f0f5ff',
         mecg: {
           red: "#E4002B",
           black: "#000000",
