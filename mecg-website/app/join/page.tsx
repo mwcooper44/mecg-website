@@ -280,7 +280,7 @@ export default function JoinPage() {
                           )}
                           
                           {/* Google Calendar button for other events */}
-                          {![3, 5].includes(event.id) && (
+                          {![3, 5, 7, 8, 9].includes(event.id) && (
                             <button 
                               className="bg-mecg-dark-blue hover:bg-mecg-dark-blue/80 text-white font-medium px-3 md:px-4 py-2 rounded-lg transition-colors duration-200 text-sm md:text-base whitespace-nowrap"
                               onClick={() => {

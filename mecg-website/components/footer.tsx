@@ -75,6 +75,9 @@ export default function EnhancedFooter() {
                 <Link href="/" className="text-gray-300 hover:text-mecg-dark-blue transition-colors">
                   Home
                 </Link>
+                <Link href="/about" className="text-gray-300 hover:text-mecg-dark-blue transition-colors">
+                  About
+                </Link>
                 <Link href="/team" className="text-gray-300 hover:text-mecg-dark-blue transition-colors">
                   Our Team
                 </Link>
@@ -119,10 +122,10 @@ export default function EnhancedFooter() {
                 <div className="flex items-center">
                   <Mail className="h-5 w-5 text-mecg-dark-blue mr-3 flex-shrink-0" />
                   <a
-                    href="mailto:info@MECGconsulting.org"
+                    href="mailto:mecg-board@umich.edu"
                     className="text-gray-300 hover:text-mecg-dark-blue transition-colors"
                   >
-                    MECG.board2025@umich.edu
+                    mecg-board@umich.edu
                   </a>
                 </div>
               </div>

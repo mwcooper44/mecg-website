@@ -165,44 +165,50 @@ export default function AboutPage() {
         }`}
       >
         <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto text-center">
-            <h2 className="text-2xl md:text-4xl font-bold text-mecg-dark-blue mb-4">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-2xl md:text-4xl font-bold text-mecg-dark-blue mb-4 text-center">
               Our History
             </h2>
-            <div className="w-40 h-1 bg-mecg-dark-blue mx-auto mb-4"></div>
+            <div className="w-40 h-1 bg-mecg-dark-blue mx-auto mb-6"></div>
             
             <Card className="bg-mecg-dark-blue text-white p-6 md:p-8 shadow-xl">
-              <CardContent className="space-y-3 md:space-y-4">
-                <p className="text-base md:text-lg leading-relaxed">
-                  The Michigan Engineering Consulting Group (MECG) was founded in 2023 by{" "}
-                  <strong>Jonathan Fay</strong> (Mechanical Engineering Class of 2026) and{" "}
-                  <strong>Aaryan Singh</strong> (Industrial and Operations Engineering Class of 2026). 
-                  The first cohort of members was welcomed during the Winter 2024 semester.
-                </p>
-                
-                <p className="text-base md:text-lg leading-relaxed">
-                  Our founders set out to create an inclusive environment where members can tailor their 
-                  experience based on their interests, whether that's technical or business-focused projects 
-                  and networking. MECG was founded on a{" "}
-                  <strong>"what you put in is what you get out"</strong>{" "}
-                  <strong>philosophy</strong>, emphasizing personal growth and meaningful work. 
-                  In a rapidly evolving technological world, there was a clear demand for a club that 
-                  combines both soft and hard skills.
-                </p>
+              <CardContent className="space-y-4 md:space-y-6">
+                <div className="flex flex-col lg:flex-row gap-6 lg:gap-8">
+                  <div className="flex-1 space-y-4">
+                    <p className="text-base md:text-lg leading-relaxed text-left">
+                      Michigan Engineering Consulting Group (MECG) was founded in 2023 by{" "}
+                      <strong>Jonathan Fay</strong> (Mechanical Engineering, Class of 2026) and{" "}
+                      <strong>Aaryan Singh</strong> (Industrial and Operations Engineering, Class of 2026) with the vision of creating a space where students could grow personally, professionally, and socially. What began as an idea between two students quickly took shape, and by Winter 2024, MECG welcomed its first cohort of members.
+                    </p>
+                    
+                    <p className="text-base md:text-lg leading-relaxed text-left">
+                      When MECG was founded, the University of Michigan lacked strong opportunities for non-business students to explore consulting. MECG filled that gap, offering students of all majors a chance to acquire business acumen, gain project experience, and collaborate <strong>regardless of their prior background or academic level</strong>.
+                    </p>
+                  </div>
 
-                {/* Founder Image */}
-                <div className="mt-4 md:mt-6 flex justify-center">
-                  <div className="relative">
-                    <div className="w-full max-w-sm md:w-96 lg:w-[600px] h-48 md:h-64 lg:h-[400px] rounded-lg overflow-hidden border-4 md:border-8 border-mecg-orange shadow-lg">
+                  {/* Founder Image - positioned to the right of first two paragraphs */}
+                  <div className="flex-shrink-0">
+                    <div className="w-full max-w-sm lg:w-80 xl:w-96 h-48 md:h-64 lg:h-80 rounded-lg overflow-hidden border-4 md:border-6 border-mecg-orange shadow-lg">
                       <Image
                         src="/images/Jon+AaryanFootball.png"
                         alt="MECG Founders Jonathan Fay and Aaryan Singh"
-                        width={600}
-                        height={400}
+                        width={400}
+                        height={320}
                         className="w-full h-full object-cover"
                       />
                     </div>
                   </div>
+                </div>
+
+                {/* Bottom two paragraphs that continue below the image */}
+                <div className="space-y-4">
+                  <p className="text-base md:text-lg leading-relaxed text-left">
+                    As the club expanded, so did the opportunities. Members began taking on technical and business-focused projects, connecting through coffee chats, building cross-disciplinary teams, and touring top firms. With each semester, MECG has evolved into <strong>more than just a consulting club</strong>, it has become a place where students can create their own paths while contributing to meaningful work and building a closer community.
+                  </p>
+
+                  <p className="text-base md:text-lg leading-relaxed text-left">
+                    Today, MECG reflects both the growth of its members and the rapid changes of the world around us. By meeting the growing demand to <strong>combine both hard and soft skills</strong>, MECG continues to prepare students to thrive in consulting and beyond, carrying forward the founding vision to cultivate students growth for a successful career.
+                  </p>
                 </div>
               </CardContent>
             </Card>
