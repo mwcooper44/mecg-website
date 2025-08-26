@@ -145,7 +145,7 @@ const teamMembers = {
     {
       name: "Allison Lukens",
       image: "/images/headshots/BA/AllisonL.webp",
-      linkedin: "https://www.linkedin.com/in/chrismunroe12/",
+      linkedin: "https://www.linkedin.com/in/-allison-lukens/",
       email: "cmunroe@umich.edu",
     },
     {
