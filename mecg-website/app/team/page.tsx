@@ -122,7 +122,7 @@ const teamMembers = {
     },
     {
       name: "Maya Menon",
-      image: "/images/headshots/BA/MayaM.webp",
+      image: "/images/headshots/BA/MayaM.png",
       linkedin: "https://www.linkedin.com/in/mayamenon28",
       email: "mayameno@umich.edu",
     },
