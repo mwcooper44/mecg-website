@@ -97,6 +97,12 @@ const teamMembers = {
   ],
   projectManagers: [
     {
+      name: "Daniel Rombaut",
+      image: "/images/headshots/BA/DanielR.webp",
+      linkedin: "https://www.linkedin.com/in/dromb",
+      email: "drombaut@umich.edu",
+    },
+    {
       name: "Erin Beiley",
       image: "/images/headshots/BA/ErinB.webp",
       linkedin: "https://www.linkedin.com/in/erin-beiley-392a14258",
@@ -172,12 +178,7 @@ const teamMembers = {
       linkedin: "https://www.linkedin.com/in/daniel-okoye-7a1229319",
       email: "dokoye@umich.edu",
     },
-    {
-      name: "Daniel Rombaut",
-      image: "/images/headshots/BA/DanielR.webp",
-      linkedin: "https://www.linkedin.com/in/dromb",
-      email: "drombaut@umich.edu",
-    },
+    
     {
       name: "Jandy Arias",
       image: "/images/headshots/BA/JandyA.webp",
