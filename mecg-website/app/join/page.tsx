@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import Image from "next/image"
+import { track } from '@vercel/analytics'
 
 // Event data with updated descriptions and details
 const timelineEvents = [
@@ -263,7 +264,10 @@ export default function JoinPage() {
                           {event.id === 3 && (
                             <button 
                               className="bg-mecg-orange hover:bg-mecg-orange/80 text-white font-medium px-3 md:px-4 py-2 rounded-lg transition-colors duration-200 text-sm md:text-base whitespace-nowrap"
-                              onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSf4s7Ym6syGEH9egGPvAq0bQLAJ1Tx1eUsuRI5oH9RFHkK1ww/closedform', '_blank')}
+                              onClick={() => {
+                                track('apply_now_clicked', { location: 'join_page_timeline' });
+                                window.open('https://docs.google.com/forms/d/e/1FAIpQLSf4s7Ym6syGEH9egGPvAq0bQLAJ1Tx1eUsuRI5oH9RFHkK1ww/closedform', '_blank');
+                              }}
                             >
                               Apply Now!
                             </button>

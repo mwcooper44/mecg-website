@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
+import { track } from '@vercel/analytics'
 
 const navItems = [
   { name: "Home", href: "/" },
@@ -62,6 +63,11 @@ export default function Navbar() {
               href={item.href}
               target={item.isExternal ? "_blank" : undefined}
               rel={item.isExternal ? "noopener noreferrer" : undefined}
+              onClick={() => {
+                if (item.name === "Apply Now") {
+                  track('apply_now_clicked', { location: 'navbar_desktop' });
+                }
+              }}
               className={cn(
                 item.isCallToAction
                   ? "bg-mecg-orange text-white px-4 py-2 rounded-md font-bold hover:bg-orange-400 transition-colors text-base"
@@ -93,6 +99,12 @@ export default function Navbar() {
                 href={item.href}
                 target={item.isExternal ? "_blank" : undefined}
                 rel={item.isExternal ? "noopener noreferrer" : undefined}
+                onClick={() => {
+                  if (item.name === "Apply Now") {
+                    track('apply_now_clicked', { location: 'navbar_mobile' });
+                  }
+                  setMobileMenuOpen(false);
+                }}
                 className={cn(
                   item.isCallToAction
                     ? "bg-mecg-orange text-white px-4 py-2 rounded-md font-bold hover:bg-orange-400 transition-colors text-center"
@@ -103,7 +115,6 @@ export default function Navbar() {
                       ? "text-white"
                       : "",
                 )}
-                onClick={() => setMobileMenuOpen(false)}
               >
                 {item.name}
               </Link>

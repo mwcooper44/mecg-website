@@ -2,6 +2,8 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Inter, Dancing_Script, Lora } from "next/font/google"
 import localFont from "next/font/local"
+import { Analytics } from '@vercel/analytics/react'
+import { track } from '@vercel/analytics'
 
 import "./globals.css"
 import Navbar from "@/components/navbar"
@@ -66,6 +68,7 @@ export default function RootLayout({
             <EnhancedFooter />
           </div>
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   )

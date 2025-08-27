@@ -3,6 +3,7 @@
 import Image from "next/image"
 import { Card, CardContent } from "@/components/ui/card"
 import { useState, useEffect } from "react"
+import { track } from '@vercel/analytics'
 
 export default function AboutPage() {
   const [flippedCards, setFlippedCards] = useState<number[]>([])
@@ -233,6 +234,7 @@ export default function AboutPage() {
           </p>
           <a
             href="/join"
+            onClick={() => track('apply_now_clicked', { location: 'about_page_cta' })}
             className="inline-block bg-white text-mecg-dark-blue px-6 md:px-8 py-3 md:py-4 rounded-lg font-bold text-base md:text-lg hover:bg-gray-100 transition-colors shadow-lg"
           >
             Apply Now
