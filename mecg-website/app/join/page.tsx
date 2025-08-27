@@ -606,6 +606,25 @@ export default function JoinPage() {
                   </div>
                     )}
                   </div>
+
+                  {/* FAQ Item 6 */}
+                  <div className="bg-white/80 backdrop-blur-sm rounded-xl p-3 lg:p-4 shadow-lg border border-gray-200">
+                    <div className="flex items-center justify-between cursor-pointer" onClick={() => toggleFAQ(6)}>
+                      <h3 className="text-base lg:text-lg font-semibold text-mecg-dark-blue">
+                        What kind of professional development does MECG offer?
+                      </h3>
+                      <svg className={`w-4 h-4 lg:w-5 lg:h-5 text-mecg-dark-blue transform transition-transform duration-200 ${openFAQ === 6 ? 'rotate-180' : 'rotate-0'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </div>
+                    {openFAQ === 6 && (
+                      <div className="mt-3 pt-3 border-t border-gray-200">
+                        <p className="text-sm lg:text-base text-mecg-dark-blue leading-relaxed">
+                          At MECG, professional development means more than just learning consulting skills. We support members with resume building, interview prep, and career readiness tools that are useful for any job or internship, no matter what field you pursue.
+                        </p>
+                  </div>
+                    )}
+                  </div>
                 </div>
               </div>
             </div>
