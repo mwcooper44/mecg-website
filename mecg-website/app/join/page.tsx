@@ -277,7 +277,7 @@ export default function JoinPage() {
                           {event.id === 5 && (
                             <button 
                               className="bg-mecg-dark-blue hover:bg-mecg-dark-blue/80 text-white font-medium px-3 md:px-4 py-2 rounded-lg transition-colors duration-200 text-sm md:text-base whitespace-nowrap"
-                              onClick={() => window.open('ZOOM_LINK_HERE', '_blank')}
+                              onClick={() => window.open('https://umich.zoom.us/j/92131251199#success', '_blank')}
                             >
                               Join Zoom
                             </button>
