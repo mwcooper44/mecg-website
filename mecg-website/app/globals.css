@@ -27,6 +27,15 @@
   font-display: swap;
 }
 
+/* Import local Sacrifice font */
+@font-face {
+  font-family: 'Sacrifice';
+  src: url('/fonts/sacrifice-font/SacrificeDemo-8Ox1B.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 body {
   font-family: 'Glacial Indifference', sans-serif;
 }
@@ -92,8 +101,8 @@ body {
     font-family: 'Glacial Indifference', sans-serif;
   }
   .font-signature {
-    font-family: var(--font-signature);
-    font-weight: 600;
+    font-family: var(--font-sacrifice);
+    font-weight: 400;
     letter-spacing: -0.5px;
     transform: rotate(-2deg);
     display: inline-block;

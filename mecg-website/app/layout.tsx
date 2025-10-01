@@ -1,6 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Inter, Dancing_Script, Lora } from "next/font/google"
+import { Inter, Dancing_Script } from "next/font/google"
 import localFont from "next/font/local"
 import { Analytics } from '@vercel/analytics/react'
 import { track } from '@vercel/analytics'
@@ -32,15 +32,23 @@ const glacialIndifference = localFont({
   variable: '--font-glacial',
 })
 
-// Load Inter, Dancing Script, and Lora fonts
+// Load Sacrifice as local font
+const sacrifice = localFont({
+  src: [
+    {
+      path: '../public/fonts/sacrifice-font/SacrificeDemo-8Ox1B.ttf',
+      weight: '400',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-sacrifice',
+})
+
+// Load Inter and Dancing Script fonts
 const inter = Inter({ subsets: ["latin"] })
 const dancingScript = Dancing_Script({
   subsets: ["latin"],
   variable: "--font-signature",
-})
-const lora = Lora({
-  subsets: ["latin"],
-  variable: "--font-lora",
 })
 
 export const metadata: Metadata = {
@@ -59,7 +67,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${glacialIndifference.className} ${dancingScript.variable} ${lora.variable} antialiased`}
+        className={`${glacialIndifference.className} ${sacrifice.variable} ${dancingScript.variable} antialiased`}
       >
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
           <div className="flex min-h-screen flex-col">

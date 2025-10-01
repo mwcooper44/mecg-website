@@ -14,12 +14,12 @@ export default function PresidentsWelcome({ className }: PresidentsWelcomeProps)
       <div className="container px-4 md:px-6">
         <div className="max-w-7xl mx-auto">
           {/* Title */}
-          <div className="text-right mb-8 lg:ml-16 lg:pl-12 mr-44">
-            <h2 className="text-5xl md:text-6xl font-bold tracking-tighter text-mecg-dark-blue font-signature">President&apos;s Welcome</h2>
+          <div className="text-right mb-12 lg:ml-16 lg:pl-12 mr-44">
+            <h2 className="text-5xl md:text-6xl font-bold tracking-wide text-mecg-dark-blue font-signature">President&apos;s Welcome</h2>
           </div>
 
           {/* Main Content Container */}
-          <div className="relative flex flex-col lg:flex-row gap-8 lg:gap-12 items-center">
+          <div className="relative flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
             {/* President's Image - Positioned to overlap */}
             <div className="lg:w-1/3 flex justify-center lg:justify-start relative z-20">
               <div className="relative -ml-4 lg:-ml-0">
@@ -52,7 +52,7 @@ export default function PresidentsWelcome({ className }: PresidentsWelcomeProps)
                   />
                 </div>
 
-                <div className="relative z-10 space-y-6">
+                <div className="relative z-10 space-y-8">
                   <p className="text-md leading-relaxed">
                     Welcome to the Michigan Engineering Consulting Group! I&apos;m thrilled to introduce you to our dynamic community of passionate students and professionals.
                   </p>
@@ -73,13 +73,14 @@ export default function PresidentsWelcome({ className }: PresidentsWelcomeProps)
                     I invite you to explore our website, attend our events, and connect with our team. Whether you&apos;re a potential client looking for strategic guidance or a student eager to join our community, we&apos;d love to hear from you.
                   </p>
                 
-
-                  {/* Signature */}
+                  <div className="pt-4">
+                    {/* Signature */}
                     <p className="text-md font-medium">
                       Best,<br />
                       <span className="text-3xl font-signature">Jules Hwang</span><br />
                       President of MECG, 2025
                     </p>
+                  </div>
                 </div>
               </div>
             </div>
