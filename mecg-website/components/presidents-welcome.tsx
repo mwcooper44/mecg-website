@@ -23,13 +23,13 @@ export default function PresidentsWelcome({ className }: PresidentsWelcomeProps)
             {/* President's Image - Positioned to overlap */}
             <div className="lg:w-1/3 flex justify-center lg:justify-start relative z-20">
               <div className="relative -ml-4 lg:-ml-0">
-                <div className="w-80 h-96 rounded-2xl bg-orange-300 p-3 shadow-lg">
+                <div className="w-96 h-[29rem] rounded-2xl bg-orange-300 p-3 shadow-lg">
                   <div className="w-full h-full rounded-xl overflow-hidden">
                     <Image
-                      src="/images/presidentswelcome/jules.png"
-                      alt="Jules Hwang, President of MECG"
-                      width={320}
-                      height={384}
+                      src="/images/presidentswelcome/annie-callam.png"
+                      alt="Annie Callam, President of MECG"
+                      width={384}
+                      height={464}
                       className="w-full h-full object-cover object-center"
                       priority
                     />
@@ -77,8 +77,8 @@ export default function PresidentsWelcome({ className }: PresidentsWelcomeProps)
                     {/* Signature */}
                     <p className="text-md font-medium">
                       Best,<br />
-                      <span className="text-3xl font-signature">Jules Hwang</span><br />
-                      President of MECG, 2025
+                      <span className="text-3xl font-signature">Annie Callam</span><br />
+                      President of MECG, 2026
                     </p>
                   </div>
                 </div>
