@@ -197,12 +197,12 @@ export default function JoinPage() {
             {/* Call to Action Section */}
             <div className="text-center mb-20 pt-20">
               <h2 className="text-3xl md:text-5xl font-bold mb-6 text-mecg-orange">
-                Apply to MECG this Fall!
+                Apply to MECG this Winter!
               </h2>
 
               <Button asChild className="bg-mecg-dark-blue hover:bg-mecg-orange text-white px-8 py-4 text-lg font-semibold rounded-lg transition-colors duration-300">
-                <Link href="https://forms.gle/S4FTRZU5SnGcoyE47" target="_blank" rel="noopener noreferrer">
-                  Fall 2025 Interest Form
+                <Link href="https://docs.google.com/forms/d/e/1FAIpQLSfl5DsinBYuXXCRe3C1dmurOyTKD39Tny6amT-_UPNt87cQSg/viewform?usp=header" target="_blank" rel="noopener noreferrer">
+                  Winter 2026 Interest Form
                 </Link>
               </Button>
             </div>
