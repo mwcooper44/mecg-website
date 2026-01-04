@@ -14,34 +14,36 @@ import { ThemeProvider } from "@/components/theme-provider"
 const glacialIndifference = localFont({
   src: [
     {
-      path: '../public/fonts/GlacialIndifference-Regular.otf',
+      path: '../fonts/GlacialIndifference-Regular.otf',
       weight: '400',
       style: 'normal',
     },
     {
-      path: '../public/fonts/GlacialIndifference-Bold.otf',
+      path: '../fonts/GlacialIndifference-Bold.otf',
       weight: '700',
       style: 'normal',
     },
     {
-      path: '../public/fonts/GlacialIndifference-Italic.otf',
+      path: '../fonts/GlacialIndifference-Italic.otf',
       weight: '400',
       style: 'italic',
     },
   ],
   variable: '--font-glacial',
+  display: 'swap',
 })
 
 // Load Sacrifice as local font
 const sacrifice = localFont({
   src: [
     {
-      path: '../public/fonts/sacrifice-font/SacrificeDemo-8Ox1B.ttf',
+      path: '../fonts/sacrifice-font/SacrificeDemo-8Ox1B.ttf',
       weight: '400',
       style: 'normal',
     },
   ],
   variable: '--font-sacrifice',
+  display: 'swap',
 })
 
 // Load Inter and Dancing Script fonts
