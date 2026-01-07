@@ -13,87 +13,77 @@ import PageHeader from "@/components/page-header"
 const teamMembers = {
   eboard: [
     {
-      name: "Jules Hwang",
-      role: "President",
-      image: "/images/headshots/Board/JulesH.webp",
-      linkedin: "https://www.linkedin.com/in/juliannehwang",
-      email: "julhwang@umich.edu",
-    },
-    {
-      name: "Kyle Cornell",
-      role: "Vice President",
-      image: "/images/headshots/Board/KyleC.webp",
-      linkedin: "https://www.linkedin.com/in/kylecornell04",
-      email: "kylcorn@umich.edu",
-    },
-    {
-      name: "Katie Slazinski",
-      role: "Director of Professional Development",
-      image: "/images/headshots/Board/KatieS.webp",
-      linkedin: "https://www.linkedin.com/in/katherine-slazinski-96b902270",
-      email: "kslaz@umich.edu",
-    },
-
-    {
-      name: "Maxwell Cooper",
-      role: "Director of Technical Consulting",
-      image: "/images/headshots/Board/MaxwellC.webp",
-      linkedin: "https://www.linkedin.com/in/cooper-maxwell",
-      email: "mwcooper@umich.edu",
-    },
-
-    {
-      name: "Michael Young",
-      role: "Director of Consulting",
-      image: "/images/headshots/Board/MichaelY.webp",
-      linkedin: "http://www.linkedin.com/in/youngim",
-      email: "youngim@umich.edu",
-    },
-
-    {
-      name: "Sydney Silva",
-      role: "Director of Operations",
-      image: "/images/headshots/Board/SydneyS.webp",
-      linkedin: "https://www.linkedin.com/in/sydney-silva-145405246/",
-      email: "sydsilva@umich.edu",
-    },
-    {
-      name: "James Oosterhouse",
-      role: "Director of Finance",
-      image: "/images/headshots/Board/JamesO.webp",
-      linkedin: "https://www.linkedin.com/in/james-oosterhouse ",
-      email: "jamesoo@umich.edu",
-    },
-    {
-      name: "David Ebosele",
-      role: "Director of Recruitment and Membership",
-      image: "/images/headshots/Board/DavidE.webp",
-      linkedin: "https://www.linkedin.com/in/david-ebosele-3813aa261/",
-      email: "debosele@umich.edu",
-    },
-    {
       name: "Annie Callam",
-      role: "Marketing Chair",
+      role: "President",
       image: "/images/headshots/Board/AnnieC.webp",
-      linkedin: "https://www.linkedin.com/in/annie-callam-413bb5274/",
+      linkedin: "https://www.linkedin.com/in/ana-callam-413bb5274/",
       email: "aicallam@umich.edu",
     },
     {
-      name: "Daniella Ranario",
-      role: "DEI Chair",
-      image: "/images/headshots/Board/DaniellaR.webp",
-      linkedin: "https://www.linkedin.com/in/daniella-ranario/",
-      email: "dranario@umich.edu",
+      name: "Nandini Tatiwala",
+      role: "VP External",
+      image: "/images/headshots/Board/NandiniT.webp",
+      linkedin: "https://www.linkedin.com/in/nandini-tatiwala/",
+      email: "tnandini@umich.edu",
     },
     {
-      name: "Abigail Osterhart",
-      role: "Social Chair",
-      image: "/images/headshots/Board/AbigailO.webp",
+      name: "Abby Osterhart",
+      role: "VP Internal",
+      image: "/images/headshots/Board/AbbyO.webp",
       linkedin: "https://www.linkedin.com/in/abigailosterhart/",
       email: "aoste@umich.edu",
     },
-    
-
+    {
+      name: "Jandy Arias",
+      role: "VP Recruitment",
+      image: "/images/headshots/Board/JandyA.webp",
+      linkedin: "https://www.linkedin.com/in/jandy-arias/",
+      email: "jandyari@umich.edu",
+    },
+    {
+      name: "Blake Stark",
+      role: "VP Consulting",
+      image: "/images/headshots/Board/BlakeS.webp",
+      linkedin: "https://www.linkedin.com/in/blakeastark",
+      email: "starkb@umich.edu",
+    },
+    {
+      name: "Sumedha Katti",
+      role: "VP Consulting",
+      image: "/images/headshots/Board/SumedhaK.webp",
+      linkedin: "https://www.linkedin.com/in/sumedha-katti/",
+      email: "skatti@umich.edu",
+    },
+    {
+      name: "Maya Menon",
+      role: "VP Education",
+      image: "/images/headshots/Board/MayaM.webp",
+      linkedin: "https://www.linkedin.com/in/mayamenon28",
+      email: "mayameno@umich.edu",
+      // Move visible window lower on the image so her face appears higher (crop more from the top)
+      imagePosition: "center 70%",
+    },
+    {
+      name: "Luciano del Carpio",
+      role: "VP Education",
+      image: "/images/headshots/Board/LucianoD.webp",
+      linkedin: "https://www.linkedin.com/in/luciano-del-carpio/",
+      email: "ldelcarp@umich.edu",
+    },
+    {
+      name: "Selena Cooper",
+      role: "VP Finance",
+      image: "/images/headshots/Board/SelenaC.webp",
+      linkedin: "https://www.linkedin.com/in/selena-cooper/",
+      email: "selenaco@umich.edu",
+    },
+    {
+      name: "Angela Yang",
+      role: "VP Marketing",
+      image: "/images/headshots/Board/AngelaY.webp",
+      linkedin: "https://www.linkedin.com/in/anngelayang/",
+      email: "angely@umich.edu",
+    },
   ],
   projectManagers: [
     {
@@ -418,6 +408,17 @@ export default function TeamPage() {
     setIsPageVisible(true)
   }, [])
 
+  // Preload executive board images for faster loading
+  useEffect(() => {
+    teamMembers.eboard.forEach((member) => {
+      const link = document.createElement('link')
+      link.rel = 'preload'
+      link.as = 'image'
+      link.href = member.image
+      document.head.appendChild(link)
+    })
+  }, [])
+
   // Create a combined array of all members for the "View All" option
   const allMembers = [
     ...teamMembers.eboard.map(member => ({ 
@@ -519,7 +520,12 @@ export default function TeamPage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-2 gap-y-6 justify-items-center">
             {getCurrentMembers().map((member, index) => (
-              <TeamMemberCard key={index} member={member} index={index} />
+              <TeamMemberCard 
+                key={index} 
+                member={member} 
+                index={index} 
+                isEboard={currentRole === "eboard"}
+              />
             ))}
           </div>
         </div>
@@ -535,12 +541,24 @@ export default function TeamPage() {
 }
 
 // Separate component for team member card to handle hooks properly
-function TeamMemberCard({ member, index }: { member: any; index: number }) {
+function TeamMemberCard({ member, index, isEboard }: { member: any; index: number; isEboard?: boolean }) {
+  const [hasBeenInView, setHasBeenInView] = useState(false)
   const [cardRef, cardInView] = useInView({
-    triggerOnce: true,
+    triggerOnce: false,
     threshold: 0.1,
     rootMargin: "50px",
   })
+
+  // Track if image has been loaded once
+  useEffect(() => {
+    if (cardInView && !hasBeenInView) {
+      setHasBeenInView(true)
+    }
+  }, [cardInView, hasBeenInView])
+
+  // Prioritize all eboard images when viewing eboard section, otherwise prioritize first 3
+  // Once an image has been in view, always load it eagerly to prevent reloading
+  const shouldPriority = isEboard ? true : index < 3 || hasBeenInView
 
   return (
     <Card 
@@ -561,11 +579,13 @@ function TeamMemberCard({ member, index }: { member: any; index: number }) {
           src={member.image || "/placeholder.svg"}
           alt={member.name}
           fill
-          className="object-cover object-top rounded-t-md"
-          priority={index < 3}
-          quality={60}
-          sizes="320px"
-          loading={index < 3 ? "eager" : "lazy"}
+          className="object-cover rounded-t-md"
+          style={{ objectPosition: (member as any).imagePosition || "center top" }}
+          priority={shouldPriority}
+          quality={isEboard ? 75 : 60}
+          sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
+          loading={shouldPriority ? "eager" : "lazy"}
+          fetchPriority={shouldPriority ? "high" : "auto"}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-end p-4">
           <div className="flex gap-2">
