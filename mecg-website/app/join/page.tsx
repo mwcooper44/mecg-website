@@ -10,27 +10,27 @@ import { track } from '@vercel/analytics'
 const timelineEvents = [
   {
     id: 1,
-    title: "Festifall",
+    title: "Winterfest",
     icon: "/images/join/1.png",
-    date: "Wednesday, August 27th",
-    time: "7:00 - 8:30 PM",
-    location: "The Diag",
-    description: "Come learn about MECG and other clubs on campus!"
+    date: "Tuesday, January 13th",
+    time: "4:00 - 7:00 PM",
+    location: "Pendleton (Table 16)",
+    description: "Come learn more about MECG and what we do!"
   },
           {
           id: 2,
     title: "Mass Meeting",
           icon: "/images/join/3.png",
-          date: "Wednesday, September 4th",
-          time: "7:00 - 8:00 PM",
-          location: "Michigan League (Hussey room)",
+          date: "Friday, January 16th",
+          time: "6:00 - 7:00 PM",
+          location: "CCCB B0420",
           description: "Learn about MECG's mission, community, and opportunities for members."
         },
         {
           id: 3,
           title: "Application Opens",
           icon: "/images/join/2.png",
-          date: "Wednesday, September 4th",
+          date: "Friday, January 16th",
           time: "8:00 PM",
           location: null,
           description: "Explain why you would like to be a part of MECG."
@@ -39,52 +39,61 @@ const timelineEvents = [
     id: 4,
     title: "Career Panel",
     icon: "/images/join/4.png",
-    date: "Monday, September 8th",
+    date: "Tuesday, January 20th",
     time: "8:00 - 9:00 PM",
-    location: "Palmer Commons (Forum Hall room)",
+    location: "NUB 1528",
     description: "Hear about members' diverse career experiences."
   },
   {
     id: 5,
+    title: "Meet the Members",
+    icon: "/images/join/10.png",
+    date: "Thursday, January 22nd",
+    time: "6:00 - 7:30 PM",
+    location: "Verve Indoor Rooftop",
+    description: "Come stop by our social networking event and talk to our members, play games, and more!"
+  },
+  {
+    id: 6,
     title: "Office Hours",
     icon: "/images/join/5.png",
-    date: "Wednesday, September 10th",
-    time: "6:00 - 8:00 PM",
+    date: "Friday, January 23rd",
+    time: "4:00 - 6:00 PM",
     location: "Zoom",
     description: "Ask questions about the club, recruitment process, or application."
   },
   {
-    id: 6,
+    id: 7,
     title: "Application Closes",
     icon: "/images/join/6.png",
-    date: "Thursday, September 11th",
-    time: null,
+    date: "Saturday, January 24th",
+    time: "11:59 PM",
     location: null,
     description: "All applications must be submitted by this deadline."
   },
           {
-          id: 7,
+          id: 8,
           title: "Speed Dating",
           icon: "/images/join/7.png",
-          date: "Monday, September 15th",
+          date: "Tuesday, January 27th",
           time: null,
           location: null,
           description: "Speak to current members in a casual but fast-paced environment."
         },
         {
-          id: 8,
-          title: "Coffee Chats",
+          id: 9,
+          title: "Group Case Activity",
           icon: "/images/join/8.png",
-          date: "Tuesday, September 16th - Friday, September 19th",
+          date: "Thursday, January 29th",
           time: null,
           location: null,
-          description: "Get to know members and our club culture on a more personal level."
+          description: "Work with a team to solve a consulting problem."
         },
         {
-          id: 9,
+          id: 10,
           title: "Interviews",
           icon: "/images/join/9.png",
-          date: "Sunday, September 21st and Monday, September 22nd",
+          date: "Monday, February 2nd & Tuesday, February 3rd",
           time: null,
           location: null,
           description: "Showcase your skills, interests, and alignment with MECG's mission and activities."
@@ -213,7 +222,7 @@ export default function JoinPage() {
             {/* Main Timeline Header - Centered */}
             <div className="mb-12 text-center animate-fade-in-delay">
               <h2 className="text-2xl md:text-4xl font-bold text-mecg-dark-blue mb-4">
-                Fall 2025 Recruitment Timeline
+                Winter 2026 Recruitment Timeline
               </h2>
               <div className="w-40 h-1 bg-mecg-dark-blue mx-auto"></div>
             </div>
@@ -274,7 +283,7 @@ export default function JoinPage() {
                           )}
                           
                           {/* Zoom button for Office Hours event */}
-                          {event.id === 5 && (
+                          {event.id === 6 && (
                             <button 
                               className="bg-mecg-dark-blue hover:bg-mecg-dark-blue/80 text-white font-medium px-3 md:px-4 py-2 rounded-lg transition-colors duration-200 text-sm md:text-base whitespace-nowrap"
                               onClick={() => window.open('https://umich.zoom.us/j/92131251199#success', '_blank')}
@@ -284,7 +293,7 @@ export default function JoinPage() {
                           )}
                           
                           {/* Google Calendar button for other events */}
-                          {![3, 5, 7, 8, 9].includes(event.id) && (
+                          {![3, 6, 8, 9, 10].includes(event.id) && (
                             <button 
                               className="bg-mecg-dark-blue hover:bg-mecg-dark-blue/80 text-white font-medium px-3 md:px-4 py-2 rounded-lg transition-colors duration-200 text-sm md:text-base whitespace-nowrap"
                               onClick={() => {
@@ -296,8 +305,17 @@ export default function JoinPage() {
                                 
                                 // Format date for Google Calendar (convert to YYYYMMDD format)
                                 const formatDateForGoogle = (dateStr: string): string => {
-                                  // Hardcode the dates for Fall 2025 to avoid parsing issues
+                                  // Hardcode the dates for Winter 2026 to avoid parsing issues
                                   const dateMap: { [key: string]: string } = {
+                                    'Tuesday, January 13th': '20260113',
+                                    'Friday, January 16th': '20260116',
+                                    'Tuesday, January 20th': '20260120',
+                                    'Thursday, January 22nd': '20260122',
+                                    'Friday, January 23rd': '20260123',
+                                    'Saturday, January 24th': '20260124',
+                                    'Tuesday, January 27th': '20260127',
+                                    'Thursday, January 29th': '20260129',
+                                    'Monday, February 2nd & Tuesday, February 3rd': '20260202',
                                     'Wednesday, August 27th': '20250827',
                                     'Wednesday, September 4th': '20250904',
                                     'Monday, September 8th': '20250908',
@@ -308,7 +326,7 @@ export default function JoinPage() {
                                     'Sunday, September 21st and Monday, September 22nd': '20250921'
                                   };
                                   
-                                  return dateMap[dateStr] || '20250901';
+                                  return dateMap[dateStr] || '20260113';
                                 };
                                 
                                 // Format time for Google Calendar
@@ -317,11 +335,17 @@ export default function JoinPage() {
                                   
                                   // Hardcode the times to avoid parsing issues
                                   const timeMap: { [key: string]: string } = {
+                                    '4:00 - 6:00 PM': '1600/1800',
+                                    '4:00 - 7:00 PM': '1600/1900',
+                                    '6:00 - 7:00 PM': '1800/1900',
+                                    '6:00 - 7:30 PM': '1800/1930',
+                                    '6:00 - 9:00 PM': '1800/2100',
                                     '7:00 - 8:30 PM': '1900/2100',
                                     '7:00 - 8:00 PM': '1900/2000',
                                     '8:00 PM': '2000/2000',
                                     '8:00 - 9:00 PM': '2000/2100',
-                                    '6:00 - 8:00 PM': '1800/2000'
+                                    '6:00 - 8:00 PM': '1800/2000',
+                                    '11:59 PM': '2359/2359'
                                   };
                                   
                                   return timeMap[timeStr] || '';
@@ -333,10 +357,20 @@ export default function JoinPage() {
                                   
                                   if (location.includes('Michigan League')) {
                                     return '911 N University Ave, Ann Arbor, MI 48109';
+                                  } else if (location.includes('Michigan Union')) {
+                                    return '530 S State St, Ann Arbor, MI 48109';
                                   } else if (location.includes('Palmer Commons')) {
                                     return '100 Washtenaw Ave, Ann Arbor, MI 48109';
                                   } else if (location === 'The Diag') {
                                     return 'The Diag, University of Michigan, Ann Arbor, MI 48109';
+                                  } else if (location.includes('Pendleton')) {
+                                    return 'Pendleton Room, University of Michigan, Ann Arbor, MI 48109';
+                                  } else if (location.includes('CCCB')) {
+                                    return 'CCCB, University of Michigan, Ann Arbor, MI 48109';
+                                  } else if (location.includes('NUB')) {
+                                    return 'NUB, University of Michigan, Ann Arbor, MI 48109';
+                                  } else if (location.includes('Verve')) {
+                                    return 'Verve Indoor Rooftop, Ann Arbor, MI';
                                   } else if (location === 'Zoom') {
                                     return 'Zoom Meeting';
                                   }
@@ -347,8 +381,22 @@ export default function JoinPage() {
                                 const buildDescription = (description: string, location: string): string => {
                                   let desc = description;
                                   
-                                  if (location && (location.includes('Michigan League') || location.includes('Palmer Commons'))) {
+                                  if (location && (location.includes('Michigan League') || location.includes('Palmer Commons') || location.includes('Pendleton') || location.includes('Michigan Union'))) {
                                     const roomMatch = location.match(/\((.*?)\)/);
+                                    if (roomMatch) {
+                                      const room = roomMatch[1];
+                                      desc += `\n\n${location.includes('Pendleton') ? 'Table' : 'Room'}: ${room}`;
+                                    }
+                                  } else if (location && location.includes('CCCB')) {
+                                    // Extract room number from CCCB location (e.g., "CCCB B0420")
+                                    const roomMatch = location.match(/CCCB\s+(.+)/);
+                                    if (roomMatch) {
+                                      const room = roomMatch[1];
+                                      desc += `\n\nRoom: ${room}`;
+                                    }
+                                  } else if (location && location.includes('NUB')) {
+                                    // Extract room number from NUB location (e.g., "NUB 1528")
+                                    const roomMatch = location.match(/NUB\s+(.+)/);
                                     if (roomMatch) {
                                       const room = roomMatch[1];
                                       desc += `\n\nRoom: ${room}`;
@@ -603,7 +651,7 @@ export default function JoinPage() {
                     {openFAQ === 5 && (
                       <div className="mt-3 pt-3 border-t border-gray-200">
                         <p className="text-sm lg:text-base text-mecg-dark-blue leading-relaxed">
-                          Recruitment begins with open rush events such as our mass meeting, career panel, and office hours, where you can meet members and learn about MECG. Selected applicants are invited to closed rush, which includes: coffee chats, speed-dating, and interviews.
+                          Recruitment begins with open rush events such as our mass meeting, career panel, meet the members, and office hours, where you can talk with our members and learn more about MECG. Selected applicants are invited to closed rush, which includes: speed-dating, a group case activity, and interviews.
                           <br /><br />
                           Throughout the process, we look for candidates who show genuine interest, consistency, and engagement.
                         </p>
