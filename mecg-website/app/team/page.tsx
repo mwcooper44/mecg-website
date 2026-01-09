@@ -117,22 +117,10 @@ const teamMembers = {
       email: "velascok@umich.edu",
     },
     {
-      name: "Maya Menon",
-      image: "/images/headshots/BA/MayaM.png",
-      linkedin: "https://www.linkedin.com/in/mayamenon28",
-      email: "mayameno@umich.edu",
-    },
-    {
       name: "Max Winnick",
       image: "/images/headshots/BAL/MaxW.webp",
       linkedin: "https://www.linkedin.com/in/maxwinnick",
       email: "winnickm@umich.edu",
-    },
-    {
-      name: "Nandini Tatiwala",
-      image: "/images/headshots/BAL/NandiniT.webp",
-      linkedin: "https://www.linkedin.com/in/nandini-tatiwala/",
-      email: "tnandini@umich.edu",
     },
     
   ],
@@ -140,15 +128,9 @@ const teamMembers = {
     
     {
       name: "Allison Lukens",
-      image: "/images/headshots/BA/AllisonL.webp",
+      image: "/images/headshots/VIEW ALL/AllisonL.webp",
       linkedin: "https://www.linkedin.com/in/-allison-lukens/",
       email: "cmunroe@umich.edu",
-    },
-    {
-      name: "Angela Yang",
-      image: "/images/headshots/BA/AngelaY.webp",
-      linkedin: "https://www.linkedin.com/in/angela-yang-a92b9b27a/",
-      email: "angely@umich.edu",
     },
     {
       name: "Bhumi Kumar",
@@ -168,16 +150,9 @@ const teamMembers = {
       linkedin: "https://www.linkedin.com/in/daniel-okoye-7a1229319",
       email: "dokoye@umich.edu",
     },
-    
     {
-      name: "Jandy Arias",
-      image: "/images/headshots/BA/JandyA.webp",
-      linkedin: "http://www.linkedin.com/in/jandy-arias-90bb09264",
-      email: "jandyari@umich.edu",
-    },
-    {
-      name: "Jed Roseman",
-      image: "/images/headshots/BA/JedR.webp",
+      name: "Jedidiah Roseman",
+      image: "/images/headshots/VIEW ALL/JedidiahR.webp",
       linkedin: "https://www.linkedin.com/in/jedidiah-roseman/",
       email: "jedrose@umich.edu",
     },   
@@ -205,33 +180,128 @@ const teamMembers = {
   ],
   businessAnalysts: [    
     {
+      name: "Abby Cho",
+      image: "/images/headshots/VIEW ALL/AbbyC.webp",
+      linkedin: "",
+      email: "",
+    },
+    {
+      name: "Adam Benjamin",
+      image: "/images/headshots/VIEW ALL/AdamB.webp",
+      linkedin: "",
+      email: "",
+    },
+    {
+      name: "Aditya Muli",
+      image: "/images/headshots/VIEW ALL/AdityaM.webp",
+      linkedin: "",
+      email: "",
+    },
+    {
+      name: "Akhi Kanmanthreddy",
+      image: "/images/headshots/VIEW ALL/AkhiK.webp",
+      linkedin: "",
+      email: "",
+    },
+    {
+      name: "Asha Joliet",
+      image: "/images/headshots/VIEW ALL/AshaJ.webp",
+      linkedin: "",
+      email: "",
+    },
+    {
       name: "Avery Bakes",
       image: "/images/headshots/BA/AveryB.webp",
       linkedin: "https://www.linkedin.com/in/avery-bakes-53994a309 ",
       email: "ajbakes@umich.edu",
     },
     {
-      name: "David Jing",
-      image: "/images/headshots/BAL/DavidJ.webp",
-      linkedin: "https://www.linkedin.com/in/davidsjing/",
-      email: "dsjing@umich.edu",
+      name: "Ayaan Vaswani",
+      image: "/images/headshots/VIEW ALL/AyaanV.webp",
+      linkedin: "",
+      email: "",
+    },
+    {
+      name: "Daniella Ranario",
+      image: "/images/headshots/VIEW ALL/DaniellaR.webp",
+      linkedin: "",
+      email: "",
+    },
+    {
+      name: "David Ebosele",
+      image: "/images/headshots/VIEW ALL/DavidE.webp",
+      linkedin: "",
+      email: "",
+    },
+    {
+      name: "Diego Leon",
+      image: "/images/headshots/VIEW ALL/DiegoL.webp",
+      linkedin: "",
+      email: "",
+    },
+    {
+      name: "Evie Price",
+      image: "/images/headshots/VIEW ALL/EvieP.webp",
+      linkedin: "",
+      email: "",
+    },
+    {
+      name: "Giada Garzelloni",
+      image: "/images/headshots/VIEW ALL/GiadaG.webp",
+      linkedin: "",
+      email: "",
     },
     {
       name: "Hayley Holder",
       image: "/images/headshots/BA/HayleyH.webp",
       linkedin: "https://www.linkedin.com/in/hayley-holder/",
       email: "hholder@umich.edu",
-    }, 
+    },
+    {
+      name: "Isabella Haindl",
+      image: "/images/headshots/VIEW ALL/IsabellaH.webp",
+      linkedin: "",
+      email: "",
+    },
+    {
+      name: "James Oosterhouse",
+      image: "/images/headshots/VIEW ALL/JamesO.webp",
+      linkedin: "",
+      email: "",
+    },
     {
       name: "Jihyo Yoo",
-      image: "/images/headshots/BA/JihyoY.webp",
+      image: "/images/headshots/VIEW ALL/JihyoY.webp",
       linkedin: "https://www.linkedin.com/in/jihyoyoo",
       email: "jihyoyoo@umich.edu",
     },
-    
     {
-      name: "Martynas (MJ) Jurciukonis",
-      image: "/images/headshots/BA/MartynasJ.webp",
+      name: "Jules Hwang",
+      image: "/images/headshots/VIEW ALL/JulesH.webp",
+      linkedin: "",
+      email: "",
+    },
+    {
+      name: "Katie Slazinski",
+      image: "/images/headshots/VIEW ALL/KatieS.webp",
+      linkedin: "",
+      email: "",
+    },
+    {
+      name: "Kyle Cornell",
+      image: "/images/headshots/VIEW ALL/KyleC.webp",
+      linkedin: "",
+      email: "",
+    },
+    {
+      name: "Luisa Bruno Ferré",
+      image: "/images/headshots/VIEW ALL/LuisaB.webp",
+      linkedin: "",
+      email: "",
+    },
+    {
+      name: "Martynas Jurciukonis",
+      image: "/images/headshots/VIEW ALL/MartynasJ.webp",
       linkedin: "https://www.linkedin.com/in/martynas-jurciukonis ",
       email: "mjurciuk@umich.edu",
     },
@@ -242,10 +312,22 @@ const teamMembers = {
       email: "maspratt@umich.edu",
     },
     {
+      name: "Maxwell Cooper",
+      image: "/images/headshots/VIEW ALL/MaxwellC.webp",
+      linkedin: "",
+      email: "",
+    },
+    {
       name: "Maxwell Franz",
       image: "/images/headshots/BA/MaxwellF.webp",
       linkedin: "https://linkedin.com/in/maxwell-franz-439188334",
       email: "maxfranz@umich.edu",
+    },
+    {
+      name: "Michael Young",
+      image: "/images/headshots/VIEW ALL/MichaelY.webp",
+      linkedin: "",
+      email: "",
     },
     {
       name: "Natalie Woolridge",
@@ -253,7 +335,18 @@ const teamMembers = {
       linkedin: "https://www.linkedin.com/in/natalie-wooldridge-1380a6329/",
       email: "nwool@umich.edu",
     },
-    
+    {
+      name: "Nitya Balasubramanian",
+      image: "/images/headshots/VIEW ALL/NityaB.webp",
+      linkedin: "",
+      email: "",
+    },
+    {
+      name: "Pranjal Mhetre",
+      image: "/images/headshots/VIEW ALL/PranjalM.webp",
+      linkedin: "",
+      email: "",
+    },
     {
       name: "Ryan Hoehler",
       image: "/images/headshots/BA/RyanH.webp",
@@ -261,31 +354,36 @@ const teamMembers = {
       email: "rhoehler@umich.edu",
     },
     {
+      name: "Sophie Cartwright",
+      image: "/images/headshots/VIEW ALL/SophieC.webp",
+      linkedin: "",
+      email: "",
+    },
+    {
       name: "Sumedha Katti",
       image: "/images/headshots/BAL/SumedhaK.webp",
       linkedin: "https://www.linkedin.com/in/sumedha-katti-874949240",
       email: "skatti@umich.edu",
     },
+    {
+      name: "Sydney Silva",
+      image: "/images/headshots/VIEW ALL/SydneyS.webp",
+      linkedin: "",
+      email: "",
+    },
+    {
+      name: "Thomas Schehl",
+      image: "/images/headshots/VIEW ALL/ThomasS.webp",
+      linkedin: "",
+      email: "",
+    },
   ],
   strategicLeads: [
-    {
-      name: "Aaryan Singh",
-      role: "Co-Founder",
-      image: "/images/headshots/SA/AaryanS.webp",
-      linkedin: "https://www.linkedin.com/in/aaryansingh2004/",
-      email: "arysingh@umich.edu",
-    },
     {
       name: "Anna Czech",
       image: "/images/headshots/BAL/AnnaC.webp",
       linkedin: " https://www.linkedin.com/in/anna-czech-738463320/ ",
       email: "arczech@umich.edu",
-    },
-    {
-      name: "Blake Stark",
-      image: "/images/headshots/PM/BlakeS.webp",
-      linkedin: "https://www.linkedin.com/in/blakeastark",
-      email: "starkb@umich.edu",
     },
     {
       name: "Caden Fedderson",
@@ -294,22 +392,10 @@ const teamMembers = {
       email: "cfedd@umich.edu",
     },
     {
-      name: "Claire Wattenbach",
-      image: "/images/headshots/BA/ClaireW.webp",
-      linkedin: "https://www.linkedin.com/in/clairewattenbach/",
-      email: "clmw@umich.edu",
-    },
-    {
       name: "Charlie Hartman",
       image: "/images/headshots/SA/CharlieH.webp",
       linkedin: "https://www.linkedin.com/in/charlie-hartman-",
       email: "hartch@umich.edu",
-    },
-    {
-      name: "Cierra Scott",
-      image: "/images/headshots/SA/CierraS.webp",
-      linkedin: "https://www.linkedin.com/in/cierra-scott-3ba924270/",
-      email: "scierra@umich.edu",
     },
     {
       name: "Elijah Frederick",
@@ -346,13 +432,6 @@ const teamMembers = {
       image: "/images/headshots/PM/JacobH.webp",
       linkedin: "https://www.linkedin.com/in/jacobchanks",
       email: "jclhanks@umich.edu",
-    },
-    {
-      name: "Jonathan Fay",
-      role: "Co-Founder",
-      image: "/images/headshots/SA/JonathanF.webp",
-      linkedin: "https://www.linkedin.com/in/jonathan-s-fay/",
-      email: "jonfay@umich.edu",
     },
     {
       name: "Jude Adwarka",
@@ -420,32 +499,84 @@ export default function TeamPage() {
   }, [])
 
   // Create a combined array of all members for the "View All" option
-  const allMembers = [
-    ...teamMembers.eboard.map(member => ({ 
-      ...member, 
+  // Deduplicate by name, keeping VP roles when there are duplicates
+  const allMembersMap = new Map()
+  
+  // First add eboard members (these have VP roles and take priority)
+  teamMembers.eboard.forEach(member => {
+    const memberWithImage = {
+      ...member,
       image: `/images/headshots/VIEW ALL/${member.name.split(' ')[0]}${member.name.split(' ')[1][0]}.webp`
-    })),
-    ...teamMembers.projectManagers.map(member => ({ 
-      ...member, 
-      category: 'Project Manager',
-      image: `/images/headshots/VIEW ALL/${member.name.split(' ')[0]}${member.name.split(' ')[1][0]}.webp`
-    })),
-    ...teamMembers.assistantProjectManagers.map(member => ({ 
-      ...member, 
-      category: 'Assistant Project Manager',
-      image: `/images/headshots/VIEW ALL/${member.name.split(' ')[0]}${member.name.split(' ')[1][0]}.webp`
-    })),
-    ...teamMembers.businessAnalysts.map(member => ({ 
-      ...member, 
-      category: 'Business Analyst',
-      image: `/images/headshots/VIEW ALL/${member.name.split(' ')[0]}${member.name.split(' ')[1][0]}.webp`
-    })),
-    ...teamMembers.strategicLeads.map(member => ({ 
-      ...member, 
-      category: 'Strategic Lead',
-      image: `/images/headshots/VIEW ALL/${member.name.split(' ')[0]}${member.name.split(' ')[1][0]}.webp`
-    }))
-  ].sort((a, b) => a.name.localeCompare(b.name))
+    }
+    allMembersMap.set(member.name, memberWithImage)
+  })
+  
+  // Then add other members, skipping if already exists (to preserve VP role)
+  teamMembers.projectManagers.forEach(member => {
+    if (!allMembersMap.has(member.name)) {
+      allMembersMap.set(member.name, {
+        ...member,
+        category: 'Project Manager',
+        image: `/images/headshots/VIEW ALL/${member.name.split(' ')[0]}${member.name.split(' ')[1][0]}.webp`
+      })
+    }
+  })
+  
+  teamMembers.assistantProjectManagers.forEach(member => {
+    if (!allMembersMap.has(member.name)) {
+      allMembersMap.set(member.name, {
+        ...member,
+        category: 'Assistant Project Manager',
+        image: `/images/headshots/VIEW ALL/${member.name.split(' ')[0]}${member.name.split(' ')[1][0]}.webp`
+      })
+    }
+  })
+  
+  teamMembers.businessAnalysts.forEach(member => {
+    if (!allMembersMap.has(member.name)) {
+      allMembersMap.set(member.name, {
+        ...member,
+        category: 'Analyst',
+        image: `/images/headshots/VIEW ALL/${member.name.split(' ')[0]}${member.name.split(' ')[1][0]}.webp`
+      })
+    }
+  })
+  
+  teamMembers.strategicLeads.forEach(member => {
+    if (!allMembersMap.has(member.name)) {
+      allMembersMap.set(member.name, {
+        ...member,
+        category: 'Strategic Lead',
+        image: `/images/headshots/VIEW ALL/${member.name.split(' ')[0]}${member.name.split(' ')[1][0]}.webp`
+      })
+    }
+  })
+  
+  // Add Co-Founders to View All section (without Strategic Lead category)
+  if (!allMembersMap.has("Aaryan Singh")) {
+    allMembersMap.set("Aaryan Singh", {
+      name: "Aaryan Singh",
+      role: "Co-Founder",
+      image: "/images/headshots/VIEW ALL/AaryanS.webp",
+      linkedin: "https://www.linkedin.com/in/aaryansingh2004/",
+      email: "arysingh@umich.edu",
+    })
+  }
+  if (!allMembersMap.has("Jonathan Fay")) {
+    allMembersMap.set("Jonathan Fay", {
+      name: "Jonathan Fay",
+      role: "Co-Founder",
+      image: "/images/headshots/VIEW ALL/JonathanF.webp",
+      linkedin: "https://www.linkedin.com/in/jonathan-s-fay/",
+      email: "jonfay@umich.edu",
+    })
+  }
+  
+  // Exclude specific members from View All section
+  const excludedNames = ["Cierra Scott", "Claire Wattenbach", "David Jing"]
+  const allMembers = Array.from(allMembersMap.values())
+    .filter(member => !excludedNames.includes(member.name))
+    .sort((a, b) => a.name.localeCompare(b.name))
 
   const getCurrentMembers = () => {
     if (currentRole === "all") {
