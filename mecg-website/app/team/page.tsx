@@ -504,9 +504,14 @@ export default function TeamPage() {
   
   // First add eboard members (these have VP roles and take priority)
   teamMembers.eboard.forEach(member => {
+    let imagePath = `/images/headshots/VIEW ALL/${member.name.split(' ')[0]}${member.name.split(' ')[1][0]}.webp`
+    // Special case for Luciano del Carpio - use LucianoD.webp
+    if (member.name === "Luciano del Carpio") {
+      imagePath = "/images/headshots/VIEW ALL/LucianoD.webp"
+    }
     const memberWithImage = {
       ...member,
-      image: `/images/headshots/VIEW ALL/${member.name.split(' ')[0]}${member.name.split(' ')[1][0]}.webp`
+      image: imagePath
     }
     allMembersMap.set(member.name, memberWithImage)
   })
