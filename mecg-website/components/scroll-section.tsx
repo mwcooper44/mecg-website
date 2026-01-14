@@ -12,7 +12,7 @@ export default function ScrollSection() {
   // Stats data
   const stats = [
     { icon: Users, value: "80+", label: "Members", href: "/team" },
-    { icon: Building, value: "20+", label: "Projects Completed", href: "/services" },
+    { icon: Building, value: "25+", label: "Projects Completed", href: "/services" },
     { icon: LibraryBig, value: "15+", label: "Different Majors", href: "/team" },
   ]
 

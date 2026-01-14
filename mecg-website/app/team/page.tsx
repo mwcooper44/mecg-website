@@ -331,7 +331,7 @@ const teamMembers = {
     },
     {
       name: "Natalie Woolridge",
-      image: "/images/headshots/BA/NateR.webp",
+      image: "/images/headshots/BA/NatalieW.webp",
       linkedin: "https://www.linkedin.com/in/natalie-wooldridge-1380a6329/",
       email: "nwool@umich.edu",
     },

@@ -439,6 +439,141 @@ const projects = [
               <div className="flex-shrink-0 text-center w-32 flex flex-col items-center">
                 <div className="w-32 h-32 mb-4 flex items-center justify-center">
                   <Image
+                    src="/images/client services/koops-automation.png"
+                    alt="Koops Automation"
+                    width={128}
+                    height={128}
+                    className="object-contain rounded-2xl max-w-[128px] max-h-[128px]"
+                  />
+                </div>
+                <h3 className="text-white font-semibold text-base leading-none">Koops Automation</h3>
+                <p className="text-mecg-blue-light text-sm">Fall 2025</p>
+              </div>
+
+              {/* Gear Separator */}
+              <div className="flex-shrink-0 flex items-start justify-center w-16 pt-12">
+                <Image
+                  src="/images/Gear.png"
+                  alt="Gear separator"
+                  width={32}
+                  height={32}
+                  className="w-8 h-8 object-contain"
+                  style={{ filter: 'brightness(0) saturate(100%) invert(48%) sepia(79%) saturate(2476%) hue-rotate(18deg) brightness(101%) contrast(101%)' }}
+                />
+              </div>
+
+              {/* Client 2 */}
+              <div className="flex-shrink-0 text-center w-32 flex flex-col items-center">
+                <div className="w-32 h-32 mb-4 flex items-center justify-center">
+                  <Image
+                    src="/images/client services/gypsy-spirits.png"
+                    alt="Gypsy Spirits"
+                    width={128}
+                    height={128}
+                    className="object-contain rounded-2xl max-w-[128px] max-h-[128px]"
+                  />
+                </div>
+                <h3 className="text-white font-semibold text-base leading-none">Gypsy Spirits</h3>
+                <p className="text-mecg-blue-light text-sm">Fall 2025</p>
+              </div>
+
+              {/* Gear Separator */}
+              <div className="flex-shrink-0 flex items-start justify-center w-16 pt-12">
+                <Image
+                  src="/images/Gear.png"
+                  alt="Gear separator"
+                  width={32}
+                  height={32}
+                  className="w-8 h-8 object-contain"
+                  style={{ filter: 'brightness(0) saturate(100%) invert(48%) sepia(79%) saturate(2476%) hue-rotate(18deg) brightness(101%) contrast(101%)' }}
+                />
+              </div>
+
+              {/* Client 3 */}
+              <div className="flex-shrink-0 text-center w-32 flex flex-col items-center">
+                <div className="w-32 h-32 mb-4 flex items-center justify-center">
+                  <Image
+                    src="/images/client services/here-here-market.png"
+                    alt="Here Here Market"
+                    width={128}
+                    height={128}
+                    className="object-contain rounded-2xl max-w-[128px] max-h-[128px]"
+                  />
+                </div>
+                <h3 className="text-white font-semibold text-base leading-none">Here Here Market</h3>
+                <p className="text-mecg-blue-light text-sm">Fall 2025</p>
+              </div>
+
+              {/* Gear Separator */}
+              <div className="flex-shrink-0 flex items-start justify-center w-16 pt-12">
+                <Image
+                  src="/images/Gear.png"
+                  alt="Gear separator"
+                  width={32}
+                  height={32}
+                  className="w-8 h-8 object-contain"
+                  style={{ filter: 'brightness(0) saturate(100%) invert(48%) sepia(79%) saturate(2476%) hue-rotate(18deg) brightness(101%) contrast(101%)' }}
+                />
+              </div>
+
+              {/* Client 4 */}
+              <div className="flex-shrink-0 text-center w-32 flex flex-col items-center">
+                <div className="w-32 h-32 mb-4 flex items-center justify-center">
+                  <Image
+                    src="/images/client services/red-hawk.png"
+                    alt="Red Hawk Golf Club"
+                    width={128}
+                    height={128}
+                    className="object-contain rounded-2xl max-w-[128px] max-h-[128px]"
+                  />
+                </div>
+                <h3 className="text-white font-semibold text-base leading-none">Red Hawk Golf Club</h3>
+                <p className="text-mecg-blue-light text-sm">Fall 2025</p>
+              </div>
+
+              {/* Gear Separator */}
+              <div className="flex-shrink-0 flex items-start justify-center w-16 pt-12">
+                <Image
+                  src="/images/Gear.png"
+                  alt="Gear separator"
+                  width={32}
+                  height={32}
+                  className="w-8 h-8 object-contain"
+                  style={{ filter: 'brightness(0) saturate(100%) invert(48%) sepia(79%) saturate(2476%) hue-rotate(18deg) brightness(101%) contrast(101%)' }}
+                />
+              </div>
+
+              {/* Client 5 */}
+              <div className="flex-shrink-0 text-center w-32 flex flex-col items-center">
+                <div className="w-32 h-32 mb-4 flex items-center justify-center">
+                  <Image
+                    src="/images/client services/glo-skin-spa.png"
+                    alt="Glo Skin Spa"
+                    width={128}
+                    height={128}
+                    className="object-contain rounded-2xl max-w-[128px] max-h-[128px]"
+                  />
+                </div>
+                <h3 className="text-white font-semibold text-base leading-none">Glo Skin Spa</h3>
+                <p className="text-mecg-blue-light text-sm">Fall 2025</p>
+              </div>
+
+              {/* Gear Separator */}
+              <div className="flex-shrink-0 flex items-start justify-center w-16 pt-12">
+                <Image
+                  src="/images/Gear.png"
+                  alt="Gear separator"
+                  width={32}
+                  height={32}
+                  className="w-8 h-8 object-contain"
+                  style={{ filter: 'brightness(0) saturate(100%) invert(48%) sepia(79%) saturate(2476%) hue-rotate(18deg) brightness(101%) contrast(101%)' }}
+                />
+              </div>
+
+              {/* Client 6 */}
+              <div className="flex-shrink-0 text-center w-32 flex flex-col items-center">
+                <div className="w-32 h-32 mb-4 flex items-center justify-center">
+                  <Image
                     src="/images/client services/legendary-sports-xperiences.png"
                     alt="Legendary Sports Xperiences"
                     width={128}
@@ -462,7 +597,7 @@ const projects = [
                 />
               </div>
 
-              {/* Client 2 */}
+              {/* Client 7 */}
               <div className="flex-shrink-0 text-center w-32 flex flex-col items-center">
                 <div className="w-32 h-32 mb-4 flex items-center justify-center">
                   <Image
@@ -489,7 +624,7 @@ const projects = [
                 />
               </div>
 
-              {/* Client 3 */}
+              {/* Client 8 */}
               <div className="flex-shrink-0 text-center w-32 flex flex-col items-center">
                 <div className="w-32 h-32 mb-4 flex items-center justify-center">
                   <Image
@@ -516,7 +651,7 @@ const projects = [
                 />
               </div>
 
-              {/* Client 4 */}
+              {/* Client 9 */}
               <div className="flex-shrink-0 text-center w-32 flex flex-col items-center">
                 <div className="w-32 h-32 mb-4 flex items-center justify-center">
                   <Image
@@ -543,7 +678,7 @@ const projects = [
                 />
               </div>
 
-              {/* Client 5 */}
+              {/* Client 10 */}
               <div className="flex-shrink-0 text-center w-32 flex flex-col items-center">
                 <div className="w-32 h-32 mb-4 flex items-center justify-center">
                   <Image
@@ -570,7 +705,7 @@ const projects = [
                 />
               </div>
 
-              {/* Client 6 */}
+              {/* Client 11 */}
               <div className="flex-shrink-0 text-center w-32 flex flex-col items-center">
                 <div className="w-32 h-32 mb-4 flex items-center justify-center">
                   <Image
@@ -597,7 +732,7 @@ const projects = [
                 />
               </div>
 
-              {/* Client 7 */}
+              {/* Client 12 */}
               <div className="flex-shrink-0 text-center w-32 flex flex-col items-center">
                 <div className="w-32 h-32 mb-4 flex items-center justify-center">
                   <Image
@@ -624,7 +759,7 @@ const projects = [
                 />
               </div>
 
-              {/* Client 8 */}
+              {/* Client 13 */}
               <div className="flex-shrink-0 text-center w-32 flex flex-col items-center">
                 <div className="w-32 h-32 mb-4 flex items-center justify-center">
                   <Image
@@ -651,7 +786,7 @@ const projects = [
                 />
               </div>
 
-              {/* Client 9 */}
+              {/* Client 14 */}
               <div className="flex-shrink-0 text-center w-32 flex flex-col items-center">
                 <div className="w-32 h-32 mb-4 flex items-center justify-center">
                   <Image

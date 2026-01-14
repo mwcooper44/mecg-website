@@ -29,12 +29,12 @@ const useWindowSize = () => {
 };
 
 const images = [
-  '/images/carousel/100_0548.JPG',
-  '/images/carousel/20250402_153917_22C7D3.JPG',
-  '/images/carousel/Screenshot_DEI_Panel_Event.JPG',
-  '/images/carousel/Screenshot_heart.JPG',
-  '/images/carousel/Screenshot_MichaelRyan.JPG',
-  '/images/carousel/IMG_5437.JPG',
+  '/images/carousel/20251116_235836_2827D0.JPEG',
+  '/images/carousel/IMG_9274.jpg',
+  '/images/carousel/IMG_9278.jpg',
+  '/images/carousel/IMG_9347.JPG',
+  '/images/carousel/IMG_9371.jpg',
+  '/images/carousel/IMG_9391.jpg',
 ];
 
 export default function Carousel() {
