@@ -18,7 +18,7 @@ const navItems = [
   { name: "Contact Us", href: "/contact" },
   {
     name: "Apply Now",
-    href: "https://forms.gle/hJFLV8aXhaLNsHBB9",
+    href: "https://docs.google.com/forms/d/e/1FAIpQLSdLvhrtv1PnwrXYTMgI_hci7mP9py3roIyAjFZ7-xkiYdXfjw/viewform?usp=header",
     isExternal: true,
     isCallToAction: true,
   },
@@ -107,7 +107,7 @@ export default function Navbar() {
                 }}
                 className={cn(
                   item.isCallToAction
-                    ? "bg-mecg-orange text-white px-4 py-2 rounded-md font-bold hover:bg-orange-400 transition-colors text-center"
+                    ? "bg-mecg-orange text-white px-4 py-2 rounded-md font-bold hover:bg-orange-400 transition-colors text-center text-base"
                     : "text-base font-medium transition-colors hover:text-mecg-orange block py-2",
                   !item.isCallToAction && pathname === item.href
                     ? "text-mecg-orange"

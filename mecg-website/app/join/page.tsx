@@ -275,7 +275,7 @@ export default function JoinPage() {
                               className="bg-mecg-orange hover:bg-mecg-orange/80 text-white font-medium px-3 md:px-4 py-2 rounded-lg transition-colors duration-200 text-sm md:text-base whitespace-nowrap"
                               onClick={() => {
                                 track('apply_now_clicked', { location: 'join_page_timeline' });
-                                window.open('https://docs.google.com/forms/d/e/1FAIpQLSf4s7Ym6syGEH9egGPvAq0bQLAJ1Tx1eUsuRI5oH9RFHkK1ww/closedform', '_blank');
+                                window.open('https://docs.google.com/forms/d/e/1FAIpQLSdLvhrtv1PnwrXYTMgI_hci7mP9py3roIyAjFZ7-xkiYdXfjw/viewform?usp=header', '_blank');
                               }}
                             >
                               Apply Now!
