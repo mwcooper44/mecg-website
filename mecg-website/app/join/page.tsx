@@ -50,7 +50,7 @@ const timelineEvents = [
     icon: "/images/join/10.png",
     date: "Thursday, January 22nd",
     time: "6:00 - 7:30 PM",
-    location: "Verve Indoor Rooftop",
+    location: "Weiser 110",
     description: "Come stop by our social networking event and talk to our members, play games, and more!"
   },
   {
@@ -369,6 +369,8 @@ export default function JoinPage() {
                                     return 'CCCB, University of Michigan, Ann Arbor, MI 48109';
                                   } else if (location.includes('NUB')) {
                                     return 'NUB, University of Michigan, Ann Arbor, MI 48109';
+                                  } else if (location.includes('Weiser')) {
+                                    return 'Weiser Hall, University of Michigan, Ann Arbor, MI 48109';
                                   } else if (location.includes('Verve')) {
                                     return 'Verve Indoor Rooftop, Ann Arbor, MI';
                                   } else if (location === 'Zoom') {
