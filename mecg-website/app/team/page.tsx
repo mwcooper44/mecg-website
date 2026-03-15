@@ -87,395 +87,430 @@ const teamMembers = {
   ],
   projectManagers: [
     {
-      name: "Daniel Rombaut",
-      image: "/images/headshots/BA/DanielR.webp",
-      linkedin: "https://www.linkedin.com/in/dromb",
-      email: "drombaut@umich.edu",
-    },
-    {
-      name: "Erin Beiley",
-      image: "/images/headshots/BA/ErinB.webp",
-      linkedin: "https://www.linkedin.com/in/erin-beiley-392a14258",
-      email: "beiley@umich.edu",
-    }, 
-    {
-      name: "Hannah TerHaar",
-      image: "/images/headshots/BA/HannahT.webp",
-      linkedin: "https://www.linkedin.com/in/hannahterhaar",
-      email: "terhaarh@umich.edu",
-    },   
-    {
-      name: "Julius Cohen",
-      image: "/images/headshots/BAL/JuliusC.webp",
-      linkedin: "https://www.linkedin.com/in/julius-cohen-7320a6313/",
-      email: "juliuszc@umich.edu",
-    },
-    {
-      name: "Kyle Velasco",
-      image: "/images/headshots/BAL/KyleV.webp",
-      linkedin: "https://www.linkedin.com/in/deward-kyle-velasco",
-      email: "velascok@umich.edu",
-    },
-    {
-      name: "Max Winnick",
-      image: "/images/headshots/BAL/MaxW.webp",
-      linkedin: "https://www.linkedin.com/in/maxwinnick",
-      email: "winnickm@umich.edu",
-    },
-    
-  ],
-  assistantProjectManagers: [
-    
-    {
-      name: "Allison Lukens",
-      image: "/images/headshots/VIEW ALL/AllisonL.webp",
-      linkedin: "https://www.linkedin.com/in/-allison-lukens/",
-      email: "cmunroe@umich.edu",
-    },
-    {
-      name: "Bhumi Kumar",
-      image: "/images/headshots/BA/BhumiK.webp",
-      linkedin: "https://www.linkedin.com/in/bhumikumar/",
-      email: "bhumik@umich.edu",
-    },
-    {
-      name: "Connor Klein",
-      image: "/images/headshots/BA/ConnorK.webp",
-      linkedin: "https://www.linkedin.com/in/connor-klein-727118a6/",
-      email: "tcklein@umich.edu",
-    },
-    {
       name: "Daniel Okoye",
-      image: "/images/headshots/BA/DanielO.webp",
+      image: "/images/headshots/PM/DanielO.webp",
       linkedin: "https://www.linkedin.com/in/daniel-okoye-7a1229319",
       email: "dokoye@umich.edu",
     },
     {
-      name: "Jedidiah Roseman",
-      image: "/images/headshots/VIEW ALL/JedidiahR.webp",
-      linkedin: "https://www.linkedin.com/in/jedidiah-roseman/",
-      email: "jedrose@umich.edu",
-    },   
+      name: "Evie Price",
+      image: "/images/headshots/PM/EvieP.webp",
+      linkedin: "https://www.linkedin.com/in/evieprice/",
+      email: "enprice@umich.edu",
+    },
     {
-      name: "Joshua Ng",
-      image: "/images/headshots/BA/JoshuaN.webp",
-      linkedin: "https://www.linkedin.com/in/joshuang42",
-      email: "joshng@umich.edu",
+      name: "Jandy Arias",
+      image: "/images/headshots/PM/JandyA.webp",
+      linkedin: "https://www.linkedin.com/in/jandy-arias/",
+      email: "jandyari@umich.edu",
+    },
+    {
+      name: "Katie Slazinski",
+      image: "/images/headshots/PM/KatieS.webp",
+      linkedin: "https://www.linkedin.com/in/katherine-slazinski/",
+      email: "kslaz@umich.edu",
     },
     {
       name: "Molly Bluestein",
-      image: "/images/headshots/BA/MollyB.webp",
+      image: "/images/headshots/PM/MollyB.webp",
       linkedin: "https://www.linkedin.com/in/mollybluestein",
       email: "mollyblu@umich.edu",
     },
     {
-      name: "Nate Reynders",
-      image: "/images/headshots/BA/NateR.webp",
-      linkedin: "https://www.linkedin.com/in/nate-reynders",
-      email: "reynders@umich.edu",
+      name: "Sophie Cartwright",
+      image: "/images/headshots/PM/SophieC.webp",
+      linkedin: "https://www.linkedin.com/in/-sophiecartwright/",
+      email: "cartso@umich.edu",
     },
-    
-    
-
   ],
-  businessAnalysts: [    
-    {
-      name: "Abby Cho",
-      image: "/images/headshots/VIEW ALL/AbbyC.webp",
-      linkedin: "https://www.linkedin.com/in/abigail-cho-/",
-      email: "eulacho@umich.edu",
-    },
-    {
-      name: "Adam Benjamin",
-      image: "/images/headshots/VIEW ALL/AdamB.webp",
-      linkedin: "https://www.linkedin.com/in/adam-d-benjamin/",
-      email: "abenji@umich.edu",
-    },
+  assistantProjectManagers: [
     {
       name: "Aditya Muli",
-      image: "/images/headshots/VIEW ALL/AdityaM.webp",
+      image: "/images/headshots/APM/AdityaM.webp",
       linkedin: "https://www.linkedin.com/in/aditya-muli-3b911a2b9/",
       email: "amuli@umich.edu",
     },
     {
       name: "Akhi Kanmanthreddy",
-      image: "/images/headshots/VIEW ALL/AkhiK.webp",
+      image: "/images/headshots/APM/AkhiK.webp",
       linkedin: "https://www.linkedin.com/in/akhikanman/",
       email: "kanmanth@umich.edu",
     },
     {
       name: "Asha Joliet",
-      image: "/images/headshots/VIEW ALL/AshaJ.webp",
+      image: "/images/headshots/APM/AshaJ.webp",
       linkedin: "https://www.linkedin.com/in/ashajoliet/",
       email: "ajoliet@umich.edu",
     },
     {
       name: "Avery Bakes",
-      image: "/images/headshots/BA/AveryB.webp",
+      image: "/images/headshots/APM/AveryB.webp",
       linkedin: "https://www.linkedin.com/in/avery-bakes-53994a309 ",
       email: "ajbakes@umich.edu",
     },
     {
       name: "Ayaan Vaswani",
-      image: "/images/headshots/VIEW ALL/AyaanV.webp",
+      image: "/images/headshots/APM/AyaanV.webp",
       linkedin: "https://www.linkedin.com/in/ayaanvaswani/",
       email: "ayaanv@umich.edu",
     },
     {
-      name: "Daniella Ranario",
-      image: "/images/headshots/VIEW ALL/DaniellaR.webp",
-      linkedin: "https://www.linkedin.com/in/daniella-ranario/",
-      email: "dranario@umich.edu",
-    },
-    {
-      name: "David Ebosele",
-      image: "/images/headshots/VIEW ALL/DavidE.webp",
-      linkedin: "https://www.linkedin.com/in/david-ebosele-3813aa261/",
-      email: "debosele@umich.edu",
-    },
-    {
-      name: "Diego Leon",
-      image: "/images/headshots/VIEW ALL/DiegoL.webp",
-      linkedin: "https://www.linkedin.com/in/diegoleon-umich/",
-      email: "dleonag@umich.edu",
-    },
-    {
-      name: "Evie Price",
-      image: "/images/headshots/VIEW ALL/EvieP.webp",
-      linkedin: "https://www.linkedin.com/in/evieprice/",
-      email: "enprice@umich.edu",
-    },
-    {
-      name: "Giada Garzelloni",
-      image: "/images/headshots/VIEW ALL/GiadaG.webp",
-      linkedin: "https://www.linkedin.com/in/giada-garzelloni/",
-      email: "garzello@umich.edu",
-    },
-    {
-      name: "Hayley Holder",
-      image: "/images/headshots/BA/HayleyH.webp",
-      linkedin: "https://www.linkedin.com/in/hayley-holder/",
-      email: "hholder@umich.edu",
-    },
-    {
-      name: "Isabella Haindl",
-      image: "/images/headshots/VIEW ALL/IsabellaH.webp",
-      linkedin: "https://www.linkedin.com/in/isabella-haindl/",
-      email: "ihaindl@umich.edu",
-    },
-    {
-      name: "James Oosterhouse",
-      image: "/images/headshots/VIEW ALL/JamesO.webp",
-      linkedin: "https://www.linkedin.com/in/james-oosterhouse/",
-      email: "jamesoo@umich.edu",
-    },
-    {
       name: "Jihyo Yoo",
-      image: "/images/headshots/VIEW ALL/JihyoY.webp",
+      image: "/images/headshots/APM/JihyoY.webp",
       linkedin: "https://www.linkedin.com/in/jihyoyoo",
       email: "jihyoyoo@umich.edu",
     },
     {
-      name: "Jules Hwang",
-      image: "/images/headshots/VIEW ALL/JulesH.webp",
-      linkedin: "https://www.linkedin.com/in/jules-hwang/",
-      email: "julhwang@umich.edu",
-    },
-    {
-      name: "Katie Slazinski",
-      image: "/images/headshots/VIEW ALL/KatieS.webp",
-      linkedin: "https://www.linkedin.com/in/katherine-slazinski/",
-      email: "kslaz@umich.edu",
-    },
-    {
-      name: "Kyle Cornell",
-      image: "/images/headshots/VIEW ALL/KyleC.webp",
-      linkedin: "https://www.linkedin.com/in/kylecornell04/",
-      email: "kylcorn@umich.edu",
-    },
-    {
-      name: "Luisa Bruno Ferré",
-      image: "/images/headshots/VIEW ALL/LuisaB.webp",
-      linkedin: "https://www.linkedin.com/in/luisabrunoferre/",
-      email: "luisabf@umich.edu",
-    },
-    {
-      name: "Martynas Jurciukonis",
-      image: "/images/headshots/VIEW ALL/MartynasJ.webp",
-      linkedin: "https://www.linkedin.com/in/martynas-jurciukonis ",
-      email: "mjurciuk@umich.edu",
-    },
-    {
-      name: "Mason Pratt",
-      image: "/images/headshots/BA/MasonP.webp",
-      linkedin: "https://www.linkedin.com/in/mason-pratt-404055284/",
-      email: "maspratt@umich.edu",
-    },
-    {
-      name: "Maxwell Cooper",
-      image: "/images/headshots/VIEW ALL/MaxwellC.webp",
-      linkedin: "https://www.linkedin.com/in/cooper-maxwell/",
-      email: "mwcooper@umich.edu",
-    },
-    {
-      name: "Maxwell Franz",
-      image: "/images/headshots/BA/MaxwellF.webp",
-      linkedin: "https://linkedin.com/in/maxwell-franz-439188334",
-      email: "maxfranz@umich.edu",
-    },
-    {
-      name: "Michael Young",
-      image: "/images/headshots/VIEW ALL/MichaelY.webp",
-      linkedin: "https://www.linkedin.com/in/youngim/",
-      email: "youngim@umich.edu",
+      name: "Luciano del Carpio",
+      image: "/images/headshots/APM/LucianoD.webp",
+      linkedin: "https://www.linkedin.com/in/luciano-del-carpio/",
+      email: "ldelcarp@umich.edu",
     },
     {
       name: "Natalie Woolridge",
-      image: "/images/headshots/BA/NatalieW.webp",
+      image: "/images/headshots/APM/NatalieW.webp",
       linkedin: "https://www.linkedin.com/in/natalie-wooldridge-1380a6329/",
       email: "nwool@umich.edu",
     },
     {
-      name: "Nitya Balasubramanian",
-      image: "/images/headshots/VIEW ALL/NityaB.webp",
-      linkedin: "https://www.linkedin.com/in/nityabalasub/",
-      email: "nbalasub@umich.edu",
-    },
-    {
       name: "Pranjal Mhetre",
-      image: "/images/headshots/VIEW ALL/PranjalM.webp",
+      image: "/images/headshots/APM/PranjalM.webp",
       linkedin: "https://www.linkedin.com/in/pranjalmhetre/",
       email: "pranjalm@umich.edu",
     },
     {
-      name: "Ryan Hoehler",
-      image: "/images/headshots/BA/RyanH.webp",
-      linkedin: "https://www.linkedin.com/in/ryan-hoehler125",
-      email: "rhoehler@umich.edu",
-    },
-    {
-      name: "Sophie Cartwright",
-      image: "/images/headshots/VIEW ALL/SophieC.webp",
-      linkedin: "https://www.linkedin.com/in/-sophiecartwright/",
-      email: "cartso@umich.edu",
-    },
-    {
-      name: "Sumedha Katti",
-      image: "/images/headshots/BAL/SumedhaK.webp",
-      linkedin: "https://www.linkedin.com/in/sumedha-katti-874949240",
-      email: "skatti@umich.edu",
-    },
-    {
-      name: "Sydney Silva",
-      image: "/images/headshots/VIEW ALL/SydneyS.webp",
-      linkedin: "https://www.linkedin.com/in/sydney-e-silva/",
-      email: "sydsilva@umich.edu",
+      name: "Selena Cooper",
+      image: "/images/headshots/APM/SelenaC.webp",
+      linkedin: "https://www.linkedin.com/in/selena-cooper/",
+      email: "selenaco@umich.edu",
     },
     {
       name: "Thomas Schehl",
-      image: "/images/headshots/VIEW ALL/ThomasS.webp",
+      image: "/images/headshots/APM/ThomasS.webp",
       linkedin: "https://www.linkedin.com/in/thomas-p-schehl/",
       email: "tschehl@umich.edu",
     },
   ],
-  strategicLeads: [
+  businessAnalysts: [
+    {
+      name: "Aaryan Singh",
+      image: "/images/headshots/Analyst/AaryanS.webp",
+      linkedin: "https://www.linkedin.com/in/aaryansingh2004/",
+      email: "arysingh@umich.edu",
+    },
+    {
+      name: "Abby Cho",
+      image: "/images/headshots/Analyst/AbbyC.webp",
+      linkedin: "https://www.linkedin.com/in/abigail-cho-/",
+      email: "eulacho@umich.edu",
+    },
+    {
+      name: "Adam Benjamin",
+      image: "/images/headshots/Analyst/AdamB.webp",
+      linkedin: "https://www.linkedin.com/in/adam-d-benjamin/",
+      email: "abenji@umich.edu",
+    },
+    {
+      name: "Allison Lukens",
+      image: "/images/headshots/Analyst/AllisonL.webp",
+      linkedin: "https://www.linkedin.com/in/-allison-lukens/",
+      email: "alukens@umich.edu",
+    },
     {
       name: "Anna Czech",
-      image: "/images/headshots/BAL/AnnaC.webp",
-      linkedin: " https://www.linkedin.com/in/anna-czech-738463320/ ",
+      image: "/images/headshots/Analyst/AnnaC.webp",
+      linkedin: "https://www.linkedin.com/in/anna-czech-738463320/",
       email: "arczech@umich.edu",
     },
     {
-      name: "Caden Fedderson",
-      image: "/images/headshots/PM/CadenF.webp",
+      name: "Bhumi Kumar",
+      image: "/images/headshots/Analyst/BhumiK.webp",
+      linkedin: "https://www.linkedin.com/in/bhumikumar/",
+      email: "bhumik@umich.edu",
+    },
+    {
+      name: "Caden Feddersen",
+      image: "/images/headshots/Analyst/CadenF.webp",
       linkedin: "https://www.linkedin.com/in/caden-feddersen/",
       email: "cfedd@umich.edu",
     },
     {
       name: "Charlie Hartman",
-      image: "/images/headshots/SA/CharlieH.webp",
-      linkedin: "https://www.linkedin.com/in/charlie-hartman-",
+      image: "/images/headshots/Analyst/CharlieH.webp",
+      linkedin: "https://www.linkedin.com/in/charlie-hartman-/",
       email: "hartch@umich.edu",
     },
     {
+      name: "Connor Klein",
+      image: "/images/headshots/Analyst/ConnorK.webp",
+      linkedin: "https://www.linkedin.com/in/tconnorklein/",
+      email: "tcklein@umich.edu",
+    },
+    {
+      name: "Daniella Ranario",
+      image: "/images/headshots/Analyst/DaniellaR.webp",
+      linkedin: "https://www.linkedin.com/in/daniella-ranario/",
+      email: "dranario@umich.edu",
+    },
+    {
+      name: "Daniel Rombaut",
+      image: "/images/headshots/Analyst/DanielR.webp",
+      linkedin: "https://www.linkedin.com/in/dromb/",
+      email: "drombaut@umich.edu",
+    },
+    {
+      name: "David Ebosele",
+      image: "/images/headshots/Analyst/DavidE.webp",
+      linkedin: "https://www.linkedin.com/in/david-ebosele-3813aa261/",
+      email: "debosele@umich.edu",
+    },
+    {
+      name: "Diego Leon",
+      image: "/images/headshots/Analyst/DiegoL.webp",
+      linkedin: "https://www.linkedin.com/in/diegoleon-umich/",
+      email: "dleonag@umich.edu",
+    },
+    {
       name: "Elijah Frederick",
-      image: "/images/headshots/BAL/ElijahF.webp",
-      linkedin: "https://www.linkedin.com/in/elijah-frederick",
+      image: "/images/headshots/Analyst/ElijahF.webp",
+      linkedin: "https://www.linkedin.com/in/elijah-frederick/",
       email: "elijahfr@umich.edu",
     },
     {
       name: "Emily Kim",
-      image: "/images/headshots/BAL/EmilyK.webp",
+      image: "/images/headshots/Analyst/EmilyK.webp",
       linkedin: "https://www.linkedin.com/in/emily-kim-48b050330/",
       email: "emilkim@umich.edu",
     },
     {
+      name: "Erin Beiley",
+      image: "/images/headshots/Analyst/ErinB.webp",
+      linkedin: "https://www.linkedin.com/in/erin-beiley/",
+      email: "beiley@umich.edu",
+    },
+    {
       name: "Ethan Showich",
-      image: "/images/headshots/PM/EthanS.webp",
-      linkedin: "https://www.linkedin.com/in/ethan-showich",
+      image: "/images/headshots/Analyst/EthanS.webp",
+      linkedin: "https://www.linkedin.com/in/ethan-showich/",
       email: "eshowich@umich.edu",
     },
     {
       name: "Eve Dragiewicz",
-      image: "/images/headshots/PM/EveD.webp",
-      linkedin: "https://www.linkedin.com/in/eve-dragiewicz-684942327",
+      image: "/images/headshots/Analyst/EveD.webp",
+      linkedin: "https://www.linkedin.com/in/eve-dragiewicz/",
       email: "evedrag@umich.edu",
     },
     {
+      name: "Giada Garzelloni",
+      image: "/images/headshots/Analyst/GiadaG.webp",
+      linkedin: "https://www.linkedin.com/in/giada-garzelloni/",
+      email: "garzello@umich.edu",
+    },
+    {
+      name: "Hannah TerHaar",
+      image: "/images/headshots/Analyst/HannahT.webp",
+      linkedin: "https://www.linkedin.com/in/hannahterhaar/",
+      email: "terhaarh@umich.edu",
+    },
+    {
       name: "Iman Ahmed",
-      image: "/images/headshots/PM/ImanA.webp",
+      image: "/images/headshots/Analyst/ImanA.webp",
       linkedin: "https://www.linkedin.com/in/imanahmed07/",
       email: "imanahm@umich.edu",
     },
     {
+      name: "Isabella Haindl",
+      image: "/images/headshots/Analyst/IsabellaH.webp",
+      linkedin: "https://www.linkedin.com/in/isabella-haindl/",
+      email: "ihaindl@umich.edu",
+    },
+    {
       name: "Jacob Hanks",
-      image: "/images/headshots/PM/JacobH.webp",
-      linkedin: "https://www.linkedin.com/in/jacobchanks",
+      image: "/images/headshots/Analyst/JacobH.webp",
+      linkedin: "https://www.linkedin.com/in/jacobchanks/",
       email: "jclhanks@umich.edu",
     },
     {
-      name: "Jude Adwarka",
-      image: "/images/headshots/PM/JudeA.webp",
-      linkedin: "https://www.linkedin.com/in/jude-adarkwa",
+      name: "James Oosterhouse",
+      image: "/images/headshots/Analyst/JamesO.webp",
+      linkedin: "https://www.linkedin.com/in/james-oosterhouse/",
+      email: "jamesoo@umich.edu",
+    },
+    {
+      name: "Jonathan Fay",
+      image: "/images/headshots/Analyst/JonathanF.webp",
+      linkedin: "https://www.linkedin.com/in/jonathan-s-fay/",
+      email: "jonfay@umich.edu",
+    },
+    {
+      name: "Joshua Ng",
+      image: "/images/headshots/Analyst/JoshuaN.webp",
+      linkedin: "https://www.linkedin.com/in/joshua-y-ng/",
+      email: "joshng@umich.edu",
+    },
+    {
+      name: "Jude Adarkwa",
+      image: "/images/headshots/Analyst/JudeA.webp",
+      linkedin: "https://www.linkedin.com/in/jude-adarkwa/",
       email: "jadarkwa@umich.edu",
     },
     {
-      name: "Lucy Mclean",
-      image: "/images/headshots/BAL/LucyM.webp",
-      linkedin: "https://www.linkedin.com/in/lucy-mclean",
+      name: "Julius Cohen",
+      image: "/images/headshots/Analyst/JuliusC.webp",
+      linkedin: "https://www.linkedin.com/in/julius-cohen-7320a6313/",
+      email: "juliuszc@umich.edu",
+    },
+    {
+      name: "Kyle Cornell",
+      image: "/images/headshots/Analyst/KyleC.webp",
+      linkedin: "https://www.linkedin.com/in/kylecornell04/",
+      email: "kylcorn@umich.edu",
+    },
+    {
+      name: "Kyle Velasco",
+      image: "/images/headshots/Analyst/KyleV.webp",
+      linkedin: "https://www.linkedin.com/in/deward-kyle-velasco/",
+      email: "velascok@umich.edu",
+    },
+    {
+      name: "Lucy McLean",
+      image: "/images/headshots/Analyst/LucyM.webp",
+      linkedin: "https://www.linkedin.com/in/lucy-mclean/",
       email: "lpmclean@umich.edu",
     },
     {
-      name: "Mark Mitu",
-      image: "/images/headshots/SA/MarkM.webp",
-      linkedin: "https://www.linkedin.com/in/markmitu/",
-      email: "markmitu@umich.edu",
+      name: "Luisa Bruno Ferré",
+      image: "/images/headshots/Analyst/LuisaB.webp",
+      linkedin: "https://www.linkedin.com/in/luisabrunoferre/",
+      email: "luisabf@umich.edu",
+    },
+    {
+      name: "Mark M.",
+      image: "/images/headshots/Analyst/MarkM.webp",
+      linkedin: "",
+      email: "",
+    },
+    {
+      name: "Martynas Jurciukonis",
+      image: "/images/headshots/Analyst/MartynasJ.webp",
+      linkedin: "https://www.linkedin.com/in/martynas-jurciukonis/",
+      email: "mjurciuk@umich.edu",
+    },
+    {
+      name: "Mason Pratt",
+      image: "/images/headshots/Analyst/MasonP.webp",
+      linkedin: "https://www.linkedin.com/in/mason-pratt-404055284/",
+      email: "maspratt@umich.edu",
+    },
+    {
+      name: "Maxwell Cooper",
+      image: "/images/headshots/Analyst/MaxwellC.webp",
+      linkedin: "https://www.linkedin.com/in/cooper-maxwell/",
+      email: "mwcooper@umich.edu",
+    },
+    {
+      name: "Maxwell Franz",
+      image: "/images/headshots/Analyst/MaxwellF.webp",
+      linkedin: "https://www.linkedin.com/in/maxwellfranz/",
+      email: "maxfranz@umich.edu",
     },
     {
       name: "Michael Cornell",
-      image: "/images/headshots/SA/MichaelC.webp",
-      linkedin: "https://www.linkedin.com/in/michael-cornell-6737242a6",
+      image: "/images/headshots/Analyst/MichaelC.webp",
+      linkedin: "https://www.linkedin.com/in/michaeltcornell/",
       email: "mtcornel@umich.edu",
     },
     {
+      name: "Michael Young",
+      image: "/images/headshots/Analyst/MichaelY.webp",
+      linkedin: "https://www.linkedin.com/in/youngim/",
+      email: "youngim@umich.edu",
+    },
+    {
       name: "Miguel Palacios",
-      image: "/images/headshots/BAL/MiguelP.webp",
+      image: "/images/headshots/Analyst/MiguelP.webp",
       linkedin: "https://www.linkedin.com/in/miguel-palacios-933ba7345/",
       email: "miguelpv@umich.edu",
     },
     {
+      name: "Nate Reynders",
+      image: "/images/headshots/Analyst/NateR.webp",
+      linkedin: "https://www.linkedin.com/in/nate-reynders/",
+      email: "reynders@umich.edu",
+    },
+    {
+      name: "Nitya Balasubramanian",
+      image: "/images/headshots/Analyst/NityaB.webp",
+      linkedin: "https://www.linkedin.com/in/nityabalasub/",
+      email: "nbalasub@umich.edu",
+    },
+    {
+      name: "Ryan Hoehler",
+      image: "/images/headshots/Analyst/RyanH.webp",
+      linkedin: "https://www.linkedin.com/in/ryan-hoehler125/",
+      email: "rhoehler@umich.edu",
+    },
+    {
+      name: "Sydney Silva",
+      image: "/images/headshots/Analyst/SydneyS.webp",
+      linkedin: "https://www.linkedin.com/in/sydney-e-silva/",
+      email: "sydsilva@umich.edu",
+    },
+    {
       name: "Thomas Carano",
-      image: "/images/headshots/SA/ThomasC.webp",
+      image: "/images/headshots/Analyst/ThomasC.webp",
       linkedin: "https://www.linkedin.com/in/t-carano/",
       email: "tcaranno@umich.edu",
     },
     {
       name: "Victor Iyer",
-      image: "/images/headshots/SA/VictorI.webp",
-      linkedin: "https://www.linkedin.com/in/victor-iyer",
+      image: "/images/headshots/Analyst/VictorI.webp",
+      linkedin: "https://www.linkedin.com/in/victor-iyer/",
       email: "viciyer@umich.edu",
     },
-  
+  ],
+  strategicLeads: [
+    {
+      name: "Hayley Holder",
+      image: "/images/headshots/SL/HayleyH.webp",
+      linkedin: "https://www.linkedin.com/in/hayley-holder/",
+      email: "hholder@umich.edu",
+    },
+    {
+      name: "Jed Roseman",
+      image: "/images/headshots/SL/JedidiahR.webp",
+      linkedin: "https://www.linkedin.com/in/jedidiah-roseman/",
+      email: "jedrose@umich.edu",
+    },
+    {
+      name: "Jules Hwang",
+      image: "/images/headshots/SL/JulesH.webp",
+      linkedin: "https://www.linkedin.com/in/jules-hwang/",
+      email: "julhwang@umich.edu",
+    },
+    {
+      name: "Max Winnick",
+      image: "/images/headshots/SL/MaxW.webp",
+      linkedin: "https://www.linkedin.com/in/maxwinnick",
+      email: "winnickm@umich.edu",
+    },
+    {
+      name: "Nandini Tatiwala",
+      image: "/images/headshots/SL/NandiniT.webp",
+      linkedin: "https://www.linkedin.com/in/nandini-tatiwala/",
+      email: "tnandini@umich.edu",
+    },
+  ],
+  // Optional: regular members with no dedicated section (used only in View All)
+  // Fill this array with members who live in /images/headshots/Members.
+  members: [
+    // Example:
+    // {
+    //   name: "First Last",
+    //   image: "/images/headshots/Members/FirstL.webp",
+    //   linkedin: "",
+    //   email: "",
+    // },
   ],
 }
 
@@ -504,16 +539,7 @@ export default function TeamPage() {
   
   // First add eboard members (these have VP roles and take priority)
   teamMembers.eboard.forEach(member => {
-    let imagePath = `/images/headshots/VIEW ALL/${member.name.split(' ')[0]}${member.name.split(' ')[1][0]}.webp`
-    // Special case for Luciano del Carpio - use LucianoD.webp
-    if (member.name === "Luciano del Carpio") {
-      imagePath = "/images/headshots/VIEW ALL/LucianoD.webp"
-    }
-    const memberWithImage = {
-      ...member,
-      image: imagePath
-    }
-    allMembersMap.set(member.name, memberWithImage)
+    allMembersMap.set(member.name, member)
   })
   
   // Then add other members, skipping if already exists (to preserve VP role)
@@ -522,7 +548,6 @@ export default function TeamPage() {
       allMembersMap.set(member.name, {
         ...member,
         category: 'Project Manager',
-        image: `/images/headshots/VIEW ALL/${member.name.split(' ')[0]}${member.name.split(' ')[1][0]}.webp`
       })
     }
   })
@@ -532,7 +557,6 @@ export default function TeamPage() {
       allMembersMap.set(member.name, {
         ...member,
         category: 'Assistant Project Manager',
-        image: `/images/headshots/VIEW ALL/${member.name.split(' ')[0]}${member.name.split(' ')[1][0]}.webp`
       })
     }
   })
@@ -542,7 +566,6 @@ export default function TeamPage() {
       allMembersMap.set(member.name, {
         ...member,
         category: 'Analyst',
-        image: `/images/headshots/VIEW ALL/${member.name.split(' ')[0]}${member.name.split(' ')[1][0]}.webp`
       })
     }
   })
@@ -552,17 +575,28 @@ export default function TeamPage() {
       allMembersMap.set(member.name, {
         ...member,
         category: 'Strategic Lead',
-        image: `/images/headshots/VIEW ALL/${member.name.split(' ')[0]}${member.name.split(' ')[1][0]}.webp`
       })
     }
   })
+  
+  // Add regular members (no dedicated section) to View All if present
+  if ((teamMembers as any).members) {
+    (teamMembers as any).members.forEach((member: any) => {
+      if (!allMembersMap.has(member.name)) {
+        allMembersMap.set(member.name, {
+          ...member,
+          category: member.category || 'Member',
+        })
+      }
+    })
+  }
   
   // Add Co-Founders to View All section (without Strategic Lead category)
   if (!allMembersMap.has("Aaryan Singh")) {
     allMembersMap.set("Aaryan Singh", {
       name: "Aaryan Singh",
       role: "Co-Founder",
-      image: "/images/headshots/VIEW ALL/AaryanS.webp",
+      image: "/images/headshots/Members/AaryanS.webp",
       linkedin: "https://www.linkedin.com/in/aaryansingh2004/",
       email: "arysingh@umich.edu",
     })
@@ -571,7 +605,7 @@ export default function TeamPage() {
     allMembersMap.set("Jonathan Fay", {
       name: "Jonathan Fay",
       role: "Co-Founder",
-      image: "/images/headshots/VIEW ALL/JonathanF.webp",
+      image: "/images/headshots/Members/JonathanF.webp",
       linkedin: "https://www.linkedin.com/in/jonathan-s-fay/",
       email: "jonfay@umich.edu",
     })
@@ -742,8 +776,22 @@ function TeamMemberCard({ member, index, isEboard }: { member: any; index: numbe
       </div>
       <CardHeader className="p-3">
         <CardTitle className="text-lg text-mecg-dark-blue">{member.name}</CardTitle>
-                         {member.role && <CardDescription className="text-xs sm:text-sm md:text-base text-mecg-dark-blue" style={{ lineHeight: '1' }}>{member.role}</CardDescription>}
-                 {member.category && <CardDescription className="text-xs sm:text-sm md:text-base text-mecg-dark-blue" style={{ lineHeight: '1' }}>{member.category}</CardDescription>}
+        {member.role && (
+          <CardDescription
+            className="text-xs sm:text-sm md:text-base text-mecg-dark-blue"
+            style={{ lineHeight: "1" }}
+          >
+            {member.role}
+          </CardDescription>
+        )}
+        {member.category && (
+          <CardDescription
+            className="text-xs sm:text-sm md:text-base text-mecg-dark-blue"
+            style={{ lineHeight: "1" }}
+          >
+            {member.category}
+          </CardDescription>
+        )}
       </CardHeader>
     </Card>
   )
