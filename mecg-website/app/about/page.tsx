@@ -178,8 +178,8 @@ export default function AboutPage() {
                   <div className="flex-1 space-y-4">
                     <p className="text-base md:text-lg leading-relaxed text-left">
                       Michigan Engineering Consulting Group (MECG) was founded in 2023 by{" "}
-                      <strong>Jonathan Fay</strong> (Mechanical Engineering, Class of 2026) and{" "}
-                      <strong>Aaryan Singh</strong> (Industrial and Operations Engineering, Class of 2026) with the vision of creating a space where students could grow personally, professionally, and socially. What began as an idea between two students quickly took shape, and by Winter 2024, MECG welcomed its first cohort of members.
+                      <strong>Max Cooper</strong> (Computer Science, Class of 2027) and{" "}
+                      <strong>Kyle Cornell</strong> (Computer Science, Class of 2027) with the vision of creating a space where students could grow personally, professionally, and socially. What began as an idea between two students quickly took shape, and by Winter 2024, MECG welcomed its first cohort of members.
                     </p>
                     
                     <p className="text-base md:text-lg leading-relaxed text-left">
@@ -191,8 +191,8 @@ export default function AboutPage() {
                   <div className="flex-shrink-0">
                     <div className="w-full max-w-sm lg:w-80 xl:w-96 h-48 md:h-64 lg:h-80 rounded-lg overflow-hidden border-4 md:border-6 border-mecg-orange shadow-lg">
                       <Image
-                        src="/images/Jon+AaryanFootball.png"
-                        alt="MECG Founders Jonathan Fay and Aaryan Singh"
+                        src="/images/Max+Kyle.jpeg"
+                        alt="MECG Founders Max Cooper and Kyle Cornell"
                         width={400}
                         height={320}
                         className="w-full h-full object-cover"
